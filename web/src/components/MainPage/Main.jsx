@@ -9,6 +9,7 @@ import style from "./Main.module.css";
 
 function Main() {
   const devices = useSelector((store) => store.devices);
+  console.log(devices.devices);
 
   return (
     <div>

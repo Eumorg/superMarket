@@ -1,6 +1,9 @@
+import { devicesInit } from "./reducers/devicesReducer"
 
 export const initState = {
-  inputState: []
+  inputState: [],
+  devices: devicesInit,
+
 }
 
 

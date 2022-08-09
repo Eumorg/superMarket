@@ -1,4 +1,6 @@
-const devicesInit = [
+import { initState } from "../initState";
+
+export const devicesInit = [
   {
     id: 1,
     model: "IPhone 12",
@@ -109,11 +111,9 @@ const devicesInit = [
   },
 ];
 
-const initialState = {
-  devices: devicesInit,
-};
 
-export const reducers = (state = initialState, action) => {
+
+export const devicesReducer = (state = initState.devices, action) => {
   switch (action.type) {
     case "":
       return;
