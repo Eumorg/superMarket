@@ -7,6 +7,7 @@ import Catalog from "./components/Catalog/Catalog";
 import { store } from './store/index';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from './components/footer/Footer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <div>
         {/* <Catalog /> */}
         <Main />
+        <Footer/>
       </div>
       </BrowserRouter>
     </Provider>
