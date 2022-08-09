@@ -1,18 +1,17 @@
 import React from "react";
-import { useSelector, useNavigate } from "react-redux";
+import { useSelector } from "react-redux";
 import Header from "../Header/Header";
-
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
+import DeviceItem from "../DeviceItem/DeviceItem";
+import { useNavigate } from "react-router-dom";
 
 import style from "./Main.module.css";
 
 function Main() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const devices = useSelector((store) => store.devices);
 
-  function onClickHandler(data) {
-    navigate()
+  function onClickHandler(id) {
+    navigate(`device/${id}`);
   }
 
   return (
@@ -23,22 +22,17 @@ function Main() {
         <h1 className={style.header}>Новинки</h1>
         <div className={style.list}>
           {devices.map((device) => (
-            <div key={device.id} className={style.card} >
-              <Card style={{ width: "18rem" }} onClick={() => onClickHandler(device.id)}>
-                <Card.Img variant="top" src={device.picture} />
-                <Card.Body>
-                  <Card.Title>{device.model}</Card.Title>
-                  <Card.Text>{device.description}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item>Цвет: {device.color}</ListGroup.Item>
-                  <ListGroup.Item>Цена: {device.price}</ListGroup.Item>
-                </ListGroup>
-                <Card.Body>
-                  <Card.Link href="#">В избраное </Card.Link>
-                  <Card.Link href="#">Купить</Card.Link>
-                </Card.Body>
-              </Card>
+            <div
+              key={device.id}
+              className={style.card}
+              onClick={() => onClickHandler(device.id)}
+            >
+              <DeviceItem
+                model={device.model}
+                img={device.picture}
+                price={device.price}
+                color={device.color}
+              />
             </div>
           ))}
         </div>
