@@ -1,0 +1,25 @@
+.device__container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	/* background-color: aquamarine; */
+	display: flex;
+	justify-content: space-around;
+}
+
+.device__image {
+	width: 400px;
+	height: 600px;
+}
+
+.device__spec {
+	max-width: 540px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-top: 30px;
+}
