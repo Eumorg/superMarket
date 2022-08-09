@@ -8,6 +8,7 @@ import { store } from './store/index';
 import { Provider } from 'react-redux';
 
 function App() {
+  console.log(store)
   // const [products, setProducts] = useState([]);
   // async function fetchProd() {
   // 	const response = await fetch('https://fakestoreapi.com/products?limit=1')
