@@ -1,5 +1,16 @@
+
+import { SignInForm } from "./components/SignInForm/SignInForm";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { SignUpForm } from "./components/SignUpForm/SignUpForm";
+
+
 function App() {
-  return <div></div>;
+  return (
+    <>
+ <SignUpForm/>
+ <SignInForm/>
+    </>
+  )
 }
 
 export default App;
