@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       color: {
         type: Sequelize.STRING
