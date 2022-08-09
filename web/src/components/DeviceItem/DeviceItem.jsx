@@ -1,17 +1,16 @@
+import { useSelector } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicExample() {
+function BasicExample({ model, img, price }) {
+
    return (
       <Card style={{ width: '18rem' }}>
-         <Card.Img variant="top" src="holder.js/100px180" />
+         <Card.Img variant="top" src={img} />
          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-               Some quick example text to build on the card title and make up the
-               bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Card.Title>{model}</Card.Title>
+            <Card.Text><span>{`ЦЕНА: ${price}`}</span></Card.Text>
+            <Button variant="primary">Добавить в Корзину</Button>
          </Card.Body>
       </Card>
    );
