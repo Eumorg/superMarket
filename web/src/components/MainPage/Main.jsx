@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useNavigate } from "react-redux";
 import Header from "../Header/Header";
 
 import Card from "react-bootstrap/Card";
@@ -8,8 +8,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import style from "./Main.module.css";
 
 function Main() {
+  const navigate = useNavigate()
   const devices = useSelector((store) => store.devices);
   console.log(devices.devices);
+
+  function onClickHandler(data) {
+    navigate()
+  }
 
   return (
     <div>
@@ -19,8 +24,8 @@ function Main() {
         <h1 className={style.header}>Новинки</h1>
         <div className={style.list}>
           {devices.map((device) => (
-            <div key={device.id} className={style.card}>
-              <Card style={{ width: "18rem" }}>
+            <div key={device.id} className={style.card} >
+              <Card style={{ width: "18rem" }} onClick={() => onClickHandler(device.id)}>
                 <Card.Img variant="top" src={device.picture} />
                 <Card.Body>
                   <Card.Title>{device.model}</Card.Title>
