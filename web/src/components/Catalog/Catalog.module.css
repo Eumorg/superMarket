@@ -1,0 +1,16 @@
+.catalog {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.filter {
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.device {
+   width: 70%;
+}
