@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { PageDevice } from './components/PageDevice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +29,7 @@ function App() {
       </div>
     </Provider>
   );
+
 }
 
 export default App;
