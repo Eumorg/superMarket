@@ -1,54 +1,124 @@
-// const todosInit = [
-//   { id: 1, value: "Wash the cat", done: false },
-//   { id: 2, value: "Learn JS", done: false },
-//   { id: 3, value: "Watch a movie", done: false },
-//   { id: 4, value: "Eat healthy", done: false },
-// ];
+const devicesInit = [
+  {
+    id: 1,
+    model: "IPhone 12",
+    description: "64mb",
+    price: "1000",
+    type: "phone",
+    color: "silver",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 2,
+    model: "IPhone 13",
+    description: "128mb",
+    price: "1100",
+    type: "phone",
+    color: "black",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 3,
+    model: "IPhone X",
+    description: "64mb",
+    price: "900",
+    type: "phone",
+    color: "gold",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 4,
+    model: "IPhone 12 mini",
+    description: "256mb",
+    price: "700",
+    type: "phone",
+    color: "silver",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 5,
+    model: "IPhone 13 mini",
+    description: "256mb",
+    price: "800",
+    type: "phone",
+    color: "blue",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 6,
+    model: "IPhone 11",
+    description: "256mb",
+    price: "1100",
+    type: "phone",
+    color: "green",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 7,
+    model: "IPhone 11 pro",
+    description: "256mb",
+    price: "1300",
+    type: "phone",
+    color: "green",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 8,
+    model: "IPhone 11 pro Max",
+    description: "512mb",
+    price: "1500",
+    type: "phone",
+    color: "midnight",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 9,
+    model: "IPad Air",
+    description: "256mb",
+    price: "1000",
+    type: "tablet",
+    color: "silver",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 10,
+    model: "MacBook Air",
+    description: "512mb",
+    price: "1300",
+    type: "laptop",
+    color: "silver",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 11,
+    model: "MacBook Pro",
+    description: "1tb",
+    price: "2000",
+    type: "laptop",
+    color: "space gray",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+  {
+    id: 12,
+    model: "Apple watch SE",
+    description: "40mm",
+    price: "500",
+    type: "watch",
+    color: "black",
+    picture: "https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png",
+  },
+];
 
-// const initialState = {
-//   todos: todosInit,
-// };
+const initialState = {
+  devices: devicesInit,
+};
 
-// export const reducers = (state = initialState, action) => {
-//   switch (action.type) {
-//     case "DONE_TODO":
-//       const newTodosState = state.todos.map((todo) => {
-//         if (todo.id === action.payload.id) return { ...todo, done: !todo.done };
-//         return todo;
-//       });
-//       return { ...state, todos: newTodosState };
+export const reducers = (state = initialState, action) => {
+  switch (action.type) {
+    case "":
+      return;
 
-//     case "DELETE_TODO":
-//       const newTodosState2 = state.todos.filter(
-//         (todo) => todo.id !== action.payload.id
-//       );
-//       return { ...state, todos: newTodosState2 };
-
-//     case "ADD_TODO":
-//       const newTodosState3 = state.todos.concat([
-//         {
-//           id: state.todos.length + 1,
-//           value: action.payload.text,
-//           done: false,
-//         },
-//       ]);
-
-//       return { ...state, todos: newTodosState3 };
-
-//     case "EDIT_TODO":
-//       console.log(action.payload.id)
-//       console.log(action.payload.text)
-      
-//       const newTodosState4 = state.todos.map((todo) => {
-//         if (todo.id === action.payload.id) {
-//           todo.value = action.payload.text;
-//         }
-//         return todo;
-//       });
-
-//       return { ...state, todos: newTodosState4 };
-
-//     default:
-//       return state;
-//   }
-// };
+    default:
+      return state;
+  }
+};
