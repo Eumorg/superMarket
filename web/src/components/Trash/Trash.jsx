@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import classes from './style.module.css';
 import { useSelector } from 'react-redux';
 

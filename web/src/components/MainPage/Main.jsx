@@ -20,7 +20,7 @@ function Main() {
 
   return (
     <div >
-      <Header />
+      
       <div className={style.container}>
         <h1 className={style.header}>Категории</h1>
         <div >
