@@ -1,0 +1,29 @@
+.trash__container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	/* background-color: aquamarine; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	border: 1px solid;
+	height: 700px;
+	border-radius: 15px;
+	background-color: rgb(251, 250, 247);
+}
+
+.table__container {
+	margin-top: 30px;
+}
+
+.rm {
+	background-color: rgb(240, 170, 170);
+	border-radius: 50%;
+	color: #fff;
+	border: none;
+}

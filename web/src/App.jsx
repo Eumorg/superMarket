@@ -1,36 +1,27 @@
-
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { PageDevice } from './components/PageDevice';
+import { Trash } from './components/Trash';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './components/MainPage/Main';
-import Catalog from "./components/Catalog/Catalog";
+import Catalog from './components/Catalog/Catalog';
 import { store } from './store/index';
 import { Provider } from 'react-redux';
 
 function App() {
-  // const [products, setProducts] = useState([]);
-  // async function fetchProd() {
-  // 	const response = await fetch('https://fakestoreapi.com/products?limit=1')
-  // 		.then((res) => res.json())
-  // 		.then((data) => setProducts(data));
-  // }
-  // useEffect(() => {
-  // 	fetchProd();
-  // }, []);
-  //   <div>
-  // 	{products.map((el) => (
-  // 		<PageDevice className='device__container' key={el.id} product={el} />
-  // 	))}
-  // </div>
-  return (
-    <Provider store={store}>
-      <div>
-        <Catalog />
-        {/* <Main /> */}
-      </div>
-    </Provider>
-  );
+	// const devices = useSelector((store) => store.devices);
 
+	return (
+		<Provider store={store}>
+			<div>
+				{/* <Catalog /> */}
+				{/* <Main /> */}
+
+				{/* <PageDevice /> */}
+				<Trash />
+			</div>
+		</Provider>
+	);
 }
 
 export default App;
