@@ -1,8 +1,7 @@
-import { useSelector } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicExample({ model, img, price }) {
+function DeviceItem({ model, img, price, color }) {
 
    return (
       <Card style={{ width: '18rem' }}>
@@ -10,10 +9,11 @@ function BasicExample({ model, img, price }) {
          <Card.Body>
             <Card.Title>{model}</Card.Title>
             <Card.Text><span>{`ЦЕНА: ${price}`}</span></Card.Text>
+            <Card.Text><span>{`ЦВЕТ: ${color}`}</span></Card.Text>
             <Button variant="primary">Добавить в Корзину</Button>
          </Card.Body>
       </Card>
    );
 }
 
-export default BasicExample;
+export default DeviceItem;

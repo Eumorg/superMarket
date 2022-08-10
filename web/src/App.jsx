@@ -7,19 +7,19 @@ import Main from './components/MainPage/Main';
 import Catalog from './components/Catalog/Catalog';
 import { store } from './store/index';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/footer/Footer';
 
 function App() {
-	// const devices = useSelector((store) => store.devices);
-
 	return (
 		<Provider store={store}>
-			<div>
-				{/* <Catalog /> */}
-				{/* <Main /> */}
-
-				{/* <PageDevice /> */}
-				<Trash />
-			</div>
+			<BrowserRouter>
+				<div>
+					{/* <Catalog /> */}
+					<Main />
+					<Footer />
+				</div>
+			</BrowserRouter>
 		</Provider>
 	);
 }
