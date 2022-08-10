@@ -14,6 +14,7 @@ const inputHandler=(e) => {dispatch ({ type:"USER_TYPE", payload:{[e.target.name
 const onSubmitHandler = async (event) => {
   event.preventDefault();
      const formData = {name:inputState.name, email:inputState.email, password:inputState.password}
+     console.log(formData);
      const response = await fetch('http://localhost:4000/log/signup',{
       method: "POST",
       credentials: 'include',
@@ -25,7 +26,7 @@ const onSubmitHandler = async (event) => {
     const data = await response;
       if (response.ok) {
       dispatch ({ type:"USER_TYPE_NAME", payload: inputState.name})
-      navigate('/main')
+      navigate('/')
     }
         }
 

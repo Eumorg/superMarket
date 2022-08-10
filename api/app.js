@@ -6,6 +6,8 @@ const FileStore = require('session-file-store')(session);
 const path = require('path');
 const cors = require('cors')
 
+const cookieParser= require ('cookie-parser');
+
 const express = require ('express');
 const app = express();
 
@@ -26,19 +28,21 @@ const corsOptions = {
   credentials: true, // we send cookies
 };
 
-app.use(session({
-  store: new FileStore(),
-  name: 'sid',
-  secret: process.env.COOKIE_SECRET,
-  resave: false,
-  saveUninitialized: false,
+const sessionConfig = {
+  name: 'sid', // название куки
+  store: new FileStore({}), // подключаем БД для храненя куков
+  secret: process.env.COOKIE_SECRET, // ключ для шифрования cookies // require('crypto').randomBytes(10).toString('hex')
+  resave: false,                     // Если true,  пересохраняет сессию, даже если она не поменялась
+  saveUninitialized: false, // Если false, куки появляются только при установке req.session
+  httpOnly: true,
   cookie: {
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
+    // secure: process.env.NODE_ENV === 'production', // В продакшне нужно "secure: true" для работы через протокол HTTPS
+    maxAge: 1000 * 60 * 60 * 24 * 10, // время жизни cookies, ms (10 дней)
   },
-}));
-
+}
+app.use(session(sessionConfig))
 app.use(cors(corsOptions));
+app.use(cookieParser())
 
 app.use('/log', userRoute)
 
