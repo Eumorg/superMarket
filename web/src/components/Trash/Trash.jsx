@@ -1,13 +1,13 @@
 import classes from './style.module.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteDeviceAction } from '../../store/actions';
 
 export const Trash = () => {
 	const devices = useSelector((store) => store.devices);
-	const devicesPriceAll = devices.reduce((acc, el) => {
-		return (acc += +el.price);
-	}, 0);
-
-	console.log(devicesPriceAll);
+	const dispatch = useDispatch();
+	const onClickDeleteDevice = (id) => {
+		dispatch(deleteDeviceAction(id));
+	};
 	return (
 		<div className={classes.trash__container}>
 			<h1>Корзина</h1>
@@ -24,13 +24,15 @@ export const Trash = () => {
 							<td>{el.model}</td>
 							<td>{el.price}</td>
 							<td>
-								<button className={classes.rm}>&times;</button>
+								<button onClick={() => onClickDeleteDevice(el.id)}>
+									Удалить
+								</button>
 							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-			<h3>Итог:{devicesPriceAll}</h3>
+			{/* <h3>Итог:{devicesPriceAll}</h3> */}
 			<button type='button' className='btn btn-success'>
 				Оформить заказ
 			</button>
