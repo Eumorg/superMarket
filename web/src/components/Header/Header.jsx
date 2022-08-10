@@ -54,7 +54,7 @@ function Header() {
             <Link to="/trash" className="nav-link">Корзина</Link>
             {inputState.payload ? (
               <>
-                <Nav.Link href="#action3">Привет, {inputState.payload}</Nav.Link>
+                <Link className="nav-link" to="profile">Личный кабинет</Link>
                 <Nav.Link onClick={logoutHandler}>Выйти</Nav.Link>
               </>
             ) : (
@@ -64,7 +64,7 @@ function Header() {
               </>
             )}
 
-            <Nav.Link href="#action5">Контакты</Nav.Link>
+            <Link className="nav-link" to=""> Контакты</Link>
             <NavDropdown title="Отзывы" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action6">
                 Смотреть отзыввы

@@ -13,26 +13,30 @@ import Catalog from './components/Catalog/Catalog';
 import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
+import Profile from './components/Profile/Profile';
 
 function App() {
-	return (
-		<BrowserRouter>
-			<Provider store={store}>
-				<div>
-					<Header />
-					<Routes>
-						<Route path='/' element={<Main />}></Route>
-						<Route path='signinform' element={<SignInForm />}></Route>
-						<Route path='signupform' element={<SignUpForm />}></Route>
-						<Route path='catalog' element={<Catalog />}></Route>
-						<Route path='/trash' element={<Trash />}></Route>
-						<Route path='/device/:id' element={<PageDevice />}></Route>
-					</Routes>
-					<Footer />
-				</div>
-			</Provider>
-		</BrowserRouter>
-	);
+
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <div>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Main />}></Route>
+            <Route path='signinform' element={<SignInForm />}></Route>
+            <Route path='signupform' element={<SignUpForm />}></Route>
+            <Route path='catalog' element={<Catalog />}></Route>
+            <Route path='/trash' element={<Trash />}></Route>
+            <Route path='/device/:id' element={<PageDevice />}></Route>
+            <Route path='/profile' element={<Profile />}></Route>
+            
+          </Routes>
+          <Footer />
+        </div>
+      </Provider>
+    </BrowserRouter>
+  );
 }
 
 export default App;
