@@ -12,7 +12,7 @@ function Header() {
   const navigate = useNavigate()
   const inputState = useSelector((store) => store.inputState);
   const dispatch = useDispatch();
-console.log("kkkkkk", inputState.payload);
+
 
   const logoutHandler = async (event) => {
   
@@ -32,7 +32,7 @@ console.log("kkkkkk", inputState.payload);
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-       <Link to="/">Супер Магазин</Link>
+       <Link className="nav-link" to="/">Супер Магазин</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -40,21 +40,21 @@ console.log("kkkkkk", inputState.payload);
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link to="/catalog">Каталог</Link>
-            <Link to="/trash">Корзина</Link>
+            <Link className="nav-link" to="/catalog">Каталог</Link>
+            <Link className="nav-link" to="/trash">Корзина</Link>
             {inputState.payload ? (
               <>
-                <Nav.Link href="#action3">Привет, {inputState.payload}</Nav.Link>
+                <Link className="nav-link" to="profile">Личный кабинет</Link>
                 <Nav.Link onClick={logoutHandler}>Выйти</Nav.Link>
               </>
             ) : (
               <>
-                <Link to="/signinform">Войти</Link>
-                 <Link to="/signupform">Зарегистрироваться</Link>
+                <Link className="nav-link"  to="/signinform">Войти</Link>
+                 <Link className="nav-link" to="/signupform">Зарегистрироваться</Link>
               </>
             )}
 
-            <Nav.Link href="#action5">Контакты</Nav.Link>
+            <Link className="nav-link" to=""> Контакты</Link>
             <NavDropdown title="Отзывы" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action6">
                 Смотреть отзыввы
