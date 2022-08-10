@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import classes from './style.module.css';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 export const PageDevice = () => {
+	const { id } = useParams();
 	const [value, setValue] = useState(false);
-	const devices = useSelector((store) => store.devices[0]);
+	const devices = useSelector((store) => store.devices[`${+id - 1}`]);
 
 	return (
 		<div className={classes.device__container}>

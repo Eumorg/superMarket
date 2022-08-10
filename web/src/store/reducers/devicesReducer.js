@@ -1,4 +1,5 @@
 import { initState } from '../initState';
+import { DELETE_DEVICE } from '../types';
 
 export const devicesInit = [
 	{
@@ -126,9 +127,9 @@ export const devicesInit = [
 
 export const devicesReducer = (state = initState.devices, action) => {
 	switch (action.type) {
-		case '':
-			return;
-
+		case DELETE_DEVICE: {
+			return state.filter((el) => el.id !== action.payload);
+		}
 		default:
 			return state;
 	}
