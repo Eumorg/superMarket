@@ -13,15 +13,15 @@ function Header() {
   const inputState = useSelector((store) => store.inputState);
   const dispatch = useDispatch();
 
-  useEffect(() =>{
-      fetch("http://localhost:4000/log/isauth",{
+  useEffect(() => {
+    fetch("http://localhost:4000/log/isauth", {
       method: "GET",
       credentials: 'include',
       headers: {
         "Content-Type": "application/json",
-      }, 
-    }).then(res=>res.json()).then(data=> dispatch({ type: "USER_TYPE_NAME", payload: data.name }))
-    },[])
+      },
+    }).then(res => res.json()).then(data => dispatch({ type: "USER_TYPE_NAME", payload: data.name }))
+  }, [])
 
   const logoutHandler = async (event) => {
     const response = await fetch("http://localhost:4000/log/signout", {
@@ -36,13 +36,12 @@ function Header() {
     // const data = await response;
   }
 
-   
-  
   return (
-    
+
     <Navbar bg="light" expand="lg">
       <Container fluid>
-       <Link to="/" className="nav-link">Супер Магазин</Link>
+
+        <Link to="/" className="nav-link">Супер Магазин</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -60,7 +59,7 @@ function Header() {
             ) : (
               <>
                 <Link to="/signinform" className="nav-link">Войти</Link>
-                 <Link to="/signupform" className="nav-link">Зарегистрироваться</Link>
+                <Link to="/signupform" className="nav-link">Зарегистрироваться</Link>
               </>
             )}
 
@@ -93,7 +92,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
+
   );
 }
 

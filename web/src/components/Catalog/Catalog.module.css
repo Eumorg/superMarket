@@ -6,7 +6,6 @@
 }
 
 .filter {
-   /* margin-top: 100px; */
    width: 30%;
    display: flex;
    flex-direction: column;
@@ -14,6 +13,7 @@
 }
 
 .filter__device {
+   padding-left: 10%;
    position: sticky;
    top: 5%;
 }
@@ -22,3 +22,16 @@
    width: 70%;
 }
 
+.filter__title__1 {
+   margin-top: 20%;
+   margin-bottom: 20%;
+}
+
+.filter__title__4 {
+   margin-bottom: 15%;
+}
+
+.form__filter {
+   margin-top: 5%;
+   margin-left: 10%;
+}
