@@ -32,7 +32,7 @@ console.log("kkkkkk", inputState.payload);
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Супер Магазин</Navbar.Brand>
+       <Link to="/">Супер Магазин</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -41,7 +41,7 @@ console.log("kkkkkk", inputState.payload);
             navbarScroll
           >
             <Link to="/catalog">Каталог</Link>
-            <Link to="/basket">Корзина</Link>
+            <Link to="/trash">Корзина</Link>
             {inputState.payload ? (
               <>
                 <Nav.Link href="#action3">Привет, {inputState.payload}</Nav.Link>

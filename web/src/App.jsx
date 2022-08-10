@@ -11,23 +11,11 @@ import {SignInForm} from './components/SignInForm/SignInForm'
 import { SignUpForm } from './components/SignUpForm/SignUpForm';
 import Header from './components/Header/Header';
 import Catalog from './components/Catalog/Catalog';
+import { Trash } from './components/Trash/Trash';
+import Footer from './components/footer/Footer';
 
 function App() {
-  
-  // const [products, setProducts] = useState([]);
-  // async function fetchProd() {
-  // 	const response = await fetch('https://fakestoreapi.com/products?limit=1')
-  // 		.then((res) => res.json())
-  // 		.then((data) => setProducts(data));
-  // }
-  // useEffect(() => {
-  // 	fetchProd();
-  // }, []);
-  //   <div>
-  // 	{products.map((el) => (
-  // 		<PageDevice className='device__container' key={el.id} product={el} />
-  // 	))}
-  // </div>
+
   return (
     <BrowserRouter> 
     <Provider store={store}>
@@ -35,12 +23,13 @@ function App() {
         <Header />
         <Routes>
         
-          <Route path='main' element={<Main />}></Route>
+          <Route path='/' element={<Main />}></Route>
           <Route path='signinform' element={<SignInForm />}></Route>
           <Route path='signupform' element={<SignUpForm />}></Route>
           <Route path='catalog' element={<Catalog />}></Route> 
-          {/* <Route path='basket' element={</>}></Route>  // роут для карзины не нашел компанент */}
+          <Route path='/trash' element={<Trash/>}></Route>  
         </Routes>
+        <Footer />
       </div>
     </Provider>
     </BrowserRouter>

@@ -2,15 +2,23 @@
    width: 100%;
    display: flex;
    justify-content: space-between;
+   top: 5%;
 }
 
 .filter {
+   /* margin-top: 100px; */
    width: 30%;
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   top: 5%;
+}
+
+.filter__device {
+   position: sticky;
+   top: 5%;
 }
 
 .device {
    width: 70%;
 }
+
