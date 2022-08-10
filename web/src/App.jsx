@@ -1,4 +1,3 @@
-
 // import React, { useEffect, useState } from 'react';
 // import { PageDevice } from './components/PageDevice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,8 +5,8 @@ import Main from './components/MainPage/Main';
 // import Catalog from "./components/Catalog/Catalog";
 import { store } from './store/index';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { SignInForm } from './components/SignInForm/SignInForm'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { SignInForm } from './components/SignInForm/SignInForm';
 import { SignUpForm } from './components/SignUpForm/SignUpForm';
 import Header from './components/Header/Header';
 import Catalog from './components/Catalog/Catalog';

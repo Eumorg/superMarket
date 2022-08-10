@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -13,10 +14,17 @@ function Header() {
   const inputState = useSelector((store) => store.inputState);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    fetch("http://localhost:4000/log/isauth", {
+      method: "GET",
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(res => res.json()).then(data => dispatch({ type: "USER_TYPE_NAME", payload: data.name }))
+  }, [])
 
   const logoutHandler = async (event) => {
-  
-   
     const response = await fetch("http://localhost:4000/log/signout", {
       method: "GET",
       credentials: 'include',
@@ -25,14 +33,16 @@ function Header() {
       },
     });
     dispatch({ type: "USER_DELETE", payload: null });
-    navigate('/main')
-    const data = await response;
+    navigate('/')
+    // const data = await response;
   }
 
   return (
+
     <Navbar bg="light" expand="lg">
       <Container fluid>
-       <Link className="nav-link" to="/">Супер Магазин</Link>
+
+        <Link to="/" className="nav-link">Супер Магазин</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -40,8 +50,8 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link className="nav-link" to="/catalog">Каталог</Link>
-            <Link className="nav-link" to="/trash">Корзина</Link>
+            <Link to="/catalog" className="nav-link">Каталог</Link>
+            <Link to="/trash" className="nav-link">Корзина</Link>
             {inputState.payload ? (
               <>
                 <Link className="nav-link" to="profile">Личный кабинет</Link>
@@ -49,8 +59,8 @@ function Header() {
               </>
             ) : (
               <>
-                <Link className="nav-link"  to="/signinform">Войти</Link>
-                 <Link className="nav-link" to="/signupform">Зарегистрироваться</Link>
+                <Link to="/signinform" className="nav-link">Войти</Link>
+                <Link to="/signupform" className="nav-link">Зарегистрироваться</Link>
               </>
             )}
 
@@ -83,6 +93,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
   );
 }
 
