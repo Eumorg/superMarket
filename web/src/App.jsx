@@ -1,29 +1,38 @@
 
-import React, { useEffect, useState } from 'react';
-import { PageDevice } from './components/PageDevice';
+// import React, { useEffect, useState } from 'react';
+// import { PageDevice } from './components/PageDevice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './components/MainPage/Main';
-import Catalog from "./components/Catalog/Catalog";
+// import Catalog from "./components/Catalog/Catalog";
 import { store } from './store/index';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { SignInForm } from './components/SignInForm/SignInForm'
+import { SignUpForm } from './components/SignUpForm/SignUpForm';
+import Header from './components/Header/Header';
+import Catalog from './components/Catalog/Catalog';
+import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 
 function App() {
 
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-
+    <BrowserRouter>
+      <Provider store={store}>
         <div>
-          <Catalog />
-          {/* <Main /> */}
+          <Header />
+          <Routes>
+            <Route path='/' element={<Main />}></Route>
+            <Route path='signinform' element={<SignInForm />}></Route>
+            <Route path='signupform' element={<SignUpForm />}></Route>
+            <Route path='catalog' element={<Catalog />}></Route>
+            <Route path='/trash' element={<Trash />}></Route>
+          </Routes>
           <Footer />
         </div>
-      </BrowserRouter>
-    </Provider>
+      </Provider>
+    </BrowserRouter>
   );
-
 }
 
 export default App;

@@ -9,17 +9,51 @@
 	/* background-color: aquamarine; */
 	display: flex;
 	justify-content: space-around;
+	border: 1px solid;
+	height: 700px;
+	border-radius: 15px;
+	background-color: rgb(251, 250, 247);
 }
 
 .device__image {
-	width: 400px;
-	height: 600px;
+	width: 450px;
+	height: 500px;
+	border: 1px solid;
+	border-radius: 15px;
+	background-color: white;
 }
 
 .device__spec {
-	max-width: 540px;
+	width: 500px;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: center;
 	padding-top: 30px;
+}
+.font__device {
+	font-size: large;
+	font-size: 20px;
+	color: blueviolet;
+}
+
+.device__image__container {
+	width: 450px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.description__device {
+	padding-top: 30px;
+	font-size: large;
+	font-size: 20px;
+}
+
+.price__device {
+	font-size: 50px;
+	font-weight: 600;
+}
+.device {
+	font-size: 40px;
 }
