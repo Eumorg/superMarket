@@ -10,6 +10,23 @@ import style from "./Catalog.module.css";
 function Catalog() {
 
    const devices = useSelector((store) => store.devices);
+   console.log('devices: ', devices);
+
+   const typeDevice = [
+      { id: 1, text: 'Рhone', type: 'phone' },
+      { id: 2, text: 'Ipad', type: 'tablet' },
+      { id: 3, text: 'MacBook', type: 'laptop' },
+      { id: 4, text: 'Watch', type: 'watch' },
+   ]
+
+   function types(type) {
+      const res = devices.filter((el) => {
+         if (el.type === type) {
+            return el
+         }
+      })
+      console.log('res: ', res);
+   }
 
    return (
       <Container>
@@ -18,18 +35,13 @@ function Catalog() {
                <div className={style.filter__device}>
                   <h1>Фильтр</h1>
                   <Form>
-                     <Form.Check
-                        // type={type}
-                        // id={`default-${type}`}
-                        // label={`default ${type}`}
-                        label={'yes'}
-                     />
-                     <Form.Check
-                        // type={type}
-                        // id={`default-${type}`}
-                        // label={`default ${type}`}
-                        label={'yes'}
-                     />
+                     {typeDevice.map((el) => (
+                        <Form.Check
+                           key={el.id}
+                           onClick={() => types(el.type)}
+                           label={el.text}
+                        />
+                     ))}
                   </Form>
                </div>
             </div>
@@ -41,6 +53,7 @@ function Catalog() {
                            model={el.model}
                            img={el.picture}
                            price={el.price}
+                           color={el.color}
                         />
                      </Col>
                   ))}

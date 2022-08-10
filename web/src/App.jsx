@@ -14,12 +14,12 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        
-      <div>
-        {/* <Catalog /> */}
-        <Main />
-        <Footer/>
-      </div>
+
+        <div>
+          <Catalog />
+          {/* <Main /> */}
+          <Footer />
+        </div>
       </BrowserRouter>
     </Provider>
   );
