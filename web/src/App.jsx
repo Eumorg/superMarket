@@ -10,6 +10,10 @@ import { SignInForm } from './components/SignInForm/SignInForm';
 import { SignUpForm } from './components/SignUpForm/SignUpForm';
 import Header from './components/Header/Header';
 import Catalog from './components/Catalog/Catalog';
+import Laptops from './components/CatalogItem/Laptops/Laptops';
+import Tablets from './components/CatalogItem/Tablets/Tablets';
+import Phones from './components/CatalogItem/Phones/Phones';
+import Accesories from './components/CatalogItem/Accesories/Accesories';
 import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
@@ -29,8 +33,17 @@ function App() {
             <Route path='catalog' element={<Catalog />}></Route>
             <Route path='/trash' element={<Trash />}></Route>
             <Route path='/device/:id' element={<PageDevice />}></Route>
+            <Route path='catalog/device/:id' element={<PageDevice />}></Route>
             <Route path='/profile' element={<Profile />}></Route>
-            
+            {/* Роутинг для каталогов */}
+            <Route path='laptops' element={<Laptops />}></Route>
+            <Route path='laptops/device/:id' element={<PageDevice />}></Route>
+            <Route path='tablets' element={<Tablets />}></Route>
+            <Route path='tablets/device/:id' element={<PageDevice />}></Route>
+            <Route path='phones' element={<Phones />}></Route>
+            <Route path='phones/device/:id' element={<PageDevice />}></Route>
+            <Route path='accesories' element={<Accesories />}></Route>
+            <Route path='accesories/device/:id' element={<PageDevice />}></Route>
           </Routes>
           <Footer />
         </div>
