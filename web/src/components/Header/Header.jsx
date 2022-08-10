@@ -5,8 +5,30 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate()
+  const inputState = useSelector((store) => store.inputState);
+  const dispatch = useDispatch();
+console.log("kkkkkk", inputState.payload);
+
+  const logoutHandler = async (event) => {
+  
+   
+    const response = await fetch("http://localhost:4000/log/signout", {
+      method: "GET",
+      credentials: 'include',
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    dispatch({ type: "USER_DELETE", payload: null });
+    navigate('/main')
+    const data = await response;
+  }
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -18,17 +40,17 @@ function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Каталог</Nav.Link>
-            <Nav.Link href="#action2">Корзина</Nav.Link>
-            {true ? (
+            <Link to="/catalog">Каталог</Link>
+            <Link to="/basket">Корзина</Link>
+            {inputState.payload ? (
               <>
-                <Nav.Link href="#action3">Войти</Nav.Link>
-                <Nav.Link href="#action4">Зарегестрироваться</Nav.Link>
+                <Nav.Link href="#action3">Привет, {inputState.payload}</Nav.Link>
+                <Nav.Link onClick={logoutHandler}>Выйти</Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link href="#action3">Привет, Биба</Nav.Link>
-                <Nav.Link href="#action4">Выйти</Nav.Link>
+                <Link to="/signinform">Войти</Link>
+                 <Link to="/signupform">Зарегистрироваться</Link>
               </>
             )}
 

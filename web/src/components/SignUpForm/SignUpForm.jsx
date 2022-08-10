@@ -12,10 +12,9 @@ const navigate = useNavigate()
 const inputHandler=(e) => {dispatch ({ type:"USER_TYPE", payload:{[e.target.name]:e.target.value}})}
 
 const onSubmitHandler = async (event) => {
-    event.preventDefault();
-
-    const formData = {name:inputState.name, email:inputState.email, password:inputState.password}
-    const response = await fetch('http://localhost:4000/log/signup',{
+  event.preventDefault();
+     const formData = {name:inputState.name, email:inputState.email, password:inputState.password}
+     const response = await fetch('http://localhost:4000/log/signup',{
       method: "POST",
       credentials: 'include',
       headers: {
@@ -24,11 +23,10 @@ const onSubmitHandler = async (event) => {
       body: JSON.stringify(formData)
     })
     const data = await response;
-  
-    if (response.ok) {
+      if (response.ok) {
       dispatch ({ type:"USER_TYPE_NAME", payload: inputState.name})
-                }
-                // navigate('/')
+      navigate('/main')
+    }
         }
 
 return (

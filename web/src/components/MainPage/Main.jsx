@@ -9,12 +9,9 @@ import style from "./Main.module.css";
 
 function Main() {
   const devices = useSelector((store) => store.devices);
-  console.log(devices.devices);
-
   return (
     <div>
-      <Header />
-      <div>
+       <div>
         <h1 className={style.header}>Категории</h1>
         <h1 className={style.header}>Новинки</h1>
         <div className={style.list}>
