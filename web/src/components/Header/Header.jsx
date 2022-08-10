@@ -12,11 +12,10 @@ function Header() {
   const navigate = useNavigate()
   const inputState = useSelector((store) => store.inputState);
   const dispatch = useDispatch();
-console.log("kkkkkk", inputState.payload);
 
   const logoutHandler = async (event) => {
-  
-   
+
+
     const response = await fetch("http://localhost:4000/log/signout", {
       method: "GET",
       credentials: 'include',
@@ -32,7 +31,7 @@ console.log("kkkkkk", inputState.payload);
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-       <Link to="/">Супер Магазин</Link>
+        <Link to="/">Супер Магазин</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -50,7 +49,7 @@ console.log("kkkkkk", inputState.payload);
             ) : (
               <>
                 <Link to="/signinform">Войти</Link>
-                 <Link to="/signupform">Зарегистрироваться</Link>
+                <Link to="/signupform">Зарегистрироваться</Link>
               </>
             )}
 
