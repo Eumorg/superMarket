@@ -1,21 +1,39 @@
 import React, { useState } from 'react';
 import classes from './style.module.css';
+import { useSelector } from 'react-redux';
 
-export const PageDevice = ({ product }) => {
+export const PageDevice = () => {
 	const [value, setValue] = useState(false);
+	const devices = useSelector((store) => store.devices[0]);
+
 	return (
 		<div className={classes.device__container}>
-			<img src={product.image} className={classes.device__image} />
+			<div className={classes.device__image__container}>
+				<img src={devices.picture} className={classes.device__image} />
+				<button type='button' className='btn btn-success'>
+					Добавить в корзину
+				</button>
+			</div>
+
 			<div className={classes.device__spec}>
-				<p>Наименование товара:{product.title}</p>
-				<p>Цена товара:{product.price}</p>
-				<button onClick={() => setValue((el) => !el)}>
-					Показать характеристики
+				<span className={classes.font__device}>Тип товара:</span>
+				<p>{devices.type}</p>
+				<span className={classes.font__device}>Наименование товара:</span>
+				<p className={classes.device}>{devices.model}</p>
+				<span className={classes.font__device}>Цена товара:</span>
+				<p>{devices.color}</p>
+				<span className={classes.font__device}>Цена товара:</span>
+				<p className={classes.price__device}>{devices.price}</p>
+				<button
+					className='btn btn-primary'
+					onClick={() => setValue((el) => !el)}
+				>
+					Показать описание
 				</button>
 
 				{value && (
 					<div>
-						<p>{product.description}</p>
+						<p className={classes.description__device}>{devices.description}</p>
 					</div>
 				)}
 			</div>
