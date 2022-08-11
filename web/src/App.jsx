@@ -14,6 +14,8 @@ import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
 import Profile from './components/Profile/Profile';
+import { Contact } from './components/Contact/Contact';
+import { Admin } from './components/Admin/Admin';
 
 function App() {
 
@@ -30,7 +32,9 @@ function App() {
             <Route path='/trash' element={<Trash />}></Route>
             <Route path='/device/:id' element={<PageDevice />}></Route>
             <Route path='/profile' element={<Profile />}></Route>
-            
+            <Route path='/contact' element={<Contact />}></Route>
+            <Route path='/admin' element={<Admin />}></Route>
+            contact
           </Routes>
           <Footer />
         </div>

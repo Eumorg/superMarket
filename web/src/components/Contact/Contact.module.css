@@ -1,0 +1,34 @@
+.cotact{
+    display: flex;
+    justify-content: flex-start; 
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+}
+ 
+.img{
+    display: flex;
+	justify-content: space-between;
+    width: 200px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+
+} 
+
+.option{
+    display: flex;
+	justify-content: space-around;;
+    align-items: center;
+}
+.map{
+    display: flex;
+	justify-content: space-between;
+    margin: 100px;
+}
+.contact_img{
+    width: 30px;
+
+}

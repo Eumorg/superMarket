@@ -1,7 +1,5 @@
 import React from "react";
 import OrderItem from "../OrderItem/OrderItem";
-import Badge from 'react-bootstrap/Badge';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 import style from "./Profile.module.css";
 
