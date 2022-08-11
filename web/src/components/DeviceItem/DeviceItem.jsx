@@ -35,7 +35,6 @@ function DeviceItem({ id, model, img, price, color, description }) {
       temp.push(props);
     }
 
-    console.log('cart',temp);
     localStorage.setItem(`cart`, JSON.stringify(temp));
   }
 
@@ -55,7 +54,6 @@ function DeviceItem({ id, model, img, price, color, description }) {
       temp.push(props);
     }
 
-    console.log('fav', temp);
     localStorage.setItem(`favorite`, JSON.stringify(temp));
   }
 
@@ -73,7 +71,9 @@ function DeviceItem({ id, model, img, price, color, description }) {
         <Card.Text>
           <span>{`ЦВЕТ: ${color}`}</span>
         </Card.Text>
-        <Button onClick={addCart} variant="primary">В корзину</Button>
+        <Button onClick={addCart} variant="primary">
+          В корзину
+        </Button>
         <Button className={style.button} variant="primary" onClick={addStorage}>
           В избранное
         </Button>

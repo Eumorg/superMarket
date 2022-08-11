@@ -1,16 +1,20 @@
 import classes from "./style.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteDeviceAction } from "../../store/actions";
 
 export const Trash = () => {
-  // const devices = useSelector((store) => store.devices);
-  const dispatch = useDispatch();
-  const onClickDeleteDevice = (id) => {
-    dispatch(deleteDeviceAction(id));
-  };
   let storage = localStorage.getItem("cart");
 
   storage = JSON.parse(storage);
+
+  function deleteItem(id) {
+    let before = localStorage.getItem("cart");
+
+    before = JSON.parse(before);
+
+    const after = before.filter((el) => el.id !== id);
+
+    localStorage.setItem(`cart`, JSON.stringify(after));
+  }
+
   return (
     <div className={classes.trash__container}>
       <h1>Корзина</h1>
@@ -21,7 +25,14 @@ export const Trash = () => {
             <th>Устройство</th>
             <th>Цена</th>
           </tr>
-          {storage ? (
+
+          {!storage || storage.length === 0 ? (
+            <>
+              <tr>
+                <td>Нет предметов в корзине</td>
+              </tr>
+            </>
+          ) : (
             <>
               {storage.map((el, inx) => (
                 <tr key={el.id}>
@@ -29,21 +40,14 @@ export const Trash = () => {
                   <td>{el.model}</td>
                   <td>{el.price}</td>
                   <td>
-                    <button onClick={() => onClickDeleteDevice(el.id)}>
-                      Удалить
-                    </button>
+                    <button onClick={() => deleteItem(el.id)}>Удалить</button>
                   </td>
                 </tr>
               ))}
             </>
-          ) : (
-            <>
-              <div>Нет предметов в корзине</div>
-            </>
           )}
         </tbody>
       </table>
-      {/* <h3>Итог:{devicesPriceAll}</h3> */}
       <button type="button" className="btn btn-success">
         Оформить заказ
       </button>

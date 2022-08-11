@@ -25,7 +25,11 @@ function Profile() {
       </div>
       <div>Избранное</div>
       <div>
-        {storage ? (
+        {!storage || storage.length === 0 ? (
+          <>
+            <div>Нет предметов в избранном</div>
+          </>
+        ) : (
           <>
             {storage.map((el) => (
               <div key={el.id} className={el.card}>
@@ -40,9 +44,6 @@ function Profile() {
               </div>
             ))}
           </>
-        ) : (
-          
-          <><div>Нет предметов в избранном</div></>
         )}
       </div>
       <div>Изменить личную информацию</div>
