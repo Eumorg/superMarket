@@ -22,7 +22,7 @@ export const PageDevice = () => {
 				<p>{devices.type}</p>
 				<span className={classes.font__device}>Наименование товара:</span>
 				<p className={classes.device}>{devices.model}</p>
-				<span className={classes.font__device}>Цена товара:</span>
+				<span className={classes.font__device}>Цвет товара:</span>
 				<p>{devices.color}</p>
 				<span className={classes.font__device}>Цена товара:</span>
 				<p className={classes.price__device}>{devices.price}</p>
