@@ -22,7 +22,7 @@ function Phones() {
          }
       })
       setItem(res)
-   }, [item])
+   }, [])
 
    function onClickHandler(id) {
       navigate(`device/${id}`);

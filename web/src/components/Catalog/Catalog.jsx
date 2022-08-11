@@ -16,6 +16,7 @@ function Catalog() {
 
    const [typeSelected, setTypeSelected] = React.useState([])
    const [filterDevise, setFilterDevise] = React.useState([])
+   const [data, setData] = React.useState([])
 
    React.useEffect(() => {
       setFilterDevise(devices)
