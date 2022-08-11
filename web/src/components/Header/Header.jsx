@@ -51,6 +51,7 @@ function Header() {
             navbarScroll
           >
             <Link to="/catalog" className="nav-link">Каталог</Link>
+            <Link to="/admin" className="nav-link">Секретная кнопка</Link>
             <Link to="/trash" className="nav-link">Корзина</Link>
             {inputState.payload ? (
               <>
@@ -64,7 +65,7 @@ function Header() {
               </>
             )}
 
-            <Link className="nav-link" to=""> Контакты</Link>
+            <Link className="nav-link" to="contact"> Контакты</Link>
             <NavDropdown title="Отзывы" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action6">
                 Смотреть отзыввы
