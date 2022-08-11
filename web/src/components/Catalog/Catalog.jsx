@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,9 +12,11 @@ function Catalog() {
 
    const devices = useSelector((store) => store.devices);
    // const dispatch = useDispatch();
+   const navigate = useNavigate();
 
    const [typeSelected, setTypeSelected] = React.useState([])
    const [filterDevise, setFilterDevise] = React.useState([])
+   const [data, setData] = React.useState([])
 
    React.useEffect(() => {
       setFilterDevise(devices)
@@ -50,13 +53,17 @@ function Catalog() {
       }
    }
 
+   function onClickHandler(id) {
+      navigate(`device/${id}`);
+   }
+
    return (
       <Container>
          <div className={style.catalog}>
             <div className={style.filter}>
                <div className={style.filter__device}>
                   <h1 className={style.filter__title__1}>Фильтр</h1>
-                  <h4 className={style.filter__title__4}>Категории</h4>
+                  <h4 className={style.filter__title__4}>Категории:</h4>
                   <Form>
                      {typeDevice.map((el) => (
                         <Form.Check
@@ -72,7 +79,7 @@ function Catalog() {
             <div className={style.device}>
                <Row>
                   {filterDevise.map((el) => (
-                     <Col key={el.id}>
+                     <Col onClick={() => onClickHandler(el.id)} className={style.device__item} key={el.id}>
                         <DeviceItem
                            model={el.model}
                            img={el.picture}
