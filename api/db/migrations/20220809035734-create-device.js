@@ -11,20 +11,23 @@ module.exports = {
       model: {
         type: Sequelize.STRING
       },
-      discription: {
+      description: {
         type: Sequelize.STRING
       },
       price: {
         type: Sequelize.STRING
       },
       type: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       color: {
         type: Sequelize.STRING
       },
       picture: {
         type: Sequelize.STRING
+      },
+      status: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
