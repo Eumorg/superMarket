@@ -72,14 +72,10 @@ function Header() {
               <NavDropdown.Item href="#action7">
                 Оставить отзыв
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action8">
-                Something else here
-              </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
+            {/* <Nav.Link href="#" disabled>
               Link
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
             <Form.Control

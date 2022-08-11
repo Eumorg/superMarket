@@ -1,21 +1,22 @@
 // const React = require('react');
 require('dotenv').config();
 const userRoute = require('./routes/userRoute')
+const catalogDevice = require('./routes/catalogDevice')
 const session = require('express-session');
-const FileStore = require('session-file-store')(session); 
+const FileStore = require('session-file-store')(session);
 const path = require('path');
 const cors = require('cors')
 
-const cookieParser= require ('cookie-parser');
+const cookieParser = require('cookie-parser');
 
-const express = require ('express');
+const express = require('express');
 const app = express();
 
-const morgan=require('morgan');
+const morgan = require('morgan');
 
 const PORT = process.env.PORT || 4001;
 
-app.use(morgan('dev')); 
+app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -45,6 +46,8 @@ app.use(cors(corsOptions));
 app.use(cookieParser())
 
 app.use('/log', userRoute)
+app.use('/catalog', catalogDevice)
+
 
 
 app.listen(PORT, async () => {
