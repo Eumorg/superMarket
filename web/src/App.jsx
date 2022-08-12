@@ -65,7 +65,7 @@ function App() {
 				<Route path='signupform' element={<SignUpForm />}></Route>
 				<Route path='catalog' element={<Catalog />}></Route>
 				<Route path='allreviews' element={<AllReviews />}></Route>
-				<Route path='userrevies' element={<UserRevies />}></Route>
+				<Route path='userreviwes' element={<UserRevies />}></Route>
 				<Route
 					path='/trash'
 					element={<Trash state={change} stateChange={setChange} />}
