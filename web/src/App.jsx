@@ -21,53 +21,57 @@ import { Contact } from './components/Contact/Contact';
 import { Admin } from './components/Admin/Admin';
 
 function App() {
+  const [change, setChange] = useState(true);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function text() {
-      const responce = await fetch('http://localhost:4000/catalog', {
-        method: 'GET',
-        credentials: 'include',
+      const responce = await fetch("http://localhost:4000/catalog", {
+        method: "GET",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
-        }
-      })
+        },
+      });
       const res = await responce.json();
       dispatch({ type: "ALL_DEVICE", payload: res });
     }
-    text()
-  })
+    text();
+  });
 
   return (
     <div>
       <Header />
       <Routes>
-        <Route path='/' element={<Main />}></Route>
-        <Route path='signinform' element={<SignInForm />}></Route>
-        <Route path='signupform' element={<SignUpForm />}></Route>
-        <Route path='catalog' element={<Catalog />}></Route>
-        <Route path='/trash' element={<Trash />}></Route>
-        <Route path='/device/:id' element={<PageDevice />}></Route>
-        <Route path='catalog/device/:id' element={<PageDevice />}></Route>
-        <Route path='/profile' element={<Profile />}></Route>
-        <Route path='/allreviews' element={<AllReviews />}></Route>
-        <Route path='/userreviews' element={<UserRevies />}></Route>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="signinform" element={<SignInForm />}></Route>
+        <Route path="signupform" element={<SignUpForm />}></Route>
+        <Route path="catalog" element={<Catalog />}></Route>
+        <Route
+          path="/trash"
+          element={<Trash state={change} stateChange={setChange} />}
+        ></Route>
+        <Route path="/device/:id" element={<PageDevice />}></Route>
+        <Route path="catalog/device/:id" element={<PageDevice />}></Route>
+        <Route
+          path="/profile"
+          element={<Profile state={change} stateChange={setChange} />}
+        ></Route>
         {/* Роутинг для каталогов */}
-        <Route path='laptops' element={<Laptops />}></Route>
-        <Route path='laptops/device/:id' element={<PageDevice />}></Route>
-        <Route path='tablets' element={<Tablets />}></Route>
-        <Route path='tablets/device/:id' element={<PageDevice />}></Route>
-        <Route path='phones' element={<Phones />}></Route>
-        <Route path='phones/device/:id' element={<PageDevice />}></Route>
-        <Route path='accesories' element={<Accesories />}></Route>
-        <Route path='accesories/device/:id' element={<PageDevice />}></Route>
-        <Route path='/contact' element={<Contact />}></Route>
-        <Route path='/admin' element={<Admin />}></Route>
+        <Route path="laptops" element={<Laptops />}></Route>
+        <Route path="laptops/device/:id" element={<PageDevice />}></Route>
+        <Route path="tablets" element={<Tablets />}></Route>
+        <Route path="tablets/device/:id" element={<PageDevice />}></Route>
+        <Route path="phones" element={<Phones />}></Route>
+        <Route path="phones/device/:id" element={<PageDevice />}></Route>
+        <Route path="accesories" element={<Accesories />}></Route>
+        <Route path="accesories/device/:id" element={<PageDevice />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
       <Footer />
     </div>
-
   );
 }
 
