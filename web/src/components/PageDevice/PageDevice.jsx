@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import classes from './style.module.css';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-
 export const PageDevice = () => {
 	const { id } = useParams();
 	const [value, setValue] = useState(false);
@@ -12,8 +11,11 @@ export const PageDevice = () => {
 		<div className={classes.device__container}>
 			<div className={classes.device__image__container}>
 				<img src={devices.picture} className={classes.device__image} />
-				<button type='button' className='btn btn-success'>
+				<button type='button' className='btn btn-primary'>
 					Добавить в корзину
+				</button>
+				<button type='button' className='btn btn-primary'>
+					Добавить в избранное
 				</button>
 			</div>
 
@@ -26,18 +28,20 @@ export const PageDevice = () => {
 				<p>{devices.color}</p>
 				<span className={classes.font__device}>Цена товара:</span>
 				<p className={classes.price__device}>{devices.price}</p>
-				<button
+				<span className={classes.font__device}>Описание товара</span>
+				<p>{devices.description}</p>
+				{/* <button
 					className='btn btn-primary'
 					onClick={() => setValue((el) => !el)}
 				>
 					Показать описание
-				</button>
+				</button> */}
 
-				{value && (
+				{/* {value && (
 					<div>
 						<p className={classes.description__device}>{devices.description}</p>
 					</div>
-				)}
+				)} */}
 			</div>
 		</div>
 	);
