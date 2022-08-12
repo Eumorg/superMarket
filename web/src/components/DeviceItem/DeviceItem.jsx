@@ -2,9 +2,12 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import style from "./DeviceItem.module.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 function DeviceItem({ id, model, img, price, color, description }) {
+  const [cart, setCart] = useState(false);
+
   const navigate = useNavigate();
 
   function onClickHandler(id) {
@@ -17,6 +20,45 @@ function DeviceItem({ id, model, img, price, color, description }) {
         return false;
       }
     }
+
+    return true;
+  }
+
+  function buttonCheck(id) {
+    let temp = [];
+    let before = localStorage.getItem("cart");
+
+    before = JSON.parse(before);
+
+    if (before) {
+      temp = temp.concat(before);
+    }
+
+    for (let i = 0; i < temp.length; i++) {
+      if (temp[i].id === id) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function favCheck(id) {
+    let temp = [];
+    let before = localStorage.getItem("favorite");
+
+    before = JSON.parse(before);
+
+    if (before) {
+      temp = temp.concat(before);
+    }
+
+    for (let i = 0; i < temp.length; i++) {
+      if (temp[i].id === id) {
+        return false;
+      }
+    }
+
     return true;
   }
 
@@ -36,8 +78,9 @@ function DeviceItem({ id, model, img, price, color, description }) {
       temp.push(props);
     }
 
-    console.log('cart',temp);
     localStorage.setItem(`cart`, JSON.stringify(temp));
+
+    setCart(!cart);
   }
 
   function addStorage(e) {
@@ -56,8 +99,9 @@ function DeviceItem({ id, model, img, price, color, description }) {
       temp.push(props);
     }
 
-    console.log('fav', temp);
     localStorage.setItem(`favorite`, JSON.stringify(temp));
+
+    setCart(!cart);
   }
 
   return (
@@ -76,9 +120,11 @@ function DeviceItem({ id, model, img, price, color, description }) {
         <Card.Text>
           <span>{`ЦВЕТ: ${color}`}</span>
         </Card.Text>
-        <Button onClick={addCart} variant="primary">В корзину</Button>
+        <Button onClick={addCart} variant="primary">
+          {buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
+        </Button>
         <Button className={style.button} variant="primary" onClick={addStorage}>
-          В избранное
+          {favCheck(id) ? <>В избранное</> : <>В избранном</>}
         </Button>
       </Card.Body>
     </Card>
