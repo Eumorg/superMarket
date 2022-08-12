@@ -1,8 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import style from "./FavoriteItem.module.css";
+import { useNavigate } from "react-router-dom";
 
-function FavoriteItem({ id, model, img, price, color, description }) {
+function FavoriteItem({ id, model, img, price, color, description, state, stateChange }) {
+  
+  console.log(state)
+  
+  const navigate = useNavigate();
+  
   function comparing(arr, id) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].id === id) {
@@ -29,6 +35,8 @@ function FavoriteItem({ id, model, img, price, color, description }) {
     }
 
     console.log("cart", temp);
+
+    localStorage.setItem(`cart`, JSON.stringify(temp));
   }
 
   function deleteItem() {
@@ -39,6 +47,11 @@ function FavoriteItem({ id, model, img, price, color, description }) {
     const after = before.filter((el) => el.id !== id);
 
     localStorage.setItem(`favorite`, JSON.stringify(after));
+
+    navigate(`/profile`)
+
+    stateChange(!state)
+    
   }
 
   return (

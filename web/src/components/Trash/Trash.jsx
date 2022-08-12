@@ -1,6 +1,6 @@
 import classes from "./style.module.css";
 
-export const Trash = () => {
+export const Trash = ({state, stateChange }) => {
   let storage = localStorage.getItem("cart");
 
   storage = JSON.parse(storage);
@@ -13,6 +13,9 @@ export const Trash = () => {
     const after = before.filter((el) => el.id !== id);
 
     localStorage.setItem(`cart`, JSON.stringify(after));
+
+    stateChange(!state)
+
   }
 
   return (

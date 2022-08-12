@@ -6,7 +6,7 @@ import style from "./Profile.module.css";
 
 import FavoriteItem from "../FavoriteItem/FavoriteItem";
 
-function Profile() {
+function Profile({state, stateChange }) {
   const user = useSelector((store) => store.inputState);
 
   let storage = localStorage.getItem("favorite");
@@ -40,6 +40,8 @@ function Profile() {
                   price={el.price}
                   color={el.color}
                   description={el.description}
+                  state={state}
+                  stateChange={stateChange}
                 />
               </div>
             ))}
