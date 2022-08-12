@@ -46,17 +46,6 @@ function App() {
       <Header />
     {/* <Slides/> */}
       <Routes>
-<<<<<<< HEAD
-        <Route path='/' element={<Main />}></Route>
-        <Route path='signinform' element={<SignInForm />}></Route>
-        <Route path='signupform' element={<SignUpForm />}></Route>
-        <Route path='catalog' element={<Catalog />}></Route>
-        <Route path='/trash' element={<Trash />}></Route>
-        <Route path='/device/:id' element={<PageDevice />}></Route>
-        <Route path='catalog/device/:id' element={<PageDevice />}></Route>
-        <Route path='/profile' element={<Profile />}></Route>
-        
-=======
         <Route path="/" element={<Main />}></Route>
         <Route path="signinform" element={<SignInForm />}></Route>
         <Route path="signupform" element={<SignUpForm />}></Route>
@@ -71,7 +60,6 @@ function App() {
           path="/profile"
           element={<Profile state={change} stateChange={setChange} />}
         ></Route>
->>>>>>> dev
         {/* Роутинг для каталогов */}
         <Route path="laptops" element={<Laptops />}></Route>
         <Route path="laptops/device/:id" element={<PageDevice />}></Route>
