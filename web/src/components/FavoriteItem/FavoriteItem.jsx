@@ -3,12 +3,18 @@ import Card from "react-bootstrap/Card";
 import style from "./FavoriteItem.module.css";
 import { useNavigate } from "react-router-dom";
 
-function FavoriteItem({ id, model, img, price, color, description, state, stateChange }) {
-  
-  console.log(state)
-  
+function FavoriteItem({
+  id,
+  model,
+  img,
+  price,
+  color,
+  description,
+  state,
+  stateChange,
+}) {
   const navigate = useNavigate();
-  
+
   function comparing(arr, id) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].id === id) {
@@ -48,10 +54,9 @@ function FavoriteItem({ id, model, img, price, color, description, state, stateC
 
     localStorage.setItem(`favorite`, JSON.stringify(after));
 
-    navigate(`/profile`)
+    navigate(`/profile`);
 
-    stateChange(!state)
-    
+    stateChange(!state);
   }
 
   return (
