@@ -44,6 +44,7 @@ function App() {
   return (
     <div>
       <Header />
+    {/* <Slides/> */}
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="signinform" element={<SignInForm />}></Route>

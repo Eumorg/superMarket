@@ -4,6 +4,8 @@ import DeviceItem from "../DeviceItem/DeviceItem";
 import { useNavigate } from "react-router-dom";
 
 import style from "./Main.module.css";
+import { Slides } from "../Slides/Slides";
+
 
 function Main() {
   const navigate = useNavigate();
@@ -60,11 +62,12 @@ function Main() {
               <h3>Аксессуары</h3>
             </div>
           </div>
-
-          <h1 className={style.header}>Новинки</h1>
+          <Slides/>
+           <h1 className={style.header}>Новинки</h1>
           <div className={style.list}>
             {devices.map((device) => (
               <div key={device.id} className={style.card}>
+              
                 <DeviceItem
                   id={device.id}
                   model={device.model}
@@ -78,7 +81,7 @@ function Main() {
           </div>
         </div>
       </div>
-    </div>
+     </div>
   );
 }
 

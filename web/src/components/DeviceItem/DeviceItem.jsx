@@ -4,6 +4,7 @@ import style from "./DeviceItem.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+
 function DeviceItem({ id, model, img, price, color, description }) {
   const [cart, setCart] = useState(false);
 
@@ -104,6 +105,8 @@ function DeviceItem({ id, model, img, price, color, description }) {
   }
 
   return (
+    <>
+  
     <Card style={{ width: "18rem" }} onClick={() => onClickHandler(id)}>
       <Card.Img variant="top" src={img} />
       <Card.Body>
@@ -125,6 +128,7 @@ function DeviceItem({ id, model, img, price, color, description }) {
         </Button>
       </Card.Body>
     </Card>
+    </>
   );
 }
 
