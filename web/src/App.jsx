@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-// import { PageDevice } from './components/PageDevice';
+import { useDispatch } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './components/MainPage/Main';
-// import Catalog from "./components/Catalog/Catalog";
-import { store } from './store/index';
-import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { SignInForm } from './components/SignInForm/SignInForm';
 import { SignUpForm } from './components/SignUpForm/SignUpForm';
@@ -15,6 +11,8 @@ import Laptops from './components/CatalogItem/Laptops/Laptops';
 import Tablets from './components/CatalogItem/Tablets/Tablets';
 import Phones from './components/CatalogItem/Phones/Phones';
 import Accesories from './components/CatalogItem/Accesories/Accesories';
+import AllReviews from './components/ReviewsShop/AllReviews/AllReviews';
+import UserRevies from './components/ReviewsShop/UserReviews/UserReviews'
 import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
@@ -36,11 +34,10 @@ function App() {
         }
       })
       const res = await responce.json();
-      // return await responce.json();
       dispatch({ type: "ALL_DEVICE", payload: res });
     }
     text()
-  }, [])
+  })
 
   return (
     <div>
@@ -54,6 +51,8 @@ function App() {
         <Route path='/device/:id' element={<PageDevice />}></Route>
         <Route path='catalog/device/:id' element={<PageDevice />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/allreviews' element={<AllReviews />}></Route>
+        <Route path='/userreviews' element={<UserRevies />}></Route>
         {/* Роутинг для каталогов */}
         <Route path='laptops' element={<Laptops />}></Route>
         <Route path='laptops/device/:id' element={<PageDevice />}></Route>
