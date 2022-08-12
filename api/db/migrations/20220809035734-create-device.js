@@ -26,8 +26,11 @@ module.exports = {
       picture: {
         type: Sequelize.STRING
       },
-      status: {
-        type: Sequelize.BOOLEAN
+      picture_2: {
+        type: Sequelize.STRING
+      },
+      picture_3: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

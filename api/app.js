@@ -15,6 +15,7 @@ const app = express();
 
 const morgan = require('morgan');
 const { application } = require('express');
+const { sequelize } = require('./db/models');
 
 const PORT = process.env.PORT || 4001;
 
@@ -58,6 +59,7 @@ app.use('/dow', dowRoute)
 app.listen(PORT, async () => {
   console.log(`Server starting on PORT: ${PORT}`);
   try {
+    await sequelize.authenticate()
     console.log('DB STATUS - CONNECTED');
   } catch (error) {
     console.log(error);

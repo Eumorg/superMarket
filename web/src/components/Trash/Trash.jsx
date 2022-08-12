@@ -1,7 +1,4 @@
 import classes from './style.module.css';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteDeviceAction } from '../../store/actions';
 import { Modal } from '../Modal/Modal';
 
 export const Trash = ({ state, stateChange }) => {
