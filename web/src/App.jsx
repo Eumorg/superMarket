@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { PageDevice } from './components/PageDevice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Main from './components/MainPage/Main';
-// import Catalog from "./components/Catalog/Catalog";
-import { store } from './store/index';
-import { Provider } from 'react-redux';
+
 import { Route, Routes } from 'react-router-dom';
 import { SignInForm } from './components/SignInForm/SignInForm';
 import { SignUpForm } from './components/SignUpForm/SignUpForm';
@@ -21,6 +19,8 @@ import { PageDevice } from './components/PageDevice/PageDevice';
 import Profile from './components/Profile/Profile';
 import { Contact } from './components/Contact/Contact';
 import { Admin } from './components/Admin/Admin';
+// import { Slides } from './components/Slides/Slides';
+
 
 function App() {
 
@@ -45,6 +45,7 @@ function App() {
   return (
     <div>
       <Header />
+    {/* <Slides/> */}
       <Routes>
         <Route path='/' element={<Main />}></Route>
         <Route path='signinform' element={<SignInForm />}></Route>
@@ -54,6 +55,7 @@ function App() {
         <Route path='/device/:id' element={<PageDevice />}></Route>
         <Route path='catalog/device/:id' element={<PageDevice />}></Route>
         <Route path='/profile' element={<Profile />}></Route>
+        
         {/* Роутинг для каталогов */}
         <Route path='laptops' element={<Laptops />}></Route>
         <Route path='laptops/device/:id' element={<PageDevice />}></Route>
