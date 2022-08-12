@@ -1,3 +1,27 @@
 .global {
    padding: 50px 100px;
 }
+
+
+.fav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  
+}
+
+.card {
+  
+  height: 37rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.orderList {
+  padding: auto;
+  
+}

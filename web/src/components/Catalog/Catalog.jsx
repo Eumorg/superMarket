@@ -1,5 +1,5 @@
-import React from 'react'
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react'
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,22 +11,22 @@ import style from "./Catalog.module.css";
 function Catalog() {
 
    const devices = useSelector((store) => store.devices);
-   // const dispatch = useDispatch();
    const navigate = useNavigate();
 
-   const [typeSelected, setTypeSelected] = React.useState([])
-   const [filterDevise, setFilterDevise] = React.useState([])
-   const [data, setData] = React.useState([])
+   const [typeSelected, setTypeSelected] = useState([])
+   const [filterDevise, setFilterDevise] = useState([])
 
-   React.useEffect(() => {
+   useEffect(() => {
       setFilterDevise(devices)
    }, [devices])
 
-   React.useEffect(() => {
+   useEffect(() => {
       if (typeSelected.length > 0) {
          const res = devices.filter((el) => {
             if (typeSelected.includes(el.type)) {
                return el
+            } else {
+               return null
             }
          })
          setFilterDevise(res)
