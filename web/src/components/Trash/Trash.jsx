@@ -1,59 +1,67 @@
-import classes from "./style.module.css";
+import classes from './style.module.css';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteDeviceAction } from '../../store/actions';
+import { Modal } from '../Modal/Modal';
 
-export const Trash = ({state, stateChange }) => {
-  let storage = localStorage.getItem("cart");
+export const Trash = ({ state, stateChange }) => {
+	let storage = localStorage.getItem('cart');
 
-  storage = JSON.parse(storage);
+	storage = JSON.parse(storage);
 
-  function deleteItem(id) {
-    let before = localStorage.getItem("cart");
+	function deleteItem(id) {
+		let before = localStorage.getItem('cart');
 
-    before = JSON.parse(before);
+		before = JSON.parse(before);
 
-    const after = before.filter((el) => el.id !== id);
+		const after = before.filter((el) => el.id !== id);
 
-    localStorage.setItem(`cart`, JSON.stringify(after));
+		localStorage.setItem(`cart`, JSON.stringify(after));
 
-    stateChange(!state)
+		stateChange(!state);
+	}
+	const devicesPriceAll = () =>
+		storage.reduce((acc, el) => {
+			return (acc += +el.price);
+		}, 0);
 
-  }
+	return (
+		<div className={classes.trash__container}>
+			<h1>Корзина</h1>
+			<table className={classes.table__container}>
+				<tbody>
+					<tr>
+						<th>№</th>
+						<th>Устройство</th>
+						<th>Цена</th>
+					</tr>
 
-  return (
-    <div className={classes.trash__container}>
-      <h1>Корзина</h1>
-      <table className={classes.table__container}>
-        <tbody>
-          <tr>
-            <th>№</th>
-            <th>Устройство</th>
-            <th>Цена</th>
-          </tr>
-
-          {!storage || storage.length === 0 ? (
-            <>
-              <tr>
-                <td>Нет предметов в корзине</td>
-              </tr>
-            </>
-          ) : (
-            <>
-              {storage.map((el, inx) => (
-                <tr key={el.id}>
-                  <td>{inx + 1}</td>
-                  <td>{el.model}</td>
-                  <td>{el.price}</td>
-                  <td>
-                    <button onClick={() => deleteItem(el.id)}>Удалить</button>
-                  </td>
-                </tr>
-              ))}
-            </>
-          )}
-        </tbody>
-      </table>
-      <button type="button" className="btn btn-success">
-        Оформить заказ
-      </button>
-    </div>
-  );
+					{!storage || storage.length === 0 ? (
+						<>
+							<tr>
+								<td>Нет предметов в корзине</td>
+							</tr>
+						</>
+					) : (
+						<>
+							{storage.map((el, inx) => (
+								<tr key={el.id}>
+									<td>{inx + 1}</td>
+									<td>{el.model}</td>
+									<td>{el.price}</td>
+									<td>
+										<button onClick={() => deleteItem(el.id)}>Удалить</button>
+									</td>
+								</tr>
+							))}
+						</>
+					)}
+				</tbody>
+			</table>
+			<div className={classes.final__price}>
+				<h3>Итог:{devicesPriceAll()}</h3>
+				<Modal />
+			</div>
+		</div>
+	);
 };
