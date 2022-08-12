@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
@@ -13,16 +13,18 @@ function Laptops() {
    const devices = useSelector((store) => store.devices);
    const navigate = useNavigate();
 
-   const [item, setItem] = React.useState([])
+   const [item, setItem] = useState([])
 
-   React.useEffect(() => {
+   useEffect(() => {
       const res = devices.filter((el) => {
          if (el.type === 'laptop') {
             return el
+         } else {
+            return null
          }
       })
       setItem(res)
-   }, [])
+   }, [devices])
 
    function onClickHandler(id) {
       navigate(`device/${id}`);

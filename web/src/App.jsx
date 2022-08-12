@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import Main from "./components/MainPage/Main";
-
-import { Route, Routes } from "react-router-dom";
-import { SignInForm } from "./components/SignInForm/SignInForm";
-import { SignUpForm } from "./components/SignUpForm/SignUpForm";
-import Header from "./components/Header/Header";
-import Catalog from "./components/Catalog/Catalog";
-import Laptops from "./components/CatalogItem/Laptops/Laptops";
-import Tablets from "./components/CatalogItem/Tablets/Tablets";
-import Phones from "./components/CatalogItem/Phones/Phones";
-import Accesories from "./components/CatalogItem/Accesories/Accesories";
-import { Trash } from "./components/Trash/Trash";
-import Footer from "./components/footer/Footer";
-import { PageDevice } from "./components/PageDevice/PageDevice";
-import Profile from "./components/Profile/Profile";
-import { Contact } from "./components/Contact/Contact";
-import { Admin } from "./components/Admin/Admin";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Main from './components/MainPage/Main';
+import { Route, Routes } from 'react-router-dom';
+import { SignInForm } from './components/SignInForm/SignInForm';
+import { SignUpForm } from './components/SignUpForm/SignUpForm';
+import Header from './components/Header/Header';
+import Catalog from './components/Catalog/Catalog';
+import Laptops from './components/CatalogItem/Laptops/Laptops';
+import Tablets from './components/CatalogItem/Tablets/Tablets';
+import Phones from './components/CatalogItem/Phones/Phones';
+import Accesories from './components/CatalogItem/Accesories/Accesories';
+import AllReviews from './components/ReviewsShop/AllReviews/AllReviews';
+import UserRevies from './components/ReviewsShop/UserReviews/UserReviews'
+import { Trash } from './components/Trash/Trash';
+import Footer from './components/footer/Footer';
+import { PageDevice } from './components/PageDevice/PageDevice';
+import Profile from './components/Profile/Profile';
+import { Contact } from './components/Contact/Contact';
+import { Admin } from './components/Admin/Admin';
 
 function App() {
   const [change, setChange] = useState(true);
@@ -35,7 +35,6 @@ function App() {
         },
       });
       const res = await responce.json();
-      // return await responce.json();
       dispatch({ type: "ALL_DEVICE", payload: res });
     }
     text();
@@ -44,7 +43,6 @@ function App() {
   return (
     <div>
       <Header />
-    {/* <Slides/> */}
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="signinform" element={<SignInForm />}></Route>

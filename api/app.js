@@ -1,8 +1,8 @@
-// const React = require('react');
 require('dotenv').config();
 const userRoute = require('./routes/userRoute')
 const dowRoute = require('./routes/dowRoute')
 const catalogDevice = require('./routes/catalogDevice')
+const reviews = require('./routes/reviews')
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const path = require('path');
@@ -49,7 +49,9 @@ app.use(cookieParser())
 
 app.use('/log', userRoute)
 app.use('/catalog', catalogDevice)
+app.use('/reviews', reviews)
 app.use('/dow', dowRoute)
+
 
 
 

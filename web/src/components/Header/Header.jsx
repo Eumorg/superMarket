@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -67,16 +66,9 @@ function Header() {
 
             <Link className="nav-link" to="contact"> Контакты</Link>
             <NavDropdown title="Отзывы" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action6">
-                Смотреть отзыввы
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action7">
-                Оставить отзыв
-              </NavDropdown.Item>
+              <Link to='/allreviews'>Смотреть отзыввы</Link>
+              <Link to='userreviews'>Оставить отзыв</Link>
             </NavDropdown>
-            {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
             <Form.Control
