@@ -4,18 +4,17 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 export const PageDevice = () => {
+
+  
   const { id } = useParams();
 
   const [cart, setCart] = useState(false);
 
   const devices = useSelector((store) => store.devices[`${+id - 1}`]);
 
-  const{  model, img, price, color, description } = { devices.model, devices.img, devices.price, devices.color, devices.description}
+  console.log(devices)
 
-  function onClickHandler(id) {
-		navigate(`device/${id}`);
-	}
-
+  const {  model, img, price, color, description } = devices
 	function comparing(arr, id) {
 		for (let i = 0; i < arr.length; i++) {
 			if (arr[i].id === id) {
@@ -66,7 +65,7 @@ export const PageDevice = () => {
 
 	function addCart(e) {
 		e.stopPropagation();
-		const props = { id, model, img, price, color, description };
+		const props = {id, model, img, price, color, description };
 
 		let temp = [];
 		let before = localStorage.getItem('cart');
@@ -87,7 +86,7 @@ export const PageDevice = () => {
 
 	function addStorage(e) {
 		e.stopPropagation();
-		const props = { id, model, img, price, color, description };
+		const props = { id ,model, img, price, color, description };
 
 		let temp = [];
 		let before = localStorage.getItem('favorite');
