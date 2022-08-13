@@ -54,7 +54,7 @@ function Catalog() {
    }
 
    function onClickHandler(id) {
-      navigate(`device/${id}`);
+      navigate(`device / ${id}`);
    }
 
    return (
@@ -81,12 +81,12 @@ function Catalog() {
                   {filterDevise.map((el) => (
                      <Col onClick={() => onClickHandler(el.id)} className={style.device__item} key={el.id}>
                         <DeviceItem
-                          id={el.id}
-                          model={el.model}
-                          img={el.picture}
-                          price={el.price}
-                          color={el.color}
-                          description={el.description}
+                           id={el.id}
+                           model={el.model}
+                           img={el.picture}
+                           price={el.price}
+                           color={el.color}
+                           description={el.description}
                         />
                      </Col>
                   ))}
@@ -98,4 +98,3 @@ function Catalog() {
 }
 
 export default Catalog
-
