@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
+     * The models/index file will call this method automatically.
      */
     static associate(models) {
       this.belongsTo(models.User, {
@@ -16,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Review.init({
-    post: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    username: DataTypes.STRING,
+    post: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Review',

@@ -4,7 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 // import style from "./OrderItem.module.css";
 
-function OrderItem() {
+function OrderItem({id, user, status}) {
   return (
     <ListGroup as="ol" numbered>
       <ListGroup.Item
@@ -12,20 +12,23 @@ function OrderItem() {
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div className="fw-bold">#001</div>
+          <div className="fw-bold">№{id}</div>
         </div>
         <div className="ms-2 me-auto">
-          <div className="">Iphone 12</div>
+          <div className="fw-bold">Имя: {user}</div>
         </div>
         <div className="ms-2 me-auto">
-          <div className="">Создан: 05-05-2022</div>
+          <div className=""></div>
         </div>
         <div className="ms-2 me-auto">
-          <div className="">Обновлен: 07-05-2022</div>
+          <div className="">Создан:</div>
+        </div>
+        <div className="ms-2 me-auto">
+          <div className="">Обновлен: </div>
         </div>
 
         <Badge bg="primary" pill>
-          Оплачен
+          {status}
         </Badge>
       </ListGroup.Item>
     </ListGroup>
