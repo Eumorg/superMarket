@@ -15,7 +15,7 @@ const onSubmitHandler = async (event) => {
   event.preventDefault();
      const formData = {name:inputState.name, email:inputState.email, password:inputState.password}
     
-     const response = await fetch('http://localhost:4000/log/signup',{
+      const response = await fetch('http://localhost:4000/log/signup',{
       method: "POST",
       credentials: 'include',
       headers: {

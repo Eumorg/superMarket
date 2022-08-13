@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const Admin = () => {
@@ -33,8 +33,8 @@ export const Admin = () => {
 
   return (
     <Container>
+      <Link to="/admin/admiborder"> Список заказов</Link>
       <Form >
-
         <InputGroup>
           <InputGroup.Text >Тип устройства</InputGroup.Text>
           <Form.Control onChange={inputHandler} name="description" as="textarea" aria-label="Тип устройства"  />

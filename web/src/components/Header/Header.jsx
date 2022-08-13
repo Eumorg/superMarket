@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -65,10 +64,7 @@ function Header() {
             )}
 
             <Link className="nav-link" to="contact"> Контакты</Link>
-            <NavDropdown title="Отзывы" id="navbarScrollingDropdown">
-              <Link to='/allreviews'>Смотреть отзыввы</Link>
-              <Link to='userreviews'>Оставить отзыв</Link>
-            </NavDropdown>
+            <Link className="nav-link" to='/allreviews'>Отзывы о магазине</Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
