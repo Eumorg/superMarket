@@ -56,7 +56,7 @@ export const Trash = ({ state, stateChange }) => {
 				</tbody>
 			</table>
 			<div className={classes.final__price}>
-				<h3>Итог:{devicesPriceAll()}</h3>
+			<div><h3> {!storage || storage.length? (<>Итого: { devicesPriceAll()}</>) : (<></>)}</h3></div>
 				<Modal />
 			</div>
 		</div>
