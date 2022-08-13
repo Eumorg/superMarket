@@ -2,6 +2,7 @@ require('dotenv').config();
 const userRoute = require('./routes/userRoute')
 const adminRoute = require('./routes/adminRoute')
 const dowRoute = require('./routes/dowRoute')
+const orderRoute = require('./routes/orderRoute')
 const catalogDevice = require('./routes/catalogDevice')
 const reviews = require('./routes/reviews')
 const session = require('express-session');
@@ -53,6 +54,7 @@ app.use('/log', userRoute)
 app.use('/catalog', catalogDevice)
 app.use('/reviews', reviews)
 app.use('/dow', dowRoute)
+app.use('/orders', orderRoute)
 app.use('/admin', adminRoute)
 
 

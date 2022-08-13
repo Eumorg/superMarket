@@ -81,10 +81,12 @@ function Catalog() {
                   {filterDevise.map((el) => (
                      <Col onClick={() => onClickHandler(el.id)} className={style.device__item} key={el.id}>
                         <DeviceItem
-                           model={el.model}
-                           img={el.picture}
-                           price={el.price}
-                           color={el.color}
+                          id={el.id}
+                          model={el.model}
+                          img={el.picture}
+                          price={el.price}
+                          color={el.color}
+                          description={el.description}
                         />
                      </Col>
                   ))}
