@@ -12,7 +12,6 @@ import Tablets from './components/CatalogItem/Tablets/Tablets';
 import Phones from './components/CatalogItem/Phones/Phones';
 import Accesories from './components/CatalogItem/Accesories/Accesories';
 import AllReviews from './components/ReviewsShop/AllReviews/AllReviews';
-import UserRevies from './components/ReviewsShop/UserReviews/UserReviews';
 import { Trash } from './components/Trash/Trash';
 import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
@@ -24,9 +23,10 @@ import { AdminOrder } from './components/AdminOrder/AdminOrder';
 function App() {
   const dispatch = useDispatch();
   const [change, setChange] = useState(true);
+  const [val, setVal] = useState(true);
 
   useEffect(() => {
-    async function text() {
+    async function allDevice() {
       const responce = await fetch('http://localhost:4000/catalog', {
         method: 'GET',
         credentials: 'include',
@@ -37,12 +37,10 @@ function App() {
       const res = await responce.json();
       dispatch({ type: 'ALL_DEVICE', payload: res });
     }
-    text();
-  }, []);
+    allDevice();
 
-  useEffect(() => {
-    async function text() {
-      const responce = await fetch('http://localhost:4000/catalog', {
+    async function allReviews() {
+      const responce = await fetch('http://localhost:4000/reviews', {
         method: 'GET',
         credentials: 'include',
         headers: {
@@ -50,9 +48,9 @@ function App() {
         },
       });
       const res = await responce.json();
-      dispatch({ type: 'ALL_DEVICE', payload: res });
+      dispatch({ type: 'ALL_REVIEWS', payload: res });
     }
-    text();
+    allReviews();
   });
 
   return (
