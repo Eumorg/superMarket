@@ -40,7 +40,7 @@ router.post('/signin', isNotAuth, async (req, res) => {
 
 router.get('/isauth', (req,res)=>{
   if (!req.session.user) {
-    req.session.user = {};
+    return
   }
   res.json(req.session.user);
   })
