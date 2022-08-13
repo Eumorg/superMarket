@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import DeviceItem from "../DeviceItem/DeviceItem";
 import { useNavigate } from "react-router-dom";
@@ -10,11 +11,15 @@ import { Slides } from "../Slides/Slides";
 function Main() {
   const navigate = useNavigate();
   const devices = useSelector((store) => store.devices);
-
+  const [search, setSearch]=useState()
+  
   function categorySelector(type) {
     navigate(`${type}`);
   }
 
+  const filterModel =devices.filter(model=>{
+    return model.model.includes(search)
+  })
   return (
     <div>
       <div className={style.container}>
@@ -64,8 +69,10 @@ function Main() {
           </div>
           <Slides/>
            <h1 className={style.header}>Новинки</h1>
+          <input onChange={(event)=>setSearch(event.target.value)}/>
+          
           <div className={style.list}>
-            {devices.map((device) => (
+            {filterModel.map((device) => (
               <div key={device.id} className={style.card}>
               
                 <DeviceItem

@@ -17,7 +17,8 @@ import Footer from './components/footer/Footer';
 import { PageDevice } from './components/PageDevice/PageDevice';
 import Profile from './components/Profile/Profile';
 import { Contact } from './components/Contact/Contact';
-import { Admin } from './components/Admin/Admin';
+import { Admin } from './components/Admin/Admin.jsx';
+import { AdminOrder } from './components/AdminOrder/AdminOrder';
 
 function App() {
   const dispatch = useDispatch();
@@ -60,7 +61,9 @@ function App() {
         <Route path='signinform' element={<SignInForm />}></Route>
         <Route path='signupform' element={<SignUpForm />}></Route>
         <Route path='catalog' element={<Catalog />}></Route>
-        <Route path='allreviews' element={<AllReviews state={val} stateChange={setVal} />}></Route>
+        <Route path='allreviews' element={<AllReviews />}></Route>
+        <Route path='userreviews' element={<UserRevies />}></Route>
+        <Route path='/admin/admiborder' element={<AdminOrder />}></Route>
         <Route
           path='/trash'
           element={<Trash state={change} stateChange={setChange} />}
