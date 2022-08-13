@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      this.belongsToMany(models.User, { through: 'Carts', foreignKey: 'device_id' });
+    };
   }
   Device.init({
     model: DataTypes.STRING,
@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     type: DataTypes.STRING,
     color: DataTypes.STRING,
     picture: DataTypes.STRING,
-    status: DataTypes.BOOLEAN
+    picture_2: DataTypes.STRING,
+    picture_3: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Device',

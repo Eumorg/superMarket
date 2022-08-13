@@ -12,7 +12,10 @@ module.exports = {
         color: 'silver',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -24,7 +27,10 @@ module.exports = {
         color: 'black',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -36,7 +42,10 @@ module.exports = {
         color: 'gold',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -48,7 +57,10 @@ module.exports = {
         color: 'silver',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -60,7 +72,10 @@ module.exports = {
         color: 'blue',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -72,7 +87,10 @@ module.exports = {
         color: 'green',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -84,7 +102,10 @@ module.exports = {
         color: 'green',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -96,7 +117,10 @@ module.exports = {
         color: 'midnight',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -108,7 +132,10 @@ module.exports = {
         color: 'silver',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -120,7 +147,10 @@ module.exports = {
         color: 'silver',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -132,7 +162,10 @@ module.exports = {
         color: 'space gray',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -144,7 +177,10 @@ module.exports = {
         color: 'black',
         picture:
           'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
-        status: true,
+        picture_2:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
+        picture_3:
+          'https://apl-box.com/wp-content/uploads/2021/09/iphone-13-blue-select-2021.png',
         createdAt: new Date(),
         updatedAt: new Date()
       }

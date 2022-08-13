@@ -1,5 +1,4 @@
 import classes from './style.module.css';
-
 import { Modal } from '../Modal/Modal';
 
 export const Trash = ({ state, stateChange }) => {
