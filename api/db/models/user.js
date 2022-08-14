@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Review, {
         foreignKey: 'user_id',
       });
-      this.belongsToMany(models.Device, { through: 'Carts', foreignKey: 'user_id' });
+      // this.belongsToMany(models.Device, { through: 'Carts', foreignKey: 'user_id' });
       this.hasMany(models.Order, {
         foreignKey: 'user_id',
       });

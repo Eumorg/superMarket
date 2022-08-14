@@ -3,13 +3,9 @@ const { Order, User, Cart, Device } = require('../db/models');
 
 router.get('/', async (req, res) => {
 
-  
-
-  const data = await Order.findAll({include: [{model: User},{model: Cart}],  raw: true})
-  
+  const data = await Order.findAll({include: [{model: User},{model: Cart, include: Device }],  raw: true})
 
   return res.json( data )
-
 
   try {
 
