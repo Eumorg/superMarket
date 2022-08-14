@@ -1,22 +1,63 @@
-import React from "react";
-import OrderItem from "../OrderItem/OrderItem";
-import Button from "react-bootstrap/Button";
-
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
+
+import OrderItem from "../OrderItem/OrderItem";
+import FavoriteItem from "../FavoriteItem/FavoriteItem";
 import style from "./Profile.module.css";
 
-import FavoriteItem from "../FavoriteItem/FavoriteItem";
-import { useState } from "react";
+
+
 
 export default function Profile({ state, stateChange }) {
   const user = useSelector((store) => store.inputState);
 
   const [orders, setOrders] = useState([]);
 
-  console.log(orders);
+  function getList() {
+    let list = orders.filter((el) => el["User.name"] === user.payload);
 
-  const getData = async (event) => {
-    event.preventDefault();
+    // let list = orders;
+
+    console.log("list", list);
+
+    let arr = [];
+
+    for (let i = 0; i < list.length; i++) {
+      let obj = {
+        id: list[i].id,
+        status: list[i].status,
+        user: list[i]["User.name"],
+        created: list[i].createdAt,
+        updated: list[i].updatedAt,
+        device: [{name: list[i]["Carts.Device.model"], id: list[i]['Carts.device_id'] }],
+      };
+
+      arr.push(obj);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i].id === arr[j].id) {
+          arr[i].device = arr[i].device.concat(arr[j].device);
+          arr[j].device = arr[i].device;
+        }
+      }
+    }
+
+    let uniqueObjArray = [
+      ...new Map(arr.map((item) => [item["id"], item])).values(),
+    ];
+
+    return uniqueObjArray;
+  }
+
+  let list = getList()
+
+  console.log("arr", list);
+
+  async function getData(event) {
+    // event.preventDefault();
 
     const response = await fetch("http://localhost:4000/orders", {
       method: "GET",
@@ -28,7 +69,11 @@ export default function Profile({ state, stateChange }) {
     const data = await response.json();
 
     setOrders(data);
-  };
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   let storage = localStorage.getItem("favorite");
 
@@ -40,12 +85,10 @@ export default function Profile({ state, stateChange }) {
         <div>
           <h3>Hello, {user.payload}!</h3>
         </div>
-        <div>
-          <Button  variant="primary">
-            Изменить личную информацию
-          </Button>
-          <Button onClick={getData} variant="primary">Заказы</Button>
-        </div>
+        {/* <div>
+          <Button variant="primary">Изменить личную информацию</Button>
+         
+        </div> */}
       </div>
 
       <div>
@@ -53,16 +96,24 @@ export default function Profile({ state, stateChange }) {
           <h3>Ваши заказы</h3>
         </div>
         <div className={style.orderList}>
-
-         {(orders.length)? (<>  <OrderItem 
-          id={orders[0].id}
-          user={orders[0]['User.name']}
-          status={orders[0].status}
-
-          
-           />
-         </>) : (<></>)}
-        
+          {orders.length ? (
+            <>{list.map(el => (<div key={el.id}>
+               <OrderItem
+                id={el.id}
+                itemList={el.device}
+                user={el.user}
+                status={el.status}
+                created={el.created}
+                updated={el.updated}
+              />
+            </div>
+             
+            ))}
+              
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <div>
