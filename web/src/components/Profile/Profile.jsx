@@ -95,8 +95,8 @@ export default function Profile({ state, stateChange }) {
         <div className={style.orderList}>
           {orders.length ? (
             <>
-              {list.map((el) => (
-                <div key={el.id}>
+              {list.map((el, inx) => (
+                <div key={inx + 1}>
                   <OrderItem
                     id={el.id}
                     itemList={el.device}
@@ -124,8 +124,8 @@ export default function Profile({ state, stateChange }) {
         ) : (
           <>
             <div className={style.fav}>
-              {storage.map((el) => (
-                <div key={el.id} className={style.card}>
+              {storage.map((el, inx) => (
+                <div key={inx + 1} className={style.card}>
                   <FavoriteItem
                     id={el.id}
                     model={el.model}
