@@ -26,19 +26,6 @@ function App() {
   const [val, setVal] = useState(true);
 
   useEffect(() => {
-    async function allDevice() {
-      const responce = await fetch('http://localhost:4000/catalog', {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const res = await responce.json();
-      dispatch({ type: 'ALL_DEVICE', payload: res });
-    }
-    allDevice();
-
     async function allReviews() {
       const responce = await fetch('http://localhost:4000/reviews', {
         method: 'GET',

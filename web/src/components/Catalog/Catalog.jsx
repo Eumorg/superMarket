@@ -10,7 +10,7 @@ import style from "./Catalog.module.css";
 
 function Catalog() {
 
-   const devices = useSelector((store) => store.devices);
+   const devices = useSelector((store) => store.searchDevices);
    const navigate = useNavigate();
 
    const [typeSelected, setTypeSelected] = useState([])
