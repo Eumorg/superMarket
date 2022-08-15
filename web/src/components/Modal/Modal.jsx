@@ -29,16 +29,16 @@ export function Modal() {
     const data = await response.json();
     const UserId = data.id;
 
-    // await fetch("/order", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     text: '',
-    //     picture: '',
-    //   }),
-    // });
+    await fetch("http://localhost:4000/orders/setOrder", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: UserId,
+        devices: storage,
+      }),
+    });
   }
 
   return (

@@ -22,7 +22,7 @@ function OrderItem({ id, user, status, itemList, created, updated }) {
             {itemList.map((el, index) => (
               <div key={index + 1}>
                 <Link to={`/device/${el.id}`}>{el.name} </Link>
-                <div>Колличество: 1</div>
+                <div>Колличество: {el.count}</div>
               </div>
             ))}
           </div>

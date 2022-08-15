@@ -9,7 +9,7 @@ export const PageDevice = () => {
 
 	const [cart, setCart] = useState(false);
 
-	const devices = useSelector((store) => store.devices[`${+id - 1}`]);
+	const devices = useSelector((store) => store.searchDevices[`${+id - 1}`]);
 
 	const { model, img, price, color, description } = devices;
 	function comparing(arr, id) {
