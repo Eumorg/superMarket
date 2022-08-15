@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,11 +8,12 @@ import DeviceItem from "../DeviceItem/DeviceItem";
 import style from "./Catalog.module.css";
 
 function Catalog() {
-  const devices = useSelector((store) => store.devices);
-  const navigate = useNavigate();
+
+  const devices = useSelector((store) => store.searchDevices);
 
   const [typeSelected, setTypeSelected] = useState([]);
   const [filterDevise, setFilterDevise] = useState([]);
+
 
   useEffect(() => {
     setFilterDevise(devices);

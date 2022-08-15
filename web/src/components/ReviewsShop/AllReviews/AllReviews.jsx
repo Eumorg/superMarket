@@ -37,7 +37,10 @@ export default function AllReviews({ state, stateChange }) {
                <Row key={el.id}>
                   <Col>
                      <div className={style.reviews__block}>
-                        <h5>{`Пользователь: ${el.username} оставил отзыв`}</h5>
+                        <div className={style.reviews__titles}>
+                           <h5>{`Пользователь: ${el.username} оставил отзыв`}</h5>
+                           <h5>{`Дата отзыва: ${el.createdAt.slice(0, 10)}`}</h5>
+                        </div>
                         <p className={style.reviews__title_p}>
                            {el.post}
                         </p>
