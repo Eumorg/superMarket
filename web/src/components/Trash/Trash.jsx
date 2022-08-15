@@ -1,64 +1,70 @@
-import classes from './style.module.css';
-import { Modal } from '../Modal/Modal';
+import { Modal } from "../Modal/Modal";
+
+import { CartItem } from "./CartItem/CartItem";
+
+import style from "./Trash.module.css";
 
 export const Trash = ({ state, stateChange }) => {
-	let storage = localStorage.getItem('cart');
+  let storage = localStorage.getItem("cart");
 
-	storage = JSON.parse(storage);
+  storage = JSON.parse(storage);
 
-	function deleteItem(id) {
-		let before = localStorage.getItem('cart');
+  const devicesPriceAll = () =>
+    storage.reduce((acc, el) => {
+      return (acc += +el.price);
+    }, 0);
 
-		before = JSON.parse(before);
+  return (
+    <div>
+      <h1>Корзина</h1>
+      <div>
+        <div>
+          <strong>
+            <div className={style.description}>
+              <div>№</div>
+              <div>Устройство</div>
+              <div>Цена</div>
+              <div>Количество</div>
+            </div>
+          </strong>
 
-		const after = before.filter((el) => el.id !== id);
-
-		localStorage.setItem(`cart`, JSON.stringify(after));
-
-		stateChange(!state);
-	}
-	const devicesPriceAll = () =>
-		storage.reduce((acc, el) => {
-			return (acc += +el.price);
-		}, 0);
-
-	return (
-		<div className={classes.trash__container}>
-			<h1>Корзина</h1>
-			<table className={classes.table__container}>
-				<tbody>
-					<tr>
-						<th>№</th>
-						<th>Устройство</th>
-						<th>Цена</th>
-					</tr>
-
-					{!storage || storage.length === 0 ? (
-						<>
-							<tr>
-								<td>Нет предметов в корзине</td>
-							</tr>
-						</>
-					) : (
-						<>
-							{storage.map((el, inx) => (
-								<tr key={el.id}>
-									<td>{inx + 1}</td>
-									<td>{el.model}</td>
-									<td>{el.price}</td>
-									<td>
-										<button onClick={() => deleteItem(el.id)}>Удалить</button>
-									</td>
-								</tr>
-							))}
-						</>
-					)}
-				</tbody>
-			</table>
-			<div className={classes.final__price}>
-			<div><h3> {!storage || storage.length? (<>Итого: { devicesPriceAll()}</>) : (<></>)}</h3></div>
-				<Modal />
-			</div>
-		</div>
-	);
+          {!storage || storage.length === 0 ? (
+            <>
+              <div>
+                <div>Нет предметов в корзине</div>
+              </div>
+            </>
+          ) : (
+            <>
+              {storage.map((el, inx) => (
+                <div key={inx + 1}>
+                  <CartItem
+                    id={el.id}
+                    model={el.model}
+                    price={el.price}
+                    state={state}
+                    stateChange={stateChange}
+                    inx={inx}
+                  />
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            {" "}
+            {!storage || storage.length ? (
+              <>Итого: {devicesPriceAll()}</>
+            ) : (
+              <></>
+            )}
+          </h3>
+        </div>
+        <Modal />
+      </div>
+    </div>
+  );
 };
