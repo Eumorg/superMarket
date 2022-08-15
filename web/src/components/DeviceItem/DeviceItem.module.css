@@ -1,3 +1,18 @@
 .button {
-  margin: 10px 10px;
+	margin: 10px 10px;
+}
+
+.img__window {
+	height: 435px;
+	width: 286px;
+	display: flex;
+	align-items: center;
+}
+
+.img__window__container {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	margin: 0 auto;
+	transform: scale(0.9);
 }

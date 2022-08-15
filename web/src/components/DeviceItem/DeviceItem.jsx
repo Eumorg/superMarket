@@ -105,15 +105,21 @@ function DeviceItem({ id, model, img, price, color, description }) {
 	return (
 		<>
 			<Card style={{ width: '18rem' }} onClick={() => onClickHandler(id)}>
-				<Card.Img variant='top' src={img} />
+				<div className={style.img__window}>
+					<Card.Img
+						className={style.img__window__container}
+						variant='top'
+						src={img}
+					/>
+				</div>
 				<Card.Body>
 					<Card.Title>{model}</Card.Title>
 					<Card.Text>
 						<span>{`ЦЕНА: ${price}`}</span>
 					</Card.Text>
-					<Card.Text>
+					{/* <Card.Text>
 						<span>{`ОПИСАНИЕ: ${description}`}</span>
-					</Card.Text>
+					</Card.Text> */}
 					<Card.Text>
 						<span>{`ЦВЕТ: ${color}`}</span>
 					</Card.Text>
