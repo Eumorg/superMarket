@@ -17,7 +17,7 @@ router.post('/signup', isNotAuth, async (req, res) => {
       password: hashedPassword,
     });
     req.session.user = { id: createUser.id, name: createUser.name, email: createUser.email }
-    res.status(200).end()
+       res.status(200).end()
   } catch (err) {
     console.error(err);
   }
