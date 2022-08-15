@@ -69,7 +69,7 @@ function Main() {
           <Slides />
           <h1 className={style.header}>Новинки</h1>
           <div className={style.list}>
-            {filterModel.reverse().slice(0, 5).map((device) => (
+            {filterModel.slice(-5).reverse().map((device) => (
               <div key={device.id} className={style.card}>
                 <DeviceItem
                   id={device.id}
