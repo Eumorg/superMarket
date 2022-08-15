@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-
 import OrderItem from "../OrderItem/OrderItem";
 import FavoriteItem from "../FavoriteItem/FavoriteItem";
 import style from "./Profile.module.css";
-
-
-
 
 export default function Profile({ state, stateChange }) {
   const user = useSelector((store) => store.inputState);
@@ -19,8 +15,6 @@ export default function Profile({ state, stateChange }) {
 
     // let list = orders;
 
-    console.log("list", list);
-
     let arr = [];
 
     for (let i = 0; i < list.length; i++) {
@@ -28,9 +22,14 @@ export default function Profile({ state, stateChange }) {
         id: list[i].id,
         status: list[i].status,
         user: list[i]["User.name"],
-        created: list[i].createdAt,
-        updated: list[i].updatedAt,
-        device: [{name: list[i]["Carts.Device.model"], id: list[i]['Carts.device_id'] }],
+        created: list[i].createdAt.slice(0, 10),
+        updated: list[i].updatedAt.slice(0, 10),
+        device: [
+          {
+            name: list[i]["Carts.Device.model"],
+            id: list[i]["Carts.device_id"],
+          },
+        ],
       };
 
       arr.push(obj);
@@ -52,9 +51,7 @@ export default function Profile({ state, stateChange }) {
     return uniqueObjArray;
   }
 
-  let list = getList()
-
-  console.log("arr", list);
+  let list = getList();
 
   async function getData(event) {
     // event.preventDefault();
@@ -97,19 +94,19 @@ export default function Profile({ state, stateChange }) {
         </div>
         <div className={style.orderList}>
           {orders.length ? (
-            <>{list.map(el => (<div key={el.id}>
-               <OrderItem
-                id={el.id}
-                itemList={el.device}
-                user={el.user}
-                status={el.status}
-                created={el.created}
-                updated={el.updated}
-              />
-            </div>
-             
-            ))}
-              
+            <>
+              {list.map((el) => (
+                <div key={el.id}>
+                  <OrderItem
+                    id={el.id}
+                    itemList={el.device}
+                    user={el.user}
+                    status={el.status}
+                    created={el.created}
+                    updated={el.updated}
+                  />
+                </div>
+              ))}
             </>
           ) : (
             <></>

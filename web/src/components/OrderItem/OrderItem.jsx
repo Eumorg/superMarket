@@ -1,5 +1,6 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
@@ -19,10 +20,14 @@ function OrderItem({ id, user, status, itemList, created, updated }) {
           <div className="">
             Содержимое:
             {itemList.map((el, index) => (
-              <div key={index + 1}>
-                <Link to="/device/${}">{el.name} </Link>
-                <div>Колличество: 1</div>
-              </div>
+              
+              <>
+              
+                <div key={index + 1}>
+                  <Link to={`/device/${el.id}`}>{el.name} </Link>
+                  <div>Колличество: 1</div>
+                </div>
+              </>
             ))}
           </div>
         </div>
@@ -35,10 +40,12 @@ function OrderItem({ id, user, status, itemList, created, updated }) {
         <div className="ms-2 me-auto">
           <div className="">Обновлен: {updated}</div>
         </div>
+        
 
         <Badge bg="primary" pill>
           {status}
         </Badge>
+        <Button variant="primary">Заказ получен</Button>
       </ListGroup.Item>
     </ListGroup>
   );
