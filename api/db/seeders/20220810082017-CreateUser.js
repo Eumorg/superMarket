@@ -11,8 +11,16 @@ module.exports = {
         isAdmin: true,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
-    ], {});
+      },
+      {
+        name: "Biooo",
+        password: '$2b$10$Kzsv0LAgTtT34IrDRDRjD./K08ha6ppr/rra06XFMOz9a7FZsw7dq',
+        email: 'bibqa@biba.ru',
+        phone: '911',
+        isAdmin: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }    ], {});
 
   },
 

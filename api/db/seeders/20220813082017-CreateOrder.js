@@ -8,6 +8,18 @@ module.exports = {
         status: 'создан',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        user_id: 1,
+        status: 'создан',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        user_id: 1,
+        status: 'создан',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
 

@@ -11,8 +11,6 @@ export const PageDevice = () => {
 
 	const devices = useSelector((store) => store.devices[`${+id - 1}`]);
 
-	console.log(devices);
-
 	const { model, img, price, color, description } = devices;
 	function comparing(arr, id) {
 		for (let i = 0; i < arr.length; i++) {
@@ -102,7 +100,6 @@ export const PageDevice = () => {
 		localStorage.setItem(`favorite`, JSON.stringify(temp));
 		setCart(!cart);
 	}
-
 	return (
 		<>
 			<div className={classes.device__container}>

@@ -10,7 +10,7 @@ import style from "./Phones.module.css";
 
 function Phones() {
 
-   const devices = useSelector((store) => store.devices);
+   const devices = useSelector((store) => store.searchDevices);
    const navigate = useNavigate();
 
    const [item, setItem] = useState([])

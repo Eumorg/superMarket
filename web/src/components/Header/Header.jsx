@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -12,6 +11,51 @@ function Header() {
   const inputState = useSelector((store) => store.inputState);
   const dispatch = useDispatch();
 
+  // Поиск девайсов
+  const [devices, setDevices] = useState([])
+
+  useEffect(() => {
+    async function allDevice() {
+      const responce = await fetch('http://localhost:4000/catalog', {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const res = await responce.json();
+      setDevices(res)
+    }
+    allDevice()
+  }, []);
+
+  const [search, setSearch] = useState([])
+
+  useEffect(() => {
+    setSearch(devices)
+  }, [devices])
+
+  const getSearch = data => {
+    let currentDevice = [], newDevice = [];
+    if (data !== "") {
+      currentDevice = devices;
+      newDevice = currentDevice.filter(el => {
+        const lc = el.model.toLowerCase();
+        const filter = data.toLowerCase();
+        return lc.includes(filter);
+      });
+    } else {
+      newDevice = devices;
+    }
+    setSearch(newDevice);
+    console.log(newDevice);
+  };
+
+  useEffect(() => {
+    dispatch({ type: "SEARCH_DEVICE", payload: search });
+  }, [search])
+
+  // Регистрация
   useEffect(() => {
     fetch("http://localhost:4000/log/isauth", {
       method: "GET",
@@ -23,7 +67,7 @@ function Header() {
   }, [])
 
   const logoutHandler = async (event) => {
-    const response = await fetch("http://localhost:4000/log/signout", {
+    await fetch("http://localhost:4000/log/signout", {
       method: "GET",
       credentials: 'include',
       headers: {
@@ -32,7 +76,6 @@ function Header() {
     });
     dispatch({ type: "USER_DELETE", payload: null });
     navigate('/')
-    // const data = await response;
   }
 
   return (
@@ -68,12 +111,12 @@ function Header() {
           </Nav>
           <Form className="d-flex">
             <Form.Control
+              onChange={({ target: { value } }) => getSearch(value)}
               type="search"
-              placeholder="Search"
+              placeholder="Поиск девайсов"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Поиск</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
