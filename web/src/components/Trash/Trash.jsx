@@ -45,6 +45,7 @@ export const Trash = ({ state, stateChange }) => {
                     state={state}
                     stateChange={stateChange}
                     inx={inx}
+                    count={el.count}
                   />
                 </div>
               ))}

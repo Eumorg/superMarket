@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,8 +10,6 @@ import style from "./Accesories.module.css";
 function Accesories() {
 
    const devices = useSelector((store) => store.searchDevices);
-   const navigate = useNavigate();
-
    const [item, setItem] = useState([])
 
    useEffect(() => {
@@ -26,10 +23,6 @@ function Accesories() {
       setItem(res)
    }, [devices])
 
-   function onClickHandler(id) {
-      navigate(`device/${id}`);
-   }
-
    return (
       <Container>
          <div className={style.catalog}>
@@ -39,8 +32,9 @@ function Accesories() {
             <div className={style.device}>
                <Row>
                   {item.map((el) => (
-                     <Col onClick={() => onClickHandler(el.id)} className={style.device__item} key={el.id}>
+                     <Col className={style.device__item} key={el.id}>
                         <DeviceItem
+                           id={el.id}
                            model={el.model}
                            img={el.picture}
                            price={el.price}

@@ -42,6 +42,7 @@ setOrders(data)
           {
             name: list[i]["Carts.Device.model"],
             id: list[i]["Carts.device_id"],
+            count: list[i]["Carts.count"],
           },
         ],
       };
@@ -149,6 +150,12 @@ setOrders(data)
                     price={el.price}
                     color={el.color}
                     description={el.description}
+<<<<<<< HEAD
+=======
+                    state={state}
+                    stateChange={stateChange}
+                    count={1}
+>>>>>>> dev
                   />
                 </div>
               ))}

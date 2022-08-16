@@ -1,16 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './style.module.css';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 
 export const PageDevice = () => {
-	const { id } = useParams();
 
+	// Отрисовка девайсов при перезагрузки страницы
+	const { id } = useParams();
+	const [devices, setDevices] = useState([])
+
+	useEffect(() => {
+		async function getDevices() {
+			const responce = await fetch('http://localhost:4000/catalog', {
+				method: 'GET',
+				credentials: 'include',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			const res = await responce.json();
+			setDevices(res[`${+id - 1}`])
+		}
+		getDevices()
+	}, [id])
+
+	// Остальная логика 
 	const [cart, setCart] = useState(false);
 
+<<<<<<< HEAD
 	const devices = useSelector((store) => store.searchDevices[`${+id - 1}`]);
 
+=======
+>>>>>>> dev
 	const { model, img, price, color, description } = devices;
 	function comparing(arr, id) {
 		for (let i = 0; i < arr.length; i++) {
@@ -18,7 +39,6 @@ export const PageDevice = () => {
 				return false;
 			}
 		}
-
 		return true;
 	}
 

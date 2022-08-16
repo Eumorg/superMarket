@@ -26,6 +26,35 @@ router.post("/getUserId", async (req, res) => {
   }
 });
 
+router.post("/setOrder", async (req, res) => {
+  try {
+    const userId = req.body.id;
+    const devices = req.body.devices;
+
+    await Order.create({
+      user_id: userId,
+      status: "создан",
+    });
+
+    const orders = await Order.findAll({
+      where: { user_id: userId },
+      raw: true,
+    });
+    const orderId = orders.reverse()[0].id;
+
+    devices.forEach((el) => {
+      Cart.create({
+        user_id: userId,
+        device_id: el.id,
+        order_id: orderId,
+        count: el.count,
+      });
+    });
+  } catch (error) {
+    console.error("Ошибка:", error);
+  }
+});
+
 router.put("/", async (req, res) => {
   try {
     const data = req.body;

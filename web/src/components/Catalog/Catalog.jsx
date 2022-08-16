@@ -82,6 +82,7 @@ function Catalog() {
                   price={el.price}
                   color={el.color}
                   description={el.description}
+                  count={1}
                 />
               </Col>
             ))}
