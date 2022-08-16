@@ -10,13 +10,27 @@ export default function Profile({ state, stateChange }) {
 
   const [orders, setOrders] = useState([]);
 
+
+  useEffect(() => {
+    getData();
+      }, []);
+
+
+async function getData(event) {
+  const response = await fetch("http://localhost:4000/orders", {
+  method: "GET",
+  credentials: "include",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+const data = await response.json();
+setOrders(data)
+}
+
   function getList() {
     let list = orders.filter((el) => el["User.name"] === user.payload);
-
-    // let list = orders;
-
     let arr = [];
-
     for (let i = 0; i < list.length; i++) {
       let obj = {
         id: list[i].id,
@@ -31,7 +45,6 @@ export default function Profile({ state, stateChange }) {
           },
         ],
       };
-
       arr.push(obj);
     }
 
@@ -43,38 +56,41 @@ export default function Profile({ state, stateChange }) {
         }
       }
     }
-
     let uniqueObjArray = [
       ...new Map(arr.map((item) => [item["id"], item])).values(),
     ];
-
     return uniqueObjArray;
   }
-
   let list = getList();
 
-  async function getData(event) {
-    // event.preventDefault();
-
-    const response = await fetch("http://localhost:4000/orders", {
-      method: "GET",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-
-    setOrders(data);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
+ 
+  
 
   let storage = localStorage.getItem("favorite");
 
   storage = JSON.parse(storage);
+
+ 
+
+  const ordersHandler = async (event) => {
+   event.preventDefault();
+     let lists = []
+      lists.push({ id: event.target.id})
+    const response = await fetch('http://localhost:4000/orders/win', {
+      method: "PUT",
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(lists)
+    })
+    if(response.status===200){
+      getData()
+    }
+    // .then((response)=>response.json())
+    // .then((data)=>setOrders(data))
+        }
+  
 
   return (
     <div className={style.global}>
@@ -82,10 +98,7 @@ export default function Profile({ state, stateChange }) {
         <div>
           <h3>Hello, {user.payload}!</h3>
         </div>
-        {/* <div>
-          <Button variant="primary">Изменить личную информацию</Button>
-         
-        </div> */}
+     
       </div>
 
       <div>
@@ -104,6 +117,9 @@ export default function Profile({ state, stateChange }) {
                     status={el.status}
                     created={el.created}
                     updated={el.updated}
+                    ordersHandler={ordersHandler}
+                    state={state}
+                    stateChange= {stateChange}
                   />
                 </div>
               ))}
@@ -133,8 +149,6 @@ export default function Profile({ state, stateChange }) {
                     price={el.price}
                     color={el.color}
                     description={el.description}
-                    state={state}
-                    stateChange={stateChange}
                   />
                 </div>
               ))}

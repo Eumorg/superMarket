@@ -25,7 +25,6 @@ export const AdminOrder = () => {
     useEffect(() => { AdminOrders() }, [])
 
     function getList() {
-        // let list = orders.filter((el) => el["User.name"] === user.payload);
         let list = ordersAdmin;
         let arr = [];
             for (let i = 0; i < list.length; i++) {
@@ -54,8 +53,7 @@ export const AdminOrder = () => {
         return uniqueObjArray;
     }
     let list = getList();
-    console.log(list);
-
+   
     const onSubmit=async(values)=>{
             let lists=[]
         for (let i=0;i<list.length;i++){
@@ -69,7 +67,7 @@ export const AdminOrder = () => {
             },
             body: JSON.stringify(values)
         })
-                console.log(values);
+           
         }
 
     return (
@@ -91,7 +89,7 @@ export const AdminOrder = () => {
                         <td>{el.user}</td>
                         <td>
                                <select {...register(`${el.id}`)} >
-                                <option value="Создан" >Создан</option>
+                                <option value="Создан" >{el.status}</option>
                                 <option value="Оплачен">Оплачен</option>
                                 <option value="Собирается">Собирается</option>
                                 <option value="Отправлен">Отправлен</option>

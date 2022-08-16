@@ -29,10 +29,8 @@ router.post("/getUserId", async (req, res) => {
 router.put("/", async (req, res) => {
   try {
     const data = req.body;
-
     const arrayKeys = Object.keys(data);
-
-    for (let i = 0; i < arrayKeys.length; i++) {
+       for (let i = 0; i < arrayKeys.length; i++) {
       const order = await Order.findOne({ where: { id: arrayKeys[i] } });
       order.status = data[arrayKeys[i]];
       order.save();
@@ -43,4 +41,16 @@ router.put("/", async (req, res) => {
   }
 });
 
+
+router.put("/win", async (req, res) => {
+   try {
+      const data = req.body;
+      const order = await Order.findOne({ where: { id: data[0].id } });
+      order.status = "Выполнен";
+      order.save();
+      res.status(200).end();
+  } catch (error) {
+    console.error("Ошибка:", error);
+  }
+});
 module.exports = router;
