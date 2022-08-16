@@ -1,7 +1,7 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import "../SignInForm/SignInForm.css";
 
 export const SignInForm = () => {
   const inputState = useSelector((store) => store.inputState);
@@ -26,7 +26,7 @@ export const SignInForm = () => {
       },
       body: JSON.stringify(formData),
     });
-    const data = await response;
+    await response;
     if (response.ok) {
       dispatch({ type: "USER_TYPE_NAME", payload: inputState.name });
       navigate("/");
@@ -34,29 +34,42 @@ export const SignInForm = () => {
   };
 
   return (
-    <Form onSubmit={onSubmitHandler}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <h1>Вход на сайт</h1>
-        <Form.Label>Логин</Form.Label>
-        <Form.Control
-          onChange={inputHandler}
-          name="name"
-          type="text"
-          placeholder="Введите ваш логин."
-        />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Пароль</Form.Label>
-        <Form.Control
-          onChange={inputHandler}
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-      </Form.Group>
-      <Button variant="primary" name="password" type="submit">
-        Вход
-      </Button>
-    </Form>
+    <Container>
+      <div class="login">
+        <h2 className="material-icons">Вход на сайт</h2>
+        <div class="form">
+          <h6 className="material-icons-data">Введите ваш</h6>
+          <form onSubmit={onSubmitHandler} class="login-form">
+            <input onChange={inputHandler} name="name" type="text" placeholder="Логин" required />
+            <input onChange={inputHandler} name="password" type="password" placeholder="Пароль" required pattern="[A-Za-z0-9_.]+$" />
+            <button>Вход</button>
+          </form>
+        </div>
+      </div >
+    </Container>
+    // <Form onSubmit={onSubmitHandler}>
+    //   <Form.Group className="mb-3" controlId="formBasicEmail">
+    //     <h1>Вход на сайт</h1>
+    //     <Form.Label>Логин</Form.Label>
+    //     <Form.Control
+    //       onChange={inputHandler}
+    //       name="name"
+    //       type="text"
+    //       placeholder="Введите ваш логин."
+    //     />
+    //   </Form.Group>
+    //   <Form.Group className="mb-3">
+    //     <Form.Label>Пароль</Form.Label>
+    //     <Form.Control
+    //       onChange={inputHandler}
+    //       type="password"
+    //       name="password"
+    //       placeholder="Password"
+    //     />
+    //   </Form.Group>
+    //   <Button variant="primary" name="password" type="submit">
+    //     Вход
+    //   </Button>
+    // </Form>
   );
 };
