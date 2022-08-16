@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 
 // import style from "./OrderItem.module.css";
 
-function OrderItem({ id, user, status, itemList, created, updated }) {
+function OrderItem({ id, user, status, itemList, created, updated, ordersHandler }) {
+
   return (
     <ListGroup as="ol">
       <ListGroup.Item
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
+        <form onSubmit={ordersHandler} id={id}>
         <div className="ms-2 me-auto">
           <div className="fw-bold">#{id}</div>
         </div>
@@ -20,7 +22,7 @@ function OrderItem({ id, user, status, itemList, created, updated }) {
           <div className="">
             Содержимое:
             {itemList.map((el, index) => (
-              <div key={index + 1}>
+              <div key={index + 1} >
                 <Link to={`/device/${el.id}`}>{el.name} </Link>
                 <div>Колличество: {el.count}</div>
               </div>
@@ -40,7 +42,9 @@ function OrderItem({ id, user, status, itemList, created, updated }) {
         <Badge bg="primary" pill>
           {status}
         </Badge>
-        <Button variant="primary">Заказ получен</Button>
+        <Button type="submit" variant="primary">Заказ получен</Button>
+      
+        </form>
       </ListGroup.Item>
     </ListGroup>
   );

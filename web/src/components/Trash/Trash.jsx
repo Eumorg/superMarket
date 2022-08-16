@@ -11,7 +11,7 @@ export const Trash = ({ state, stateChange }) => {
 
   const devicesPriceAll = () =>
     storage.reduce((acc, el) => {
-      return (acc += +el.price);
+      return (acc += +el.price * el.count);
     }, 0);
 
   return (
