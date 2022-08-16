@@ -59,7 +59,7 @@ export function CartItem({ id, model, price, inx, state, stateChange, count }) {
     <div className={style.container}>
       <div>{inx + 1}</div>
       <div>{model}</div>
-      <div>{price}</div>
+      <div>${price}</div>
       <div className={style.container}>
         <button onClick={countDecrease}> - </button>
         <div> {count} </div>

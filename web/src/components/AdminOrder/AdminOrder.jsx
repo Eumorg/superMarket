@@ -7,7 +7,6 @@ export const AdminOrder = () => {
   const { handleSubmit, register } = useForm();
 
   async function AdminOrders(event) {
-    // event.preventDefault();
     const response = await fetch("http://localhost:4000/orders", {
       method: "GET",
       credentials: "include",

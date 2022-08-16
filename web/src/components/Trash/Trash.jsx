@@ -58,7 +58,7 @@ export const Trash = ({ state, stateChange }) => {
           <h3>
             {" "}
             {!storage || storage.length ? (
-              <>Итого: {devicesPriceAll()}</>
+              <>Итого: ${devicesPriceAll()}</>
             ) : (
               <></>
             )}
