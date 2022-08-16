@@ -150,12 +150,9 @@ setOrders(data)
                     price={el.price}
                     color={el.color}
                     description={el.description}
-<<<<<<< HEAD
-=======
                     state={state}
                     stateChange={stateChange}
                     count={1}
->>>>>>> dev
                   />
                 </div>
               ))}
