@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
-import style from "../UserReviews/UserReviews.module.css";
+import "../UserReviews/UserReviews.css";
 
 export default function UserReviews({ state, stateChange }) {
 
@@ -27,16 +27,26 @@ export default function UserReviews({ state, stateChange }) {
 
    return (
       <Container >
-         <h3 className={style.user__reviews__title_h3}>Оcтавить отзыв</h3>
-         <div className={style.input}>
-            <input
-               value={val}
-               className={style.input__text}
-               onChange={(e) => setVal(e.target.value)}
-               type="text"
-            />
-            <button onClick={getText} >Отправить</button>
+         <div className="wrap">
+            <h2>Feedback form!</h2>
+            <p>Оставьте отзыв:</p>
+            <form className='form__text' action>
+               <textarea name="textarea" cols={30} rows={10} placeholder="Оставьте отзыв:" defaultValue={""} />
+               <button className="btn" type="submit">Submit</button>
+            </form>
          </div>
       </Container>
+      // <Container >
+      //    <h3 className={style.user__reviews__title_h3}>Оcтавить отзыв</h3>
+      //    <div className={style.input}>
+      //       <input
+      //          value={val}
+      //          className={style.input__text}
+      //          onChange={(e) => setVal(e.target.value)}
+      //          type="text"
+      //       />
+      //       <button onClick={getText} >Отправить</button>
+      //    </div>
+      // </Container>
    )
 }
