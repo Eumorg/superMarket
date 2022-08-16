@@ -197,6 +197,70 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					model: 'IPad Pro 11',
+					description:
+						'Мощный. Простой в использовании и универсальный. iPad создан специально для ваших любимых занятий. Работайте, играйте, творите, учитесь, общайтесь и делайте множество других дел.',
+					price: '1000',
+					type: 'tablet',
+					color: 'silver',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/641/ruru_ipad-pro-11-wifi-silver_q321_pdp-image-1b.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/3ee/ruru_ipad-pro-11-wifi-silver_q321_pdp-image-1a.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/4fb/ruru_ipad-pro-11-wifi-silver_q321_pdp-image-2.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'Apple watch Nike SE',
+					description:
+						'Смарт-часы Apple Watch Series 3 GPS 42mm черного цвета обладают лаконичным дизайном и расширенным функционалом, что делает удобным их использование в повседневной жизни.',
+					price: '500',
+					type: 'watch',
+					color: 'black',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/67e/%20apple_watch_nike_se_gps_44mm_space_gray_aluminum_anthracite_black_sport_band_34fr_screen__usen.png/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/9ec/apple_watch_nike_se_gps_40mm_space_gray_aluminum_anthracite_black_sport_band_pure_front_screen__usen%20lfwhn.png/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/a6f/ruru-apple_watch_nike_se_gps_40mm_space_gray_aluminum_anthracite_black_nike_sport_band_pdp_3.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'Apple watch Series 3',
+					description:
+						'Смарт-часы Apple Watch Series 3 GPS 42mm черного цвета обладают лаконичным дизайном и расширенным функционалом, что делает удобным их использование в повседневной жизни.',
+					price: '500',
+					type: 'watch',
+					color: 'black',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/bee/ruru_apple-watch-series3-gps-aluminum-sbblack_38mm_pdp-image-1.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/fd5/ruru_apple-watch-series3-gps-aluminum-sbblack_38mm_pdp-image-2.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/bb4/ruru_apple-watch-series3-gps-aluminum-sbblack_38mm_pdp-image-3.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'IPad Air mini',
+					description:
+						'Мощный. Простой в использовании и универсальный. iPad создан специально для ваших любимых занятий. Работайте, играйте, творите, учитесь, общайтесь и делайте множество других дел.',
+					price: '1000',
+					type: 'tablet',
+					color: 'space gray',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/069/0698016bc3d0490e8bcefd699480022f.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/9a4/ipad_mini_q421_wi-fi_space_gray_pdp_image_position-1a__ru-ru.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/1e6/ipad_mini_q421_wi-fi_space_gray_pdp_image_position-2__ru-ru.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);
