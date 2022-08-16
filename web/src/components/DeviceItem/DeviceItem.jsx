@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import style from './DeviceItem.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function DeviceItem({ id, model, img, price, color, description }) {
+function DeviceItem({ id, model, img, price, color, description, count }) {
 	const [cart, setCart] = useState(false);
 
 	const navigate = useNavigate();
@@ -63,7 +63,7 @@ function DeviceItem({ id, model, img, price, color, description }) {
 
 	function addCart(e) {
 		e.stopPropagation();
-		const props = { id, model, img, price, color, description };
+		const props = { id, model, img, price, color, description, count };
 
 		let temp = [];
 		let before = localStorage.getItem('cart');
@@ -76,6 +76,8 @@ function DeviceItem({ id, model, img, price, color, description }) {
 		if (comparing(temp, id)) {
 			temp.push(props);
 		}
+
+    
 
 		localStorage.setItem(`cart`, JSON.stringify(temp));
 

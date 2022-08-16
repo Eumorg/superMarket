@@ -78,6 +78,7 @@ function Main() {
                   price={device.price}
                   color={device.color}
                   description={device.description}
+                  count={1}
                 />
               </div>
             ))}

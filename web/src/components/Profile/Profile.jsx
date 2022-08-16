@@ -28,6 +28,7 @@ export default function Profile({ state, stateChange }) {
           {
             name: list[i]["Carts.Device.model"],
             id: list[i]["Carts.device_id"],
+            count: list[i]["Carts.count"],
           },
         ],
       };
@@ -135,6 +136,7 @@ export default function Profile({ state, stateChange }) {
                     description={el.description}
                     state={state}
                     stateChange={stateChange}
+                    count={1}
                   />
                 </div>
               ))}
