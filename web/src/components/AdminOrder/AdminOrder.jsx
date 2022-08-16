@@ -7,7 +7,6 @@ export const AdminOrder = () => {
   const { handleSubmit, register } = useForm();
 
   async function AdminOrders(event) {
-    // event.preventDefault();
     const response = await fetch("http://localhost:4000/orders", {
       method: "GET",
       credentials: "include",
@@ -24,7 +23,6 @@ export const AdminOrder = () => {
   }, []);
 
   function getList() {
-    // let list = orders.filter((el) => el["User.name"] === user.payload);
     let list = ordersAdmin;
     let arr = [];
     for (let i = 0; i < list.length; i++) {
@@ -53,14 +51,13 @@ export const AdminOrder = () => {
     return uniqueObjArray;
   }
   let list = getList();
-  console.log(list);
 
   const onSubmit = async (values) => {
     let lists = [];
     for (let i = 0; i < list.length; i++) {
       lists.push({ id: list[i]?.id, status: list[i]?.status });
     }
-    const response = await fetch("http://localhost:4000/orders", {
+    await fetch("http://localhost:4000/orders", {
       method: "PUT",
       credentials: "include",
       headers: {
@@ -68,7 +65,6 @@ export const AdminOrder = () => {
       },
       body: JSON.stringify(values),
     });
-    console.log(values);
   };
 
   return (
