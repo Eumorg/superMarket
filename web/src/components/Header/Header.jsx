@@ -48,7 +48,6 @@ function Header() {
       newDevice = devices;
     }
     setSearch(newDevice);
-    console.log(newDevice);
   };
 
   useEffect(() => {

@@ -26,6 +26,7 @@ function App() {
   const [val, setVal] = useState(true);
 
   useEffect(() => {
+
     async function allReviews() {
       const responce = await fetch('http://localhost:4000/reviews', {
         method: 'GET',
