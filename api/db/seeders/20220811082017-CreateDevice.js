@@ -28,9 +28,12 @@ module.exports = {
 					price: '1100',
 					type: 'phone',
 					color: 'black',
-					picture: 'https://items.s1.citilink.ru/1783864_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1783864_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1783864_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/1aa/1aa03c5eb26b29c393ca9bf250aa6d45.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/1f2/1f25b3f6c419e61ca9fdede9dfb10057.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/dd5/dd53ccd59af265466a4d1d5156c979a5.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -73,9 +76,12 @@ module.exports = {
 					price: '800',
 					type: 'phone',
 					color: 'blue',
-					picture: 'https://items.s1.citilink.ru/1603375_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1603375_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1603375_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/78c/iphone_13_q421_pink_pdp_image_position-1a__ru-ru.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/c49/iphone_13_q421_pink_pdp_image_position-1b__ru-ru.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/4b7/iphone_13_q421_pink_pdp_image_position-3__ru-ru.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -86,9 +92,12 @@ module.exports = {
 					price: '1100',
 					type: 'phone',
 					color: 'green',
-					picture: 'https://items.s1.citilink.ru/1793604_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1793604_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1793604_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/20a/20a2ca46235d24d61b36cd20a15ee6c8.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/2a4/iphone_11_b_3.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/82d/iphone_11_b_4.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -99,9 +108,12 @@ module.exports = {
 					price: '1300',
 					type: 'phone',
 					color: 'green',
-					picture: 'https://items.s1.citilink.ru/1178910_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1178910_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1178910_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/3ab/iphone_11_pro_s_2.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/cc2/iphone_11_pro_s_3.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/643/iphone_11_pro_s_1.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -128,9 +140,12 @@ module.exports = {
 					price: '1000',
 					type: 'tablet',
 					color: 'silver',
-					picture: 'https://items.s1.citilink.ru/1517609_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1517609_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1517609_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/55f/ruru_ipad-air_q420_space_gray-wi-fi_pdp-image-1b.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/074/ruru_ipad-air_q420_space_gray-wi-fi_pdp-image-2.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/3a3/ruru_ipad-air_q420_space_gray-wi-fi_pdp-image-6.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -141,9 +156,12 @@ module.exports = {
 					price: '1300',
 					type: 'laptop',
 					color: 'silver',
-					picture: 'https://items.s1.citilink.ru/1451522_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1451522_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1451522_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/f18/ruru_macbook-air_q121_silver_pdp-image-1.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/ae2/ruru_macbook-air_q121_silver_pdp-image-2.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/2a2/ruru_macbook-air_q121_silver_pdp-image-3.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -154,9 +172,12 @@ module.exports = {
 					price: '2000',
 					type: 'laptop',
 					color: 'space gray',
-					picture: 'https://items.s1.citilink.ru/1451570_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1451570_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1451570_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/a56/macbook_pro_16-in_q122_silver_pdp_image_position-1__ru-ru.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/200/macbook_pro_16-in_q122_silver_pdp_image_position-2__ru-ru.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/a87/macbook_pro_16-in_q122_silver_pdp_image_position-3__ru-ru.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
@@ -167,9 +188,12 @@ module.exports = {
 					price: '500',
 					type: 'watch',
 					color: 'black',
-					picture: 'https://items.s1.citilink.ru/1611491_v01_b.jpg',
-					picture_2: 'https://items.s1.citilink.ru/1611491_v02_b.jpg',
-					picture_3: 'https://items.s1.citilink.ru/1611491_v03_b.jpg',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/8c0/apple_watch_se_gps_40mm_gold_aluminum_starlight_sport_band_34fr_screen__usen.png/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/1d3/apple_watch_se_gps_40mm_gold_aluminum_starlight_sport_band_pure_front_screen__usen.png/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/53f/ruru-apple_watch_se_gps_40mm_gold_aluminum_pink_sand_sport_band_pdp_3.jpg/resize/870x725/hq/',
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
