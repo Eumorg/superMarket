@@ -4,10 +4,9 @@ import { useParams } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 
 export const PageDevice = () => {
-
 	// Отрисовка девайсов при перезагрузки страницы
 	const { id } = useParams();
-	const [devices, setDevices] = useState([])
+	const [devices, setDevices] = useState([]);
 
 	useEffect(() => {
 		async function getDevices() {
@@ -19,14 +18,13 @@ export const PageDevice = () => {
 				},
 			});
 			const res = await responce.json();
-			setDevices(res[`${+id - 1}`])
+			setDevices(res[`${+id - 1}`]);
 		}
-		getDevices()
-	}, [id])
+		getDevices();
+	}, [id]);
 
-	// Остальная логика 
+	// Остальная логика
 	const [cart, setCart] = useState(false);
-
 
 	const { model, img, price, color, description } = devices;
 	function comparing(arr, id) {
@@ -148,29 +146,81 @@ export const PageDevice = () => {
 					</div>
 				</div>
 				<div className={classes.device__spec}>
-					<span className={classes.font__device}>Тип товара:</span>
-					<p>{devices.type}</p>
-					<span className={classes.font__device}>Наименование товара:</span>
 					<p className={classes.device}>{devices.model}</p>
-					<span className={classes.font__device}>Цвет товара:</span>
 					<p>{devices.color}</p>
-					<span className={classes.font__device}>Цена товара:</span>
 					<p className={classes.price__device}>{devices.price}</p>
-					<span className={classes.font__device}>Описание товара</span>
-					<p>{devices.description}</p>
-					<button
-						onClick={addStorage}
-						type='button'
-						className='btn btn-primary'
-					>
-						{favCheck(id) ? <>В избранное</> : <>В избранном</>}
-					</button>
-					<br />
-					<button onClick={addCart} type='button' className='btn btn-primary'>
-						{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
-					</button>
+					<p className={classes.text__desc}>{devices.description}</p>
+					<div className={classes.div__but}>
+						<button
+							onClick={addStorage}
+							type='button'
+							className='btn btn-primary'
+						>
+							{favCheck(id) ? <>В избранное</> : <>В избранном</>}
+						</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button onClick={addCart} type='button' className='btn btn-primary'>
+							{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
+						</button>
+					</div>
 				</div>
 			</div>
 		</>
 	);
 };
+
+// return (
+// 	<>
+// 		<div className={classes.device__container}>
+// 			<div className={classes.device__image__container}>
+// 				{/* <img src={devices.picture} className={classes.device__image} alt='' /> */}
+// 				<div className={classes.device__container__slider}>
+// 					<Carousel>
+// 						<Carousel.Item>
+// 							<img
+// 								className='d-block w-100'
+// 								src={devices.picture}
+// 								alt='First slide'
+// 							/>
+// 						</Carousel.Item>
+// 						<Carousel.Item>
+// 							<img
+// 								className='d-block w-100'
+// 								src={devices.picture_2}
+// 								alt='Second slide'
+// 							/>
+// 						</Carousel.Item>
+// 						<Carousel.Item>
+// 							<img
+// 								className='d-block w-100'
+// 								src={devices.picture_3}
+// 								alt='Third slide'
+// 							/>
+// 						</Carousel.Item>
+// 					</Carousel>
+// 				</div>
+// 			</div>
+// 			<div className={classes.device__spec}>
+// 				<p className={classes.device}>{devices.model}</p>
+
+// 				<p>{devices.color}</p>
+// 				<span className={classes.font__device}>Цена:</span>
+// 				<p className={classes.price__device}>{devices.price}</p>
+// 				<span className={classes.font__device}>Описание товара</span>
+// 				<p>{devices.description}</p>
+// 				<button
+// 					onClick={addStorage}
+// 					type='button'
+// 					className='btn btn-primary'
+// 				>
+// 					{favCheck(id) ? <>В избранное</> : <>В избранном</>}
+// 				</button>
+// 				<br />
+// 				<button onClick={addCart} type='button' className='btn btn-primary'>
+// 					{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
+// 				</button>
+// 			</div>
+// 		</div>
+// 	</>
+// );
+// };
