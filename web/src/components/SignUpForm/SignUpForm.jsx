@@ -31,11 +31,11 @@ export const SignUpForm = () => {
 
   return (
     <Container>
-      <div class="login">
+      <div className="login">
         <h2 className="material-icons">Регистрация</h2>
-        <div class="form">
+        <div className="form">
           <h6 className="material-icons-data">Введите ваш</h6>
-          <form onSubmit={onSubmitHandler} class="login-form">
+          <form onSubmit={onSubmitHandler} className="login-form">
             <input onChange={inputHandler} name="name" type="text" placeholder="Логин" required />
             <input onChange={inputHandler} name="email" type="email" placeholder="Почту" required />
             <input onChange={inputHandler} name="password" type="password" placeholder="Пароль" required pattern="[A-Za-z0-9_.]+$" />

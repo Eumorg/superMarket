@@ -1,0 +1,49 @@
+.navbar_main {
+   width: 100%;
+   min-height: 80px;
+   background-color: black !important;
+   top: 0;
+   position: fixed;
+   z-index: 9999;
+}
+
+#navbar__logo {
+   margin-left: 3%;
+   margin-right: 3%;
+   font-size: 25px;
+   color: rgb(82, 148, 247);
+}
+
+.header__form__search {
+   display: flex;
+   justify-content: space-between;
+   padding-right: 2%;
+}
+
+.lk_form {
+   margin-left: 15px;
+}
+
+.nav-link {
+   color: white;
+}
+
+.nav-link:visited {
+   color: white;
+}
+
+.nav-link:hover {
+   color: rgb(141, 141, 141);
+}
+
+.nav-link:active {
+   color: rgb(141, 141, 141) !important;
+}
+
+.navbar-toggler {
+   background-color: white;
+}
+
+.basket {
+   margin-right: 2%;
+}

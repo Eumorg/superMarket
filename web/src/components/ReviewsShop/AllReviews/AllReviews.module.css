@@ -1,9 +1,8 @@
 .container {
-   margin-bottom: 8%;
+   margin-bottom: 5%;
 }
 
 .title__text {
-   margin-top: 5%;
    padding: 0 2%;
    display: flex;
    justify-content: space-between;
@@ -22,7 +21,7 @@
    min-height: 10%;
    margin-top: 3%;
    padding: 2%;
-   border: 2px solid black;
+   border-bottom: 1px solid rgb(82, 148, 247);
    border-radius: 4px;
 }
 
@@ -47,4 +46,9 @@
 
 .title__inner__p {
    margin: 0 2%;
+}
+
+.reviews__title_h1 {
+   text-align: center;
+   margin-top: 3%;
 }
