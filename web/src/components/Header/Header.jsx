@@ -53,7 +53,7 @@ function Header() {
 
   useEffect(() => {
     dispatch({ type: "SEARCH_DEVICE", payload: search });
-  }, [search])
+  }, [dispatch, search])
 
   // Регистрация
   useEffect(() => {
@@ -64,7 +64,7 @@ function Header() {
         "Content-Type": "application/json",
       },
     }).then(res => res.json()).then(data => dispatch({ type: "USER_TYPE_NAME", payload: data.name }))
-  }, [])
+  }, [dispatch])
 
   const logoutHandler = async (event) => {
     await fetch("http://localhost:4000/log/signout", {

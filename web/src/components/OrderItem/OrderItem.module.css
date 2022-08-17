@@ -6,7 +6,7 @@
   width: 1000px;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  /* align-items: start; */
   min-height: 100px;
 }
 
