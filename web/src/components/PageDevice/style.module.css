@@ -12,15 +12,10 @@
 	border: 1px solid;
 	height: 1000px;
 	border-radius: 15px;
-	background-color: rgb(251, 250, 247);
 }
 
 .device__image {
-	/* width: 450px; */
 	max-height: 500px;
-	/* border: 1px solid;
-	border-radius: 15px;
-	background-color: white; */
 	max-width: 100%;
 	max-height: 100%;
 	display: block;
@@ -80,4 +75,16 @@
 	/* height: 750px; */
 	/* border-radius: 15px;
 	background-color: rgb(251, 250, 247); */
+}
+
+.div__but {
+	display: flex;
+}
+
+.text__desc {
+	text-align: justify;
+	width: 300px;
+	padding-bottom: 50px;
+	color: rgb(162, 164, 164);
+	font-weight: 600;
 }
