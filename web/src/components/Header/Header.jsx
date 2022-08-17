@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import '../Header/Header.css'
 
 function Header() {
   const navigate = useNavigate()
@@ -52,7 +53,7 @@ function Header() {
 
   useEffect(() => {
     dispatch({ type: "SEARCH_DEVICE", payload: search });
-  }, [search])
+  }, [dispatch, search])
 
   // Регистрация
   useEffect(() => {
@@ -63,7 +64,7 @@ function Header() {
         "Content-Type": "application/json",
       },
     }).then(res => res.json()).then(data => dispatch({ type: "USER_TYPE_NAME", payload: data.name }))
-  }, [])
+  }, [dispatch])
 
   const logoutHandler = async (event) => {
     await fetch("http://localhost:4000/log/signout", {
@@ -79,44 +80,53 @@ function Header() {
 
   return (
 
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbar_main" bg="light" expand="lg">
       <Container fluid>
 
-        <Link to="/" className="nav-link">Супер Магазин</Link>
+        <Link to="/" id="navbar__logo" className="nav-link">Apple Shop</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse className="navbar_main_inner" id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
             <Link to="/catalog" className="nav-link">Каталог</Link>
-            <Link to="/admin" className="nav-link">Секретная кнопка</Link>
-            <Link to="/trash" className="nav-link">Корзина</Link>
-            {inputState.payload ? (
-              <>
-                <Link className="nav-link" to="profile">Личный кабинет</Link>
-                <Nav.Link onClick={logoutHandler}>Выйти</Nav.Link>
-              </>
-            ) : (
-              <>
-                <Link to="/signinform" className="nav-link">Войти</Link>
-                <Link to="/signupform" className="nav-link">Зарегистрироваться</Link>
-              </>
-            )}
-
+            {inputState.payload === "Biba" &&
+              <Link to="/admin" className="nav-link">Кнопка для админа</Link>
+            }
             <Link className="nav-link" to="contact"> Контакты</Link>
             <Link className="nav-link" to='/allreviews'>Отзывы о магазине</Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              onChange={({ target: { value } }) => getSearch(value)}
-              type="search"
-              placeholder="Поиск девайсов"
-              className="me-2"
-              aria-label="Search"
-            />
-          </Form>
+          <Link to="/trash" className="nav-link basket">Корзина</Link>
+          <div className="header__form__search">
+            <Form className="d-flex">
+              <Form.Control
+                onChange={({ target: { value } }) => getSearch(value)}
+                type="search"
+                placeholder="Поиск девайсов"
+                className="me-2"
+                aria-label="Search"
+              />
+            </Form>
+            <Nav
+              className="me-auto my-2 my-lg-0 lk_form"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              {inputState.payload ? (
+                <>
+                  <Link className="nav-link" to="profile">Личный кабинет</Link>
+                  <Nav.Link onClick={logoutHandler}>Выйти</Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/signinform" className="nav-link">Войти</Link>
+                  <Link to="/signupform" className="nav-link">Зарегистрироваться</Link>
+                </>
+              )}
+            </Nav>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

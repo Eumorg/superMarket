@@ -17,11 +17,25 @@
 }
 
 .header {
+  margin-top: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  color: rgb(113, 112, 112);
 }
 
 .orderList {
+
   padding: auto;
   
+}
+
+.orderItem {
+  display: flex;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  color: rgb(113, 112, 112);
 }

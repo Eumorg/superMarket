@@ -2,7 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import DeviceItem from "../DeviceItem/DeviceItem";
 import { useNavigate } from "react-router-dom";
-
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import style from "./Main.module.css";
 import { Slides } from "../Slides/Slides";
 
@@ -20,7 +21,7 @@ function Main() {
   })
 
   return (
-    <div>
+    <Container>
       <div className={style.container}>
         <h1 className={style.header}>Категории</h1>
         <div>
@@ -69,8 +70,8 @@ function Main() {
           <Slides />
           <h1 className={style.header}>Новинки</h1>
           <div className={style.list}>
-            {filterModel.slice(-5).reverse().map((device) => (
-              <div key={device.id} className={style.card}>
+            {filterModel.slice(-4).reverse().map((device) => (
+              <Col key={device.id} className={style.card}>
                 <DeviceItem
                   id={device.id}
                   model={device.model}
@@ -80,12 +81,12 @@ function Main() {
                   description={device.description}
                   count={1}
                 />
-              </div>
+              </Col>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

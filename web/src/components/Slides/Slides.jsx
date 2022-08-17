@@ -1,52 +1,53 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Container from 'react-bootstrap/Container';
 import '../Slides/Slides.module.css'
 import React from 'react'
+import style from "./Slides.module.css";
 
 export const Slides = () => {
   return (
-    <Container>
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://www.apple.com/v/iphone-13/h/images/key-features/hero/hero_green__rz0u5fdewmqq_large.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://www.apple.com/v/ipad-air/r/images/overview/hero/main_ipad__d991v5y9hgom_large.png"
-            alt="Second slide"
-          />
+    <Carousel>
+      <Carousel.Item className={style.ipad}>
+        <img
+          className="d-block w-100"
+          src="https://www.apple.com/v/iphone-13/h/images/key-features/hero/hero_green__rz0u5fdewmqq_large.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h2>IPhone</h2>
+          <p>Новая камера нереальные возможности всего то 1100$ </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item className={style.ipad}>
+        <img
+          className="d-block w-100 ipad__inner"
+          src="https://ilounge.ua/files/uploads/new_4/ipad-pro-max-15-data-vyhoda-3.jpg
+          "
+          alt="Second slide"
+        />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Caption>
+          <h2>IPad</h2>
+          <p>Сверхширокоугольная фронтальная камера 12 Мп</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item className={style.mac}>
+        <div className={style.mac__inner}>
           <img
             className="d-block w-100"
-            src="holder.js/800x400?text=Third slidebg=20232a"
+            src="https://www.xda-developers.com/files/2022/06/MacBook-Air-2022-in-three-colors-1900x700_c.jpg"
             alt="Third slide"
           />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-    </Container>
+        </div>
+        <Carousel.Caption>
+          <h2>MacBooK</h2>
+          <p>Суперсила профессиональных Прогеров</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   )
 }
+
+// https://www.xda-developers.com/files/2022/06/MacBook-Air-2022-in-three-colors-1900x700_c.jpg
+// https://ilounge.ua/files/uploads/new_4/ipad-pro-max-15-data-vyhoda-3.jpg
 
 

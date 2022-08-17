@@ -11,7 +11,7 @@ module.exports = {
 						'Это iPhone 12. Великолепный яркий дисплей Super Retina XDR 6,1 дюйма. Передняя панель Ceramic Shield, с которой риск повреждений дисплея при падении в 4 раза ниже.',
 					price: '1000',
 					type: 'phone',
-					color: 'blue',
+					color: 'silver',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/47a/ruru_iphone12_q121_blue_pdp-image-1b.jpg/resize/870x725/hq/',
 					picture_2:
@@ -27,7 +27,7 @@ module.exports = {
 						'iPhone 13. Самая совершенная система двух камер на iPhone. Режим «Киноэффект» делает из видео настоящее кино. Супербыстрый чип A15 Bionic. Неутомимый аккумулятор.',
 					price: '1100',
 					type: 'phone',
-					color: 'green',
+					color: 'black',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/1aa/1aa03c5eb26b29c393ca9bf250aa6d45.jpg/resize/870x725/hq/',
 					picture_2:
@@ -43,7 +43,7 @@ module.exports = {
 						'Смартфон Apple iPhone X – воплощение статуса, надежности и передовых технологий. Большой, 5.8-дюймовый экран дарит удивительно четкое и живое изображение (разрешение 2436x1125).',
 					price: '900',
 					type: 'phone',
-					color: 'silver',
+					color: 'gold',
 					picture:
 						'https://avatars.mds.yandex.net/get-mpic/3631580/img_id5546778610980337055.png/orig',
 					picture_2:
@@ -59,7 +59,7 @@ module.exports = {
 						'Это iPhone 12 mini. Мощные функции в небольшом корпусе с диагональю 5,4 дюйма. Невероятно яркий компактный дисплей Super Retina XDR.',
 					price: '700',
 					type: 'phone',
-					color: 'white',
+					color: 'silver',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/f7b/ruru_iphone12_q121_white_pdp-image-1b.jpg/resize/870x725/hq/',
 					picture_2:
@@ -75,7 +75,7 @@ module.exports = {
 						'iPhone 13 mini. Самая совершенная система двух камер на iPhone. Режим «Киноэффект» делает из видео настоящее кино. Супербыстрый чип A15 Bionic. Неутомимый аккумулятор.',
 					price: '800',
 					type: 'phone',
-					color: 'pink',
+					color: 'blue',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/78c/iphone_13_q421_pink_pdp_image_position-1a__ru-ru.jpg/resize/870x725/hq/',
 					picture_2:
@@ -91,7 +91,7 @@ module.exports = {
 						'Функциональный и стильный смартфон Apple iPhone 11 в металлическом корпусе черного цвета способен обеспечить не только повседневное общение и развлечения, но и продуктивную работу.',
 					price: '1100',
 					type: 'phone',
-					color: 'black',
+					color: 'green',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/20a/20a2ca46235d24d61b36cd20a15ee6c8.jpg/resize/870x725/hq/',
 					picture_2:
@@ -107,7 +107,7 @@ module.exports = {
 						'Смартфон Apple iPhone 11 Pro оборудован процессором A13 Bionic, самым мощным в линейке бренда на момент релиза модели. Он дает возможность проходить самые ресурсоемкие игры на максимальных настройках.',
 					price: '1300',
 					type: 'phone',
-					color: 'silver',
+					color: 'green',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/3ab/iphone_11_pro_s_2.jpg/resize/870x725/hq/',
 					picture_2:
@@ -139,7 +139,7 @@ module.exports = {
 						'Мощный. Простой в использовании и универсальный. iPad создан специально для ваших любимых занятий. Работайте, играйте, творите, учитесь, общайтесь и делайте множество других дел.',
 					price: '1000',
 					type: 'tablet',
-					color: 'space gray',
+					color: 'silver',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/55f/ruru_ipad-air_q420_space_gray-wi-fi_pdp-image-1b.jpg/resize/870x725/hq/',
 					picture_2:
@@ -171,7 +171,7 @@ module.exports = {
 						'Ноутбук Apple MacBook Pro выполнен в металлическом корпусе серого цвета толщиной 15.6 мм и весом 1.4 кг, поэтому станет стильным и надежным спутником на каждый день.',
 					price: '2000',
 					type: 'laptop',
-					color: 'silver',
+					color: 'space gray',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/a56/macbook_pro_16-in_q122_silver_pdp_image_position-1__ru-ru.jpg/resize/870x725/hq/',
 					picture_2:
@@ -187,7 +187,7 @@ module.exports = {
 						'Смарт-часы Apple Watch Series 3 GPS 42mm черного цвета обладают лаконичным дизайном и расширенным функционалом, что делает удобным их использование в повседневной жизни.',
 					price: '500',
 					type: 'watch',
-					color: 'gold aluminum',
+					color: 'black',
 					picture:
 						'https://cdn.svyaznoy.ru/upload/iblock/8c0/apple_watch_se_gps_40mm_gold_aluminum_starlight_sport_band_34fr_screen__usen.png/resize/870x725/hq/',
 					picture_2:
