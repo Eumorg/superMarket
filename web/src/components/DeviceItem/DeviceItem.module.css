@@ -20,11 +20,7 @@
 }
 
 .img__window__container {
-	/* max-width: 100%; */
-	/* max-height: 100%; */
-	/* display: block;
-	margin: 0 auto;
-	transform: scale(0.9); */
+
 
   width: 80%;
   min-width: -30%;

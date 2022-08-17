@@ -14,7 +14,6 @@ function FavoriteItem({
   state,
   stateChange,
 }) {
-
   const [cart, setCart] = useState(false);
 
   function buttonCheck(id) {
@@ -39,7 +38,6 @@ function FavoriteItem({
   function onClickHandler(id) {
     navigate(`/device/${id}`);
   }
-
 
   const navigate = useNavigate();
 
@@ -90,22 +88,29 @@ function FavoriteItem({
 
   return (
     <Card onClick={() => onClickHandler(id)} style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={img} />
+      <Card.Img variant="top" src={img} className={style.img}/>
       <Card.Body>
-        <Card.Title>{model}</Card.Title>
-        <Card.Text>
+        <div className={style.description}>
+        <Card.Title className={style.title}>{model}</Card.Title>
+        <Card.Text className={style.color}>
           <span>{color}</span>
         </Card.Text>
-        <Card.Text>
+        <Card.Text className={style.price}>
           <span>{`$${price}`}</span>
         </Card.Text>
-        
-        <Button onClick={addCart} variant="primary">
-        {buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
-        </Button>
-        <Button onClick={deleteItem} className={style.button} variant="danger">
-          Удалить
-        </Button>
+        </div>
+        <div className={style.buttons}>
+          <Button onClick={addCart} variant="primary">
+            {buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
+          </Button>
+          <Button
+            onClick={deleteItem}
+            className={style.button}
+            variant="danger"
+          >
+            Удалить
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

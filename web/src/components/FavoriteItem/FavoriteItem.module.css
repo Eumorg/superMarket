@@ -1,3 +1,39 @@
 .button {
   margin: 10px 10px;
 }
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.description {
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+}
+
+.title {
+  color: rgb(114, 114, 121);
+  margin-bottom: 0%;
+}
+
+.price {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.color {
+  color: rgb(114, 114, 121);
+}
+
+
+.img {
+  width: 70%;
+  min-height: auto;
+  margin: 20px auto;
+}
