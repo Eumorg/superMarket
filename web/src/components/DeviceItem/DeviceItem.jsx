@@ -10,7 +10,7 @@ function DeviceItem({ id, model, img, price, color, description, count }) {
   const navigate = useNavigate();
 
   function onClickHandler(id) {
-    navigate(`device/${id}`);
+    navigate(`/device/${id}`);
   }
 
   function comparing(arr, id) {

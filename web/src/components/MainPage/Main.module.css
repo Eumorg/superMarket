@@ -1,14 +1,13 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: space-evenly;
   height: 100%;
+  margin: 5% auto;
 }
 
-.card {
-  margin: 30px 20px ;
-}
+
 
 .header {
   margin: 30px;
@@ -53,3 +52,6 @@
 
 }
 
+.card {
+  width: 20%;
+}

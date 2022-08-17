@@ -4,17 +4,12 @@ import Button from "react-bootstrap/esm/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
-// import style from "./OrderItem.module.css";
+import style from "./OrderItem.module.css";
 
-function OrderItem({ id, user, status, itemList, created, updated, ordersHandler }) {
-
+function OrderItem({ id, status, itemList, created, updated, ordersHandler }) {
   return (
-    <ListGroup as="ol">
-      <ListGroup.Item
-        as="li"
-        className="d-flex justify-content-between align-items-start"
-      >
-        <form onSubmit={ordersHandler} id={id}>
+    <ListGroup.Item as="li">
+      <form onSubmit={ordersHandler} id={id} className={style.block}>
         <div className="ms-2 me-auto">
           <div className="fw-bold">#{id}</div>
         </div>
@@ -22,12 +17,13 @@ function OrderItem({ id, user, status, itemList, created, updated, ordersHandler
           <div className="">
             Содержимое:
             {itemList.map((el, index) => (
-              <div key={index + 1} >
+              <div key={index + 1} className={style}>
                 <Link to={`/device/${el.id}`}>{el.name} </Link>
                 <div>Колличество: {el.count}</div>
               </div>
             ))}
           </div>
+          
         </div>
         <div className="ms-2 me-auto">
           <div className=""></div>
@@ -42,11 +38,11 @@ function OrderItem({ id, user, status, itemList, created, updated, ordersHandler
         <Badge bg="primary" pill>
           {status}
         </Badge>
-        <Button type="submit" variant="primary">Заказ получен</Button>
-      
-        </form>
-      </ListGroup.Item>
-    </ListGroup>
+        <Button type="submit" variant="primary">
+          Заказ получен
+        </Button>
+      </form>
+    </ListGroup.Item>
   );
 }
 

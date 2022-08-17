@@ -22,6 +22,11 @@
 }
 
 .orderList {
+
   padding: auto;
   
+}
+
+.orderItem {
+  display: flex;
 }
