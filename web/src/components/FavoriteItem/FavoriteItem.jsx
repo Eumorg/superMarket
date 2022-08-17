@@ -94,11 +94,12 @@ function FavoriteItem({
       <Card.Body>
         <Card.Title>{model}</Card.Title>
         <Card.Text>
-          <span>{`ЦЕНА: ${price}`}</span>
+          <span>{color}</span>
         </Card.Text>
         <Card.Text>
-          <span>{`ЦВЕТ: ${color}`}</span>
+          <span>{`$${price}`}</span>
         </Card.Text>
+        
         <Button onClick={addCart} variant="primary">
         {buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
         </Button>
