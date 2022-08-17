@@ -28,7 +28,7 @@ function OrderItem({ id, status, itemList, created, updated, ordersHandler }) {
         <div className="">
           <div className={style.header}>Количество</div>
           {itemList.map((el, index) => (
-            <div  key={index + 1} >
+            <div key={index + 1} >
               <div className={style.qty}>{el.count}</div>
             </div>
           ))}
@@ -45,7 +45,7 @@ function OrderItem({ id, status, itemList, created, updated, ordersHandler }) {
       <div>
         <div className={style.header}>Статус</div>
         <div className={style.status}>
-          <Badge   bg="primary" pill>
+          <Badge bg="primary" pill>
             {status}
           </Badge>
         </div>

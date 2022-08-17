@@ -6,7 +6,7 @@
   width: 1000px;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  /* align-items: start; */
   min-height: 100px;
 }
 
@@ -22,7 +22,7 @@
 .header {
   font-weight: 500;
   color: rgb(102, 102, 97);
-  
+
 }
 
 .col {
@@ -33,13 +33,13 @@
 }
 
 .link {
-  
+
   display: flex;
   text-decoration: none;
   color: black;
   text-align: center;
   vertical-align: middle;
-  
+
 }
 
 .qty {
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
 
-  
+
 }
 
 .count {
@@ -60,5 +60,5 @@
 }
 
 .status {
- padding-top: 13px;
+  padding-top: 13px;
 }

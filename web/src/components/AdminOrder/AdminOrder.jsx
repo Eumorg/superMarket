@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { useForm } from "react-hook-form";
+import Container from "react-bootstrap/Container";
 
 export const AdminOrder = () => {
   const [ordersAdmin, setOrdersAdmin] = useState([]);
@@ -68,38 +69,40 @@ export const AdminOrder = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Table>
-        <thead>
-          <tr>
-            <th>№ заказа</th>
-            <th>Имя покупателя</th>
-            <th>Статус заказа</th>
-            <th>Время создания заказа</th>
-            <th>Время обновления заказа</th>
-          </tr>
-        </thead>
-        <tbody>
-          {list.map((el) => (
-            <tr key={el.id}>
-              <td>{el.id}</td>
-              <td>{el.user}</td>
-              <td>
-                <select {...register(`${el.id}`)}>
-                  <option value="Создан">Создан</option>
-                  <option value="Оплачен">Оплачен</option>
-                  <option value="Собирается">Собирается</option>
-                  <option value="Отправлен">Отправлен</option>
-                  <option value="Выполнен">Выполнен</option>
-                </select>
-              </td>
-              <td>{el.created.slice(0, 10)}</td>
-              <td>{el.updated.slice(0, 10)}</td>
+    <Container>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Table>
+          <thead>
+            <tr>
+              <th>№ заказа</th>
+              <th>Имя покупателя</th>
+              <th>Статус заказа</th>
+              <th>Время создания заказа</th>
+              <th>Время обновления заказа</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-      <button type="submit">Сохранить</button>
-    </form>
+          </thead>
+          <tbody>
+            {list.map((el) => (
+              <tr key={el.id}>
+                <td>{el.id}</td>
+                <td>{el.user}</td>
+                <td>
+                  <select {...register(`${el.id}`)}>
+                    <option value="Создан">{el.status}</option>
+                    <option value="Оплачен">Оплачен</option>
+                    <option value="Собирается">Собирается</option>
+                    <option value="Отправлен">Отправлен</option>
+                    <option value="Выполнен">Выполнен</option>
+                  </select>
+                </td>
+                <td>{el.created.slice(0, 10)}</td>
+                <td>{el.updated.slice(0, 10)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <button type="submit">Сохранить</button>
+      </form>
+    </Container>
   );
 };
