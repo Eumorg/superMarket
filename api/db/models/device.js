@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, BOOLEAN
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Device extends Model {
@@ -10,16 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      this.hasMany(models.Cart, 
+        {  foreignKey: 'device_id' }
+        );
+    };
   }
   Device.init({
     model: DataTypes.STRING,
-    discription: DataTypes.STRING,
+    description: DataTypes.STRING,
     price: DataTypes.STRING,
-    type: DataTypes.NUMBER,
+    type: DataTypes.STRING,
     color: DataTypes.STRING,
-    picture: DataTypes.STRING
+    picture: DataTypes.STRING,
+    picture_2: DataTypes.STRING,
+    picture_3: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Device',

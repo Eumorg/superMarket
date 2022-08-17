@@ -10,14 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-    }
+      this.hasMany(models.Review, {
+        foreignKey: 'user_id',
+      });
+      // this.belongsToMany(models.Device, { through: 'Carts', foreignKey: 'user_id' });
+      this.hasMany(models.Order, {
+        foreignKey: 'user_id',
+      });
+    };
   }
   User.init({
     name: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING,
-    phone: DataTypes.NUMBER
+    phone: DataTypes.INTEGER,
+    isAdmin: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'User',

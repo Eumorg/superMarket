@@ -1,0 +1,65 @@
+.buttons {
+	display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.button {
+  margin: 2% 1%;
+}
+
+.img__window {
+	height: 300px;
+	width: 230px;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+.img__window__container {
+
+
+  width: 80%;
+  min-width: -30%;
+  height: auto;
+  
+
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: auto;
+
+  /* padding: 1% 10%; */
+
+
+}
+
+.card {
+ 
+  min-width: 70%;
+  height: auto;
+}
+
+.description {
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+}
+
+.title {
+  color: rgb(114, 114, 121);
+  margin-bottom: 0%;
+}
+
+.price {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.color {
+  color: rgb(114, 114, 121);
+}
