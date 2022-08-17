@@ -1,36 +1,43 @@
-.cotact{
+.container {
+    margin-bottom: 8%;
+}
+
+.cotact {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: stretch;
 }
-.text{
+
+.text {
     display: flex;
     justify-content: space-between;
     height: 300px;
     font-family: sans-serif;
     text-align: justify;
 }
- 
-.img{
-    width: 200px;
-     padding: 20px;
-} 
 
-.option{
+.img {
+    width: 200px;
+    padding: 20px;
+}
+
+.option {
     display: flex;
-	justify-content: space-around;;
+    justify-content: space-around;
+    ;
     align-items: center;
 }
-.map{
+
+.map {
     display: flex;
-	justify-content: space-between;
-   }
-.contact_img{
+    justify-content: space-between;
+}
+
+.contact_img {
     width: 30px;
 }
 
-.networks{
+.networks {
     display: flex;
     align-items: flex-end;
 }
-

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
+import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import OrderItem from "../OrderItem/OrderItem";
 import FavoriteItem from "../FavoriteItem/FavoriteItem";
@@ -95,75 +95,77 @@ export default function Profile({ state, stateChange }) {
   };
 
   return (
-    <div className={style.global}>
-      <div className={style.header}>
-        <div>
-          <h3>Привет, {user.payload}!</h3>
+    <Container>
+      <div className={style.global}>
+        <div className={style.header}>
+          <div>
+            <h3>Привет, {user.payload}!</h3>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <div className={style.title}>
-          <h3>Ваши заказы</h3>
+        <div>
+          <div className={style.title}>
+            <h3>Ваши заказы</h3>
+          </div>
+          <div className={style.orderList}>
+            {orders.length ? (
+              <><ListGroup as="ol">
+                {
+                  list.map((el, inx) => (
+                    <div key={inx + 1} className={style.orderItem}>
+                      <OrderItem
+                        as="li"
+                        id={el.id}
+                        itemList={el.device}
+                        user={el.user}
+                        status={el.status}
+                        created={el.created}
+                        updated={el.updated}
+                        ordersHandler={ordersHandler}
+                        state={state}
+                        stateChange={stateChange}
+                      />
+                    </div>
+
+                  ))}
+              </ListGroup></>
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
-        <div className={style.orderList}>
-          {orders.length ? (
-            <><ListGroup as="ol">
-              { 
-              list.map((el, inx) => (
-                <div key={inx + 1} className={style.orderItem}>
-                  <OrderItem
-                    as="li"
-                    id={el.id}
-                    itemList={el.device}
-                    user={el.user}
-                    status={el.status}
-                    created={el.created}
-                    updated={el.updated}
-                    ordersHandler={ordersHandler}
-                    state={state}
-                    stateChange={stateChange}
-                  />
-                </div>
-                
-              )) }
-            </ListGroup></>
+        <div className={style.title}>
+          <h3>Избранное</h3>
+        </div>
+        <div>
+          {!storage || storage.length === 0 ? (
+            <>
+              <div>Нет предметов в избранном</div>
+            </>
           ) : (
-            <></>
+            <>
+              <div className={style.fav}>
+                {storage.map((el, inx) => (
+                  <div key={inx + 1} className={style.card}>
+                    <FavoriteItem
+
+                      id={el.id}
+                      model={el.model}
+                      img={el.img}
+                      price={el.price}
+                      color={el.color}
+                      description={el.description}
+                      state={state}
+                      stateChange={stateChange}
+                      count={1}
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </div>
-      <div className={style.title}>
-        <h3>Избранное</h3>
-      </div>
-      <div>
-        {!storage || storage.length === 0 ? (
-          <>
-            <div>Нет предметов в избранном</div>
-          </>
-        ) : (
-          <>
-            <div className={style.fav}>
-              {storage.map((el, inx) => (
-                <div key={inx + 1} className={style.card}>
-                  <FavoriteItem
-              
-                    id={el.id}
-                    model={el.model}
-                    img={el.img}
-                    price={el.price}
-                    color={el.color}
-                    description={el.description}
-                    state={state}
-                    stateChange={stateChange}
-                    count={1}
-                  />
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-    </div>
+    </Container>
   );
 }
