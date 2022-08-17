@@ -92,9 +92,9 @@ function Header() {
             navbarScroll
           >
             <Link to="/catalog" className="nav-link">Каталог</Link>
-            {inputState.payload==="Biba"&&
-            <Link to="/admin" className="nav-link">Кнопка для админа</Link>
-  }
+            {inputState.payload === "Biba" &&
+              <Link to="/admin" className="nav-link">Кнопка для админа</Link>
+            }
             <Link className="nav-link" to="contact"> Контакты</Link>
             <Link className="nav-link" to='/allreviews'>Отзывы о магазине</Link>
           </Nav>
