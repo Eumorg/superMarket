@@ -1,9 +1,10 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: space-evenly;
   height: 100%;
+  margin: 5% auto;
 }
 
 .card {
@@ -50,5 +51,8 @@
 .container {
   display: flex;
   flex-direction: column;
+}
 
+.card {
+  width: 20%;
 }
