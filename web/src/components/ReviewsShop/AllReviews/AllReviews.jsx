@@ -16,7 +16,6 @@ export default function AllReviews({ state, stateChange }) {
    return (
       <Container className={style.container}>
          <div className={style.title__text}>
-            <h1 className={style.reviews__title_h1} >Отзывы о магазине</h1>
             {inputState.payload ? (
                <UserReviews state={state} stateChange={stateChange} />
             ) : (
@@ -32,14 +31,15 @@ export default function AllReviews({ state, stateChange }) {
                </>
             )}
          </div>
+         {/* <h2 className={style.reviews__title_h1} >Что говорят покупатели</h2> */}
          <div className={style.reviews}>
             {allReviews.map((el) => (
                <Row key={el.id}>
                   <Col>
                      <div className={style.reviews__block}>
                         <div className={style.reviews__titles}>
-                           <h5>{`Пользователь: ${el.username} оставил отзыв`}</h5>
-                           <h5>{`Дата отзыва: ${el.createdAt.slice(0, 10)}`}</h5>
+                           <h5>{`Покупатель: ${el.username} оставил отзыв`}</h5>
+                           <h5>{`Дата: ${el.createdAt.slice(0, 10)}`}</h5>
                         </div>
                         <p className={style.reviews__title_p}>
                            {el.post}
