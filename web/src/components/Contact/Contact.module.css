@@ -1,21 +1,19 @@
 .cotact{
     display: flex;
     justify-content: flex-start; 
+    align-items: stretch;
 }
 .text{
     display: flex;
     justify-content: space-between;
     height: 300px;
+    font-family: sans-serif;
+    text-align: justify;
 }
  
 .img{
-    display: flex;
-	justify-content: space-between;
     width: 200px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-
+     padding: 20px;
 } 
 
 .option{
@@ -26,9 +24,13 @@
 .map{
     display: flex;
 	justify-content: space-between;
-    margin: 100px;
-}
+   }
 .contact_img{
     width: 30px;
-
 }
+
+.networks{
+    display: flex;
+    align-items: flex-end;
+}
+
