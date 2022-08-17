@@ -18,7 +18,8 @@
 
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  color: rgb(113, 112, 112);
 }
 
 .orderList {
@@ -29,4 +30,11 @@
 
 .orderItem {
   display: flex;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  color: rgb(113, 112, 112);
 }

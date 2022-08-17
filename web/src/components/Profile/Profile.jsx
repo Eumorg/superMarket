@@ -103,7 +103,7 @@ export default function Profile({ state, stateChange }) {
       </div>
 
       <div>
-        <div>
+        <div className={style.title}>
           <h3>Ваши заказы</h3>
         </div>
         <div className={style.orderList}>
@@ -133,7 +133,7 @@ export default function Profile({ state, stateChange }) {
           )}
         </div>
       </div>
-      <div>
+      <div className={style.title}>
         <h3>Избранное</h3>
       </div>
       <div>

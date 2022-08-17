@@ -1,13 +1,64 @@
 .block {
-  display: grid;
-
-  
+  margin: 10px auto;
+  padding: auto px;
+  border: 1px solid;
+  border-radius: 10px;
   width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: start;
+  min-height: 100px;
 }
 
-.device {
+.num {
+  width: 10%;
+  padding: 4%;
+  margin: 50 auto;
+  font-weight: 500;
+  color: rgb(110, 110, 108);
+  text-align: center;
+}
+
+.header {
+  font-weight: 500;
+  color: rgb(102, 102, 97);
+  
+}
+
+.col {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.link {
+  
+  display: flex;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+  
+}
+
+.qty {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+
+.count {
+  width: 100px;
+}
+
+.button {
+  padding: 30px 20px;
+}
+
+.status {
+ padding-top: 13px;
 }
