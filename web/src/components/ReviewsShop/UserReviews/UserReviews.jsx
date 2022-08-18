@@ -44,7 +44,7 @@ export default function UserReviews({ state, stateChange }) {
             required
             autoComplete="off"
             defaultValue={""} />
-         <label className="box__rewiews__label" htmlFor="msg"><span className="box__rewiews__span">Какой будет ваш отзыв</span></label>
+         <label className="box__rewiews__label" htmlFor="msg"><span className="box__rewiews__span">Каким будет ваш отзыв</span></label>
          <input
             className="box__rewiews__input"
             onClick={getText}

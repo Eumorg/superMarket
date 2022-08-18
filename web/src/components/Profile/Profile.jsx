@@ -140,7 +140,7 @@ export default function Profile({ state, stateChange }) {
         <div>
           {!storage || storage.length === 0 ? (
             <>
-              <div>Нет предметов в избранном</div>
+              <div className={style.none}>Нет предметов в избранном</div>
             </>
           ) : (
             <>

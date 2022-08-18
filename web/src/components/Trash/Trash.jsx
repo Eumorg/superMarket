@@ -10,7 +10,7 @@ export const Trash = ({ state, stateChange }) => {
 	storage = JSON.parse(storage);
 
 	const devicesPriceAll = () =>
-		storage.reduce((acc, el) => {
+		storage?.reduce((acc, el) => {
 			return (acc += +el.price * el.count);
 		}, 0);
 

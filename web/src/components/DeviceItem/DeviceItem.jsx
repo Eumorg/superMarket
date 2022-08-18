@@ -63,7 +63,9 @@ function DeviceItem({ id, model, img, price, color, description, count }) {
 
   function addCart(e) {
     e.stopPropagation();
-    const props = { id, model, img, price, color, description, count };
+    const props = { id, model, img, price, color, description, count};
+
+    count = 1
 
     let temp = [];
     let before = localStorage.getItem("cart");
