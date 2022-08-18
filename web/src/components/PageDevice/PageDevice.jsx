@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classes from './style.module.css';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
+import Container from "react-bootstrap/Container";
 
 export const PageDevice = () => {
 	// Отрисовка девайсов при перезагрузки страницы
@@ -116,111 +117,62 @@ export const PageDevice = () => {
 	}
 	return (
 		<>
-			<div className={classes.device__container}>
-				<div className={classes.device__image__container}>
-					{/* <img src={devices.picture} className={classes.device__image} alt='' /> */}
-					<div className={classes.device__container__slider}>
-						<Carousel>
-							<Carousel.Item>
-								<img
-									className='d-block w-100'
-									src={devices.picture}
-									alt='First slide'
-								/>
-							</Carousel.Item>
-							<Carousel.Item>
-								<img
-									className='d-block w-100'
-									src={devices.picture_2}
-									alt='Second slide'
-								/>
-							</Carousel.Item>
-							<Carousel.Item>
-								<img
-									className='d-block w-100'
-									src={devices.picture_3}
-									alt='Third slide'
-								/>
-							</Carousel.Item>
-						</Carousel>
+			<Container fluid className={classes.container}>
+				<div className={classes.device__container}>
+					<div className={classes.device__image__container}>
+						<div className={classes.device__container__slider}>
+							<Carousel >
+								<Carousel.Item>
+									<img
+										// style={{ width: '100px', height: '400px' }}
+										// className={classes['d-block'] && classes['w-100']}
+										className='d-block w-100'
+										src={devices.picture}
+										alt='First slide'
+									/>
+								</Carousel.Item>
+								<Carousel.Item>
+									<img
+										// style={{ width: '100px', height: '400px' }}
+										// className={classes['d-block'] && classes['w-100']}
+										className='d-block w-100'
+										src={devices.picture_2}
+										alt='Second slide'
+									/>
+								</Carousel.Item>
+								<Carousel.Item>
+									<img
+										// style={{ width: '100px', height: '400px' }}
+										// className={classes['d-block'] && classes['w-100']}
+										className='d-block w-100'
+										src={devices.picture_3}
+										alt='Third slide'
+									/>
+								</Carousel.Item>
+							</Carousel>
+						</div>
+					</div>
+					<div className={classes.device__spec}>
+						<p className={classes.device}>{devices.model}</p>
+						<p>{devices.color}</p>
+						<p className={classes.price__device}>{devices.price}</p>
+						<p className={classes.text__desc}>{devices.description}</p>
+						<div className={classes.div__but}>
+							<button
+								onClick={addStorage}
+								type='button'
+								className='btn btn-primary'
+							>
+								{favCheck(id) ? <>В избранное</> : <>В избранном</>}
+							</button>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button onClick={addCart} type='button' className='btn btn-primary'>
+								{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
+							</button>
+						</div>
 					</div>
 				</div>
-				<div className={classes.device__spec}>
-					<p className={classes.device}>{devices.model}</p>
-					<p>{devices.color}</p>
-					<p className={classes.price__device}>{devices.price}</p>
-					<p className={classes.text__desc}>{devices.description}</p>
-					<div className={classes.div__but}>
-						<button
-							onClick={addStorage}
-							type='button'
-							className='btn btn-primary'
-						>
-							{favCheck(id) ? <>В избранное</> : <>В избранном</>}
-						</button>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button onClick={addCart} type='button' className='btn btn-primary'>
-							{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
-						</button>
-					</div>
-				</div>
-			</div>
+			</Container>
 		</>
 	);
 };
-
-// return (
-// 	<>
-// 		<div className={classes.device__container}>
-// 			<div className={classes.device__image__container}>
-// 				{/* <img src={devices.picture} className={classes.device__image} alt='' /> */}
-// 				<div className={classes.device__container__slider}>
-// 					<Carousel>
-// 						<Carousel.Item>
-// 							<img
-// 								className='d-block w-100'
-// 								src={devices.picture}
-// 								alt='First slide'
-// 							/>
-// 						</Carousel.Item>
-// 						<Carousel.Item>
-// 							<img
-// 								className='d-block w-100'
-// 								src={devices.picture_2}
-// 								alt='Second slide'
-// 							/>
-// 						</Carousel.Item>
-// 						<Carousel.Item>
-// 							<img
-// 								className='d-block w-100'
-// 								src={devices.picture_3}
-// 								alt='Third slide'
-// 							/>
-// 						</Carousel.Item>
-// 					</Carousel>
-// 				</div>
-// 			</div>
-// 			<div className={classes.device__spec}>
-// 				<p className={classes.device}>{devices.model}</p>
-
-// 				<p>{devices.color}</p>
-// 				<span className={classes.font__device}>Цена:</span>
-// 				<p className={classes.price__device}>{devices.price}</p>
-// 				<span className={classes.font__device}>Описание товара</span>
-// 				<p>{devices.description}</p>
-// 				<button
-// 					onClick={addStorage}
-// 					type='button'
-// 					className='btn btn-primary'
-// 				>
-// 					{favCheck(id) ? <>В избранное</> : <>В избранном</>}
-// 				</button>
-// 				<br />
-// 				<button onClick={addCart} type='button' className='btn btn-primary'>
-// 					{buttonCheck(id) ? <>В корзину</> : <>В корзине</>}
-// 				</button>
-// 			</div>
-// 		</div>
-// 	</>
-// );
-// };

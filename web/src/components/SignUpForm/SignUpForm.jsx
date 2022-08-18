@@ -37,6 +37,7 @@ export const SignUpForm = () => {
           <h6 className="material-icons-data">Введите ваш</h6>
           <form onSubmit={onSubmitHandler} className="login-form">
             <input onChange={inputHandler} name="name" type="text" placeholder="Логин" required />
+            <input onChange={inputHandler} name="phone" type="tel" placeholder="Телефон" required />
             <input onChange={inputHandler} name="email" type="email" placeholder="Почту" required />
             <input onChange={inputHandler} name="password" type="password" placeholder="Пароль" required pattern="[A-Za-z0-9_.]+$" />
             <button>Регистрация</button>
@@ -44,21 +45,5 @@ export const SignUpForm = () => {
         </div>
       </div >
     </Container>
-    // <Form onSubmit={onSubmitHandler} >
-    //   <h1>Регистрация</h1>
-    //   <FormGroup className="mb-3">
-    //     <Form.Label htmlFor="disabledTextInput">Логин</Form.Label>
-    //     <Form.Control onChange={inputHandler} name="name" id="disabledTextInput" placeholder="Введите ваш логин" />
-    //   </FormGroup>
-    //   <Form.Label>Email адрес</Form.Label>
-    //   <Form.Control onChange={inputHandler} type="email" name="email" placeholder=" Введите ваш Email" />
-    //   <FormGroup className="mb-3" controlId="formBasicPassword">
-    //     <Form.Label>Пароль</Form.Label>
-    //     <Form.Control onChange={inputHandler} type="password" name="password" placeholder="Пароль" />
-    //   </FormGroup>
-    //   <Button variant="primary" type="submit">
-    //     Регистрация
-    //   </Button>
-    // </Form>
   )
 }

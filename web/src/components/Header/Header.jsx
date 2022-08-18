@@ -96,7 +96,7 @@ function Header() {
               <Link to="/admin" className="nav-link">Кнопка для админа</Link>
             }
             <Link className="nav-link" to="contact"> Контакты</Link>
-            <Link className="nav-link" to='/allreviews'>Отзывы о магазине</Link>
+            <Link className="nav-link" to='/allreviews'>Отзывы</Link>
           </Nav>
           <Link to="/trash" className="nav-link basket">Корзина</Link>
           <div className="header__form__search">
