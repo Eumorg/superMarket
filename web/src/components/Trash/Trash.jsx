@@ -11,11 +11,12 @@ export const Trash = ({ state, stateChange }) => {
 
 	const devicesPriceAll = () =>
 		storage.reduce((acc, el) => {
-			return (acc += +el.price * el.count);
+			acc += +el.price * el.count;
+			return '$' + acc
 		}, 0);
 
 	return (
-		<Container>
+		<Container className={style.container}>
 			<div>
 				<h1 className={style.trash__title}>Корзина</h1>
 				<div className={style.trash__container}>

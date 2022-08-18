@@ -61,7 +61,7 @@ export function CartItem({ id, model, price, inx, state, stateChange, count }) {
 			</div>
 			<div className={style.dev__price}>
 				<strong>Цена</strong>
-				{price}
+				{`$${price}`}
 			</div>
 			<div>
 				<strong>Количество</strong>
