@@ -4,6 +4,7 @@ import DeviceItem from "../DeviceItem/DeviceItem";
 import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import style from "./Main.module.css";
 import { Slides } from "../Slides/Slides";
 
@@ -70,19 +71,21 @@ function Main() {
           <Slides />
           <h1 className={style.header}>Новинки</h1>
           <div className={style.list}>
-            {filterModel.slice(-4).reverse().map((device) => (
-              <Col key={device.id} className={style.card}>
-                <DeviceItem
-                  id={device.id}
-                  model={device.model}
-                  img={device.picture}
-                  price={device.price}
-                  color={device.color}
-                  description={device.description}
-                  count={1}
-                />
-              </Col>
-            ))}
+            <Row>
+              {filterModel.slice(-4).reverse().map((device) => (
+                <Col key={device.id} className={style.card}>
+                  <DeviceItem
+                    id={device.id}
+                    model={device.model}
+                    img={device.picture}
+                    price={device.price}
+                    color={device.color}
+                    description={device.description}
+                    count={1}
+                  />
+                </Col>
+              ))}
+            </Row>
           </div>
         </div>
       </div>

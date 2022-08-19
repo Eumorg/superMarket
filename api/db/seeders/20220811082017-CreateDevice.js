@@ -261,6 +261,70 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					model: 'IPad pro m1',
+					description:
+						'iPad Pro оснащён чипом Apple M1 — это высочайшая производительность и возможность целый день работать без подзарядки.3 Дисплей Liquid Retina 11 дюймов впечатляет не только качеством, но и компактностью.',
+					price: '1200',
+					type: 'tablet',
+					color: 'space gray',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/fc9/fc9f901d943cfbe4ef07efdee84b802e.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/cf1/cf1df70049d80c2bd0809c5b4139c301.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/757/757fe5eeaac96b8dd22b849976de1327.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'Apple airpods 2',
+					description:
+						'Увеличенное время работы в режиме телефонного разговора. Активация Siri с помощью голоса. Новый футляр с возможностью беспроводной зарядки (продается отдельно). Все это AirPods - уникальные беспроводные наушники.',
+					price: '500',
+					type: 'watch',
+					color: 'white',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/9f6b6160354a68322edb2d54e25969a9/11.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/540/12.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/ecc/13.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'MacBook m1 max',
+					description:
+						'Новый MacBook Pro с беспрецедентной производительностью открывает невероятные возможности профессионалам. Вы можете выбрать мощный чип M1 Pro или ещё более мощный M1 Max — для максимально сложных задач.',
+					price: '1300',
+					type: 'laptop',
+					color: 'space gray',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/9ee/macbook_pro_14-in_q122_space_gray_pdp_image_position-1__ru-ru.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/0b5/macbook_pro_14-in_q122_space_gray_pdp_image_position-2__ru-ru.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/006/macbook_pro_14-in_q122_space_gray_pdp_image_position-4__ru-ru.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'MacBook 12',
+					description:
+						'Создавая MacBook, в Apple поставили перед собой цель, которая казалась невозможной: добиться абсолютной функциональности и удобства самого тонкого и легкого ноутбука Mac. При своей компактности он мощнее предыдущих моделей.',
+					price: '1500',
+					type: 'laptop',
+					color: 'silver',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/0e8/macbook-2017-purefront-open-silver-screen.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/e8c/macbook_hero_silver_iso_ru-ru-screen.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/d620ec773377ed95241a77b3496055e2/2.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);

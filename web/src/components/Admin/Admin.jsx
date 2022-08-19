@@ -17,53 +17,52 @@ export const Admin = () => {
   const dowlandHandler = async (event) => {
     event.preventDefault();
     const formData = { model: inputAdmin.model, description: inputAdmin.description, price: inputAdmin.price, type: inputAdmin.type, color: inputAdmin.color }
-   const response = await fetch ("http://localhost:4000/dow",{
-    method: "POST",
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData)
-  })
- if(response.ok){
-  navigate('/')
- }
- }
+    const response = await fetch("http://localhost:4000/dow", {
+      method: "POST",
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    })
+    if (response.ok) {
+      navigate('/')
+    }
+  }
 
 
   return (
-    <Container>
-      <Link to="/admin/admiborder"> Список заказов</Link>
+    <Container style={{ minHeight: 'calc(86vh - 80px' }}>
+      <Link style={{ margin: '10px', padding: '1%', fontSize: '20px', textDecoration: 'none' }} to="/admin/admiborder"> Список заказов</Link>
       <Form >
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text >Тип устройства</InputGroup.Text>
-          <Form.Control onChange={inputHandler} name="description" as="textarea" aria-label="Тип устройства"  />
+          <Form.Control onChange={inputHandler} name="description" as="input" aria-label="Тип устройства" />
         </InputGroup>
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text>Модель</InputGroup.Text>
-          <Form.Control onChange={inputHandler} name="model" as="textarea" aria-label=" Модель"/>
+          <Form.Control onChange={inputHandler} name="model" as="input" aria-label=" Модель" />
         </InputGroup>
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text>Характеристики</InputGroup.Text>
           <Form.Control name="price" onChange={inputHandler} as="textarea" aria-label="Характеристики" />
         </InputGroup>
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text>Цена</InputGroup.Text>
-          <Form.Control name="type" onChange={inputHandler} as="textarea" aria-label="price" />
+          <Form.Control name="type" onChange={inputHandler} as="input" aria-label="price" />
         </InputGroup>
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text >Цвет</InputGroup.Text>
-          <Form.Control name="color" onChange={inputHandler} as="textarea" aria-label="Цвет" />
+          <Form.Control name="color" onChange={inputHandler} as="input" aria-label="Цвет" />
         </InputGroup>
-        <InputGroup>
+        <InputGroup style={{ margin: '10px' }}>
           <InputGroup.Text name="picture" onChange={inputHandler}>Изображение</InputGroup.Text>
-          <Form.Control as="textarea" aria-label="Изображение" />
+          <Form.Control as="input" aria-label="Изображение" />
         </InputGroup>
-
-        <Button onClick={dowlandHandler} variant="primary" type="submit">
+        <Button style={{ margin: '10px' }} onClick={dowlandHandler} variant="primary" type="submit">
           Добавить
         </Button>
       </Form>
-    </Container>
+    </Container >
   )
 }
