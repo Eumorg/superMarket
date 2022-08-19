@@ -1,4 +1,9 @@
-
+.container {
+   width: 100%;
+   max-width: 1600px;
+   margin-top: 8%;
+   min-height: calc(100vh - 80px);
+}
 
 .catalog {
    width: 100%;
@@ -8,28 +13,28 @@
 }
 
 .filter {
-   width: 30%;
+   width: 20%;
    display: flex;
    flex-direction: column;
    top: 5%;
-
+   margin-right: 3%;
 }
 
 .filter__device {
-   padding-left: 10%;
+   /* padding-left: 10%; */
    position: sticky;
    top: 5%;
 }
 
 .device {
-   width: 70%;
-   
+   width: 80%;
+
 }
 
 .filter__title__1 {
    margin-top: 20%;
    margin-bottom: 20%;
-   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .filter__title__4 {
@@ -39,11 +44,10 @@
 .form__filter {
    margin-top: 5%;
    margin-left: 10%;
-   font-family:Georgia, 'Times New Roman', Times, serif;
-   font-size:30px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 30px;
 }
 
 .device__item {
    margin: 2% auto;
 }
-
