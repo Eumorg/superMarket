@@ -32,7 +32,7 @@ function Catalog() {
     } else {
       setFilterDevise(devices);
     }
-  }, [typeSelected]);
+  }, [devices, typeSelected]);
 
   const typeDevice = [
     { id: 1, text: "Рhone", type: "phone" },
