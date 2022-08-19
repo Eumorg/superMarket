@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-import classes from "./style.module.css";
-import { useParams } from "react-router-dom";
-import Carousel from "react-bootstrap/Carousel";
-=======
 import React, { useState, useEffect } from 'react';
 import classes from './style.module.css';
 import { useParams } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import Container from "react-bootstrap/Container";
->>>>>>> dev
 
 export const PageDevice = () => {
   // Отрисовка девайсов при перезагрузки страницы
