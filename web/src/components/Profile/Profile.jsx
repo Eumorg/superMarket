@@ -90,8 +90,7 @@ export default function Profile({ state, stateChange }) {
     if (response.status === 200) {
       getData();
     }
-    // .then((response)=>response.json())
-    // .then((data)=>setOrders(data))
+    
   };
 
   return (
