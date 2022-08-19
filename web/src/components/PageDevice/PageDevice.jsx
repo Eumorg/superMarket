@@ -114,6 +114,13 @@ export const PageDevice = () => {
 
 		before = JSON.parse(before);
 
+    if (before) {
+      temp = temp.concat(before);
+    }
+    if (comparing(temp, id)) {
+      temp.push(props);
+    }
+
 		localStorage.setItem(`favorite`, JSON.stringify(temp));
 		setCart(!cart);
 	}
@@ -126,8 +133,7 @@ export const PageDevice = () => {
 							<Carousel >
 								<Carousel.Item>
 									<img
-										// style={{ width: '100px', height: '400px' }}
-										// className={classes['d-block'] && classes['w-100']}
+								
 										className='d-block w-100'
 										src={devices.picture}
 										alt='First slide'
@@ -135,8 +141,7 @@ export const PageDevice = () => {
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										// style={{ width: '100px', height: '400px' }}
-										// className={classes['d-block'] && classes['w-100']}
+									
 										className='d-block w-100'
 										src={devices.picture_2}
 										alt='Second slide'
@@ -144,8 +149,7 @@ export const PageDevice = () => {
 								</Carousel.Item>
 								<Carousel.Item>
 									<img
-										// style={{ width: '100px', height: '400px' }}
-										// className={classes['d-block'] && classes['w-100']}
+									
 										className='d-block w-100'
 										src={devices.picture_3}
 										alt='Third slide'
