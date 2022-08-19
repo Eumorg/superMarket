@@ -293,6 +293,38 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					model: 'MacBook m1 max',
+					description:
+						'Новый MacBook Pro с беспрецедентной производительностью открывает невероятные возможности профессионалам. Вы можете выбрать мощный чип M1 Pro или ещё более мощный M1 Max — для максимально сложных задач.',
+					price: '1300',
+					type: 'laptop',
+					color: 'space gray',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/9ee/macbook_pro_14-in_q122_space_gray_pdp_image_position-1__ru-ru.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/0b5/macbook_pro_14-in_q122_space_gray_pdp_image_position-2__ru-ru.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/006/macbook_pro_14-in_q122_space_gray_pdp_image_position-4__ru-ru.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					model: 'MacBook 12',
+					description:
+						'Создавая MacBook, в Apple поставили перед собой цель, которая казалась невозможной: добиться абсолютной функциональности и удобства самого тонкого и легкого ноутбука Mac. При своей компактности он мощнее предыдущих моделей.',
+					price: '1500',
+					type: 'laptop',
+					color: 'silver',
+					picture:
+						'https://cdn.svyaznoy.ru/upload/iblock/0e8/macbook-2017-purefront-open-silver-screen.jpg/resize/870x725/hq/',
+					picture_2:
+						'https://cdn.svyaznoy.ru/upload/iblock/e8c/macbook_hero_silver_iso_ru-ru-screen.jpg/resize/870x725/hq/',
+					picture_3:
+						'https://cdn.svyaznoy.ru/upload/iblock/d620ec773377ed95241a77b3496055e2/2.jpg/resize/870x725/hq/',
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);
