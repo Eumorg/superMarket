@@ -30,9 +30,8 @@ Database:
 Для запуска приложения необходимо выполнить команду npm run dev из папки API, затем выполнить команду npm start из папки WEB
 
 ![image](https://user-images.githubusercontent.com/96069898/187669340-82de685a-ac93-49e6-889c-5d82dd95ae5c.png)
-![image](https://user-images.githubusercontent.com/96069898/187669536-1656e410-e11b-4cd0-85bf-ba764cd3a0b8.png)
 ![image](https://user-images.githubusercontent.com/96069898/187669705-6ed756dd-cea8-4420-85eb-644893f940db.png)
-![image](https://user-images.githubusercontent.com/96069898/187669842-544e4257-c46e-48d6-a11b-137fc84c775f.png)
+![image](https://user-images.githubusercontent.com/96069898/187670074-7da69e64-24fe-4161-819b-d7fcb5e7f324.png)
 ![image](https://user-images.githubusercontent.com/96069898/187669904-f13780cb-6c8d-41ca-b47e-91ec882afa3a.png)
 
 
