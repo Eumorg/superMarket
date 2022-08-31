@@ -12,7 +12,7 @@ export const Trash = ({ state, stateChange }) => {
   const devicesPriceAll = () =>
     storage?.reduce((acc, el) => {
       acc += +el.price * el.count;
-      return "$" + acc;
+      return  + acc;
     }, 0);
 
   return (
@@ -45,7 +45,7 @@ export const Trash = ({ state, stateChange }) => {
             <h3 className={style.trash__title}>
               {" "}
               {!storage || storage.length ? (
-                <>Итого: {devicesPriceAll()}</>
+                <>Итого: ${devicesPriceAll()}</>
               ) : (
                 <></>
               )}
