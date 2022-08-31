@@ -18,10 +18,10 @@ Database:
 -Sequelize, PostgreSQL
 
 Команда разработчиков:
-https://github.com/Eumorg (Team Leader)
-https://github.com/Danill212
-https://github.com/VitalikN7
-https://github.com/IvanNovokshanov
+-https://github.com/Eumorg (Team Leader)
+-https://github.com/Danill212
+-https://github.com/VitalikN7
+-https://github.com/IvanNovokshanov
 
 
 Для запуска приложения необходимо выполнить команду npm run dev из папки API, затем выполнить команду npm start из папки WEB
