@@ -22,13 +22,12 @@
 .header {
   font-weight: 500;
   color: rgb(102, 102, 97);
-
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 20%;
 }
 

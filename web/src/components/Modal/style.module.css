@@ -153,3 +153,9 @@
 	margin: 0;
 	padding: 5px 0;
 }
+
+.bat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

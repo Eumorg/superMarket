@@ -1,14 +1,10 @@
 .list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   align-content: space-evenly;
   height: 100%;
   margin: 5% auto;
-}
-
-.card {
-  margin: 30px 20px;
 }
 
 .header {

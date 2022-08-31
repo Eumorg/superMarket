@@ -1,26 +1,24 @@
+.container {
+	width: 100%;
+	max-width: 1600px;
+	min-height: calc(86vh - 80px);
+}
+
 .device__container {
-	max-width: 1170px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-top: 16px;
-	padding-bottom: 16px;
-	margin-top: 100px;
+	width: 60%;
+	height: 80% !important;
 	display: flex;
-	justify-content: space-around;
-	border: 1px solid;
-	height: 1000px;
+	margin-top: 10% !important;
+	margin-left: 20%;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid; */
+	/* height: 700px; */
 	border-radius: 15px;
-	background-color: rgb(251, 250, 247);
 }
 
 .device__image {
-	/* width: 450px; */
 	max-height: 500px;
-	/* border: 1px solid;
-	border-radius: 15px;
-	background-color: white; */
 	max-width: 100%;
 	max-height: 100%;
 	display: block;
@@ -35,6 +33,7 @@
 	align-items: center;
 	padding-top: 30px;
 }
+
 .font__device {
 	font-size: large;
 	font-size: 20px;
@@ -42,12 +41,11 @@
 }
 
 .device__image__container {
-	/* margin-top: 50px; */
 	width: 450px;
 	height: 600px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 }
 
 .description__device {
@@ -60,6 +58,7 @@
 	font-size: 50px;
 	font-weight: 600;
 }
+
 .device {
 	font-size: 40px;
 }
@@ -76,8 +75,16 @@
 	margin-top: 50px;
 	display: flex;
 	justify-content: space-around;
-	/* border: 1px solid; */
-	/* height: 750px; */
-	/* border-radius: 15px;
-	background-color: rgb(251, 250, 247); */
+}
+
+.div__but {
+	display: flex;
+}
+
+.text__desc {
+	text-align: justify;
+	width: 300px;
+	padding-bottom: 50px;
+	color: rgb(162, 164, 164);
+	font-weight: 600;
 }

@@ -38,7 +38,7 @@ export default function AllReviews({ state, stateChange }) {
                   <Col>
                      <div className={style.reviews__block}>
                         <div className={style.reviews__titles}>
-                           <h5>{`Покупатель: ${el.username} оставил отзыв`}</h5>
+                           <h5>{`Покупатель ${el.username} оставил отзыв`}</h5>
                            <h5>{`Дата: ${el.createdAt.slice(0, 10)}`}</h5>
                         </div>
                         <p className={style.reviews__title_p}>

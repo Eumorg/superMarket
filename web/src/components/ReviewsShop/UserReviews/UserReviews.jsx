@@ -27,13 +27,6 @@ export default function UserReviews({ state, stateChange }) {
    return (
       <div className='box__rewiews'>
          <h1 className='box__rewiews__h1'>Оставьте Отзыв</h1>
-         {/* <input
-            type="text"
-            name="name"
-            className="question box__rewiews__input"
-            id="nme" required
-            autoComplete="off" />
-         <label className="box__rewiews__label" htmlFor="nme"><span className="box__rewiews__span">Как вас зовут</span></label> */}
          <textarea
             value={val}
             onChange={(e) => setVal(e.target.value)}
@@ -44,7 +37,7 @@ export default function UserReviews({ state, stateChange }) {
             required
             autoComplete="off"
             defaultValue={""} />
-         <label className="box__rewiews__label" htmlFor="msg"><span className="box__rewiews__span">Какой будет ваш отзыв</span></label>
+         <label className="box__rewiews__label" htmlFor="msg"><span className="box__rewiews__span">Каким будет ваш отзыв</span></label>
          <input
             className="box__rewiews__input"
             onClick={getText}

@@ -32,13 +32,13 @@ function Catalog() {
     } else {
       setFilterDevise(devices);
     }
-  }, [typeSelected]);
+  }, [devices, typeSelected]);
 
   const typeDevice = [
     { id: 1, text: "Рhone", type: "phone" },
     { id: 2, text: "Ipad", type: "tablet" },
     { id: 3, text: "MacBook", type: "laptop" },
-    { id: 4, text: "Watch", type: "watch" },
+    { id: 4, text: "Accesories", type: "watch" },
   ];
 
   function types(device) {
@@ -53,7 +53,7 @@ function Catalog() {
   }
 
   return (
-    <Container>
+    <Container fluid className={style.container}>
       <div className={style.catalog}>
         <div className={style.filter}>
           <div className={style.filter__device}>

@@ -90,8 +90,7 @@ export default function Profile({ state, stateChange }) {
     if (response.status === 200) {
       getData();
     }
-    // .then((response)=>response.json())
-    // .then((data)=>setOrders(data))
+    
   };
 
   return (
@@ -140,7 +139,7 @@ export default function Profile({ state, stateChange }) {
         <div>
           {!storage || storage.length === 0 ? (
             <>
-              <div>Нет предметов в избранном</div>
+              <div className={style.none}>Нет предметов в избранном</div>
             </>
           ) : (
             <>

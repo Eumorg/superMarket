@@ -10,53 +10,39 @@ export const Trash = ({ state, stateChange }) => {
   storage = JSON.parse(storage);
 
   const devicesPriceAll = () =>
-    storage.reduce((acc, el) => {
-      return (acc += +el.price * el.count);
+    storage?.reduce((acc, el) => {
+      acc += +el.price * el.count;
+      return  + acc;
     }, 0);
 
   return (
-    <Container>
-      <div className={style.container}>
-        <h1>Корзина</h1>
-        <div>
-          <div>
-            <strong>
-              <div className={style.description}>
-                <div>№</div>
-                <div>Устройство</div>
-                <div>Цена</div>
-                <div>Количество</div>
-              </div>
-            </strong>
-
-            {!storage || storage.length === 0 ? (
-              <>
-                <div>
-                  <div>Нет предметов в корзине</div>
+    <Container className={style.container}>
+      <div>
+        <h1 className={style.trash__title}>Корзина</h1>
+        <div className={style.trash__container}>
+          {!storage || storage.length === 0 ? (
+            <div>Нет предметов в корзине</div>
+          ) : (
+            <>
+              {storage.map((el, inx) => (
+                <div key={inx + 1}>
+                  <CartItem
+                    id={el.id}
+                    model={el.model}
+                    price={el.price}
+                    state={state}
+                    stateChange={stateChange}
+                    inx={inx}
+                    count={el.count}
+                  />
                 </div>
-              </>
-            ) : (
-              <>
-                {storage.map((el, inx) => (
-                  <div key={inx + 1}>
-                    <CartItem
-                      id={el.id}
-                      model={el.model}
-                      price={el.price}
-                      state={state}
-                      stateChange={stateChange}
-                      inx={inx}
-                      count={el.count}
-                    />
-                  </div>
-                ))}
-              </>
-            )}
-          </div>
+              ))}
+            </>
+          )}
         </div>
         <div>
           <div>
-            <h3>
+            <h3 className={style.trash__title}>
               {" "}
               {!storage || storage.length ? (
                 <>Итого: ${devicesPriceAll()}</>

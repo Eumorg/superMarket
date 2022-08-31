@@ -1,6 +1,32 @@
-.description{
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: 30px ;
+.container {
+	min-height: calc(86vh - 80px);
+}
+
+.description {
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+	margin: 20px;
+}
+
+.trash__container {
+	max-width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border: 1px solid;
+	height: auto;
+	border-radius: 15px;
+}
+
+.trash__title {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

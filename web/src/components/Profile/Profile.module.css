@@ -1,5 +1,5 @@
 .global {
-   padding: 50px 100px;
+  padding: 50px 100px;
 }
 
 
@@ -8,11 +8,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-evenly;
-  
+
 }
 
 .card {
-  
+
   height: 37rem;
 }
 
@@ -26,7 +26,7 @@
 .orderList {
 
   padding: auto;
-  
+
 }
 
 .orderItem {
@@ -38,4 +38,9 @@
   justify-content: center;
   padding-top: 5%;
   color: rgb(113, 112, 112);
+}
+
+.none {
+  margin-top: 10%;
+  text-align: center;
 }
