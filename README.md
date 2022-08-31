@@ -15,14 +15,17 @@ Backend:
 - Node.js, Express
 
 Database:
--Sequelize, PostgreSQL
+<ul>
+  <li>Sequelize, PostgreSQL</li>
+</ul>
 
 Команда разработчиков:
--https://github.com/Eumorg (Team Leader)
--https://github.com/Danill212
--https://github.com/VitalikN7
--https://github.com/IvanNovokshanov
-
+<ul>
+  <li>https://github.com/Eumorg (Team Leader)</li>
+  <li>https://github.com/Danill212</li>
+  <li>https://github.com/VitalikN7</li>
+  <li>https://github.com/IvanNovokshanov</li>
+</ul>
 
 Для запуска приложения необходимо выполнить команду npm run dev из папки API, затем выполнить команду npm start из папки WEB
 
