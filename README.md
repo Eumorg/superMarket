@@ -28,7 +28,18 @@ Database:
   <li>https://github.com/IvanNovokshanov</li>
 </ul>
 
-Для запуска приложения необходимо выполнить команду npm run dev из папки API, затем выполнить команду npm start из папки WEB
+Для запуска приложения необходимо выполнить из папки API:
+1. touch .env  Затем скопировать в свежесозданный файл .env строки из файла .env_example, изменив имя пользователя и пароль для Postgres на свои.
+2. Выполнить команду npm i
+3. Выполнить npx sequelize db:create
+4. Выполнить npx sequelize db:migrate
+5. Выполнить npx sequelize db:seed:all
+6. Выполнить npm sequelize run dev
+
+Затем выполнить из папки WEB следующие команды:
+1. npm i
+2. npm start
+3. Для входа из под админа можно использовать имя пользователя Biba и пароль 1234
 
 ![image](https://user-images.githubusercontent.com/96069898/187669340-82de685a-ac93-49e6-889c-5d82dd95ae5c.png)
 ![image](https://user-images.githubusercontent.com/96069898/187669705-6ed756dd-cea8-4420-85eb-644893f940db.png)
